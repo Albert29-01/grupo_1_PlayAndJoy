@@ -41,7 +41,7 @@ Los niños de los ochenta son ahora los consumidores de mediana edad propensos a
 
 ## ✔Listado de 5 páginas referentes:
 
-[Club de café](https://somosclubdecafe.com/)
+**[Club de café](https://somosclubdecafe.com/)**
 
 Puntos de referencia:
 - Home
@@ -50,24 +50,24 @@ Puntos de referencia:
 - Carrito de compras
 - Informacion relevante sobre los diferentes tipos de cafe y sus moliendas
 
-[Lado B música](https://www.ladobmusica.com.ar/)
+**[Lado B música](https://www.ladobmusica.com.ar/)**
 
 Puntos de referencia:
 - Formulario de Registro.
 - Formulario de Login pop-up.
 
-[Bacan](https://www.bacan.com.ar/#/women/step/style)
+**[Bacan](https://www.bacan.com.ar/#/women/step/style)**
 
 Puntos de referencia:
 - Formulario de Suscripción atractivo, dinámico y simple.
 
-[Bonvivir](https://www.bonvivir.com/suscripcion/)
+**[Bonvivir](https://www.bonvivir.com/suscripcion/)**
 
 Puntos de referencia:
 - Formulario de Suscripción sobre vinos
 - Informacion relevante sobre vinos.
 
-[Bukku](https://bukku.com.ar/)
+**[Bukku](https://bukku.com.ar/)**
 
 Puntos de referencia:
 - La idea de una experiencia que combinara sentidos. En este caso, libros y música.
@@ -75,10 +75,18 @@ Puntos de referencia:
 
 ---
 
-About Us:
+### ***About Us:***
 
-Noelia "La Revelde⭐" Carosella
+**Noelia "La Revelde ⭐" Carosella**
 
-Alberto "Pappo🤟" Simonetti
+Amante de la buseca y el vino tinto, solía ir a bailar a la Nave del Olvido... pero tuvo que hacer tripa y corazón, y pasar un tiempo fuera de casa para volver al final desde donde partió.
 
-Emilia "DJ 🎧" Quintana
+Hoy, mientas prepara su proyecto para recibirse de desarrolladora Full-Stack, se pregunta: ¿Cuánto más? ¿Cuanto más queda en la vida aprender?
+
+**Alberto "Pappo 🤟" Simonetti**
+
+Fan de los Redonditos de Ricota y por qué no, de jamón y queso también... El capitán Beto, como le dicen los amigos, es un hombre de gustos sencillos... para él, el lujo es vulgaridad...
+
+Actualmente está haciendo el curso de Full-Stack en DH aunque no sabe si le gusta más que el rock. Dice que su secreto es: "La suerte del principiante, no puede fallar".
+
+**Emilia "DJ 🎧" Quintana**
