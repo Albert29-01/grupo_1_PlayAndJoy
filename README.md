@@ -31,7 +31,8 @@ El cliente seleccionará los productos a los que quiera suscribirse.
 
 ## ✔<u>Público objetivo</u>
 
-Nuestro público objetivo está orientado a hombres y mujeres de entre 30 y 60 años aproximadamente. 
+Nuestro público objetivo está orientado a hombres y mujeres de entre 30 y 60 años aproximadamente, o a todas aquellas que personas que se animen a vivir la experiencia de leer un libro o escuchar excelente  música
+mientras disfruta de un buen vino o un buen café sin la necesidad de concurrir a locales dedicados a tales efectos. 
 
 ## ✔<u>Estética del sitio</u>
 
