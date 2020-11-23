@@ -89,4 +89,8 @@ Fan de los Redonditos de Ricota y por qué no, de jamón y queso también... El 
 
 Actualmente está haciendo el curso de Full-Stack en DH aunque no sabe si le gusta más que el rock. Dice que su secreto es: "La suerte del principiante, no puede fallar".
 
-**Emilia "DJ 🎧" Quintana**
+**Emilia "Melomana 🎶" Quintana**
+
+Fuego y pasión por el Diseño Gráfico desde que descubrió Paint. Con corashe enfrentó la vida desde el Jardin de la República y con el ritmo de la vida llegó a conocer diferentes bandas y generos que la marcaron... 
+
+Mediante una pandemia de por medio, como un Loco en el desierto decidió que nunca es tarde y arrancó el curso de Full-Stack. Le gusta sentir que en cada pasito suyo hay una canción...
