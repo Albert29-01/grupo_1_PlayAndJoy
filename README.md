@@ -1,5 +1,5 @@
 
-![Logo Play And Joy](./logo-transparente.png)
+![Logo Play And Joy](./public/Logo/logo-transparente.png)
 
 ---
 

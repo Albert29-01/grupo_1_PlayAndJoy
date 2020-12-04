@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@700&display=swap');
+
+:root {
+    --color-gris: #C0BCB4;
+    --color-azul: #383F5B;
+    --color-beige: #E7D8C4;
+    --color-ladrillo: #C36350;
+    --color-arena: #D4B489;
+    --color-petroleo: #96A79D;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*=======================
+BODY
+========================*/
+
+body {
+    font-family: Quicksand;
+}
+
+/*=======================
+HEADER
+========================*/
+
+header {
+    
+}
+
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+.botonStandar {
+    background: var(--color-azul);
+    color: var(--color-beige);
+    font-size: 14px;
+    padding: 5px 15px;
+    margin-right: 20px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+header a img.logo {
+    display: flex;
+    margin-right: 15px;
+}
+
+header div nav.navIngreso {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+}
+
+
+header div form { 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+header div form input{ 
+    width: 100%;
+    height: 22px;
+    border: none;
+    border-radius: 20px;
+    background: var(--color-gris);
+    opacity: 50%;
+}
+
+
+header div nav a img { margin-right: 15px; }
+
+header ul.navMenu {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 30%;
+}
+
+header ul li { list-style: none; }
+
+hr {
+    border-color: var(--color-ladrillo);
+    opacity: 50%;
+    margin: 10px 20px;
+}
+
+/*=======================
+SECTION SUSCRIBITE
+========================*/
+
+
+section img { width: 100%; }
