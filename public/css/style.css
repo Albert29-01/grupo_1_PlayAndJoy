@@ -20,10 +20,11 @@ BODY
 ========================*/
 
 body {
+    
     font-family: Quicksand;
     color: var(--color-azul);
 }
-
+p{font-family: Open Sans;}
 /*=======================
 HEADER
 ========================*/
@@ -96,8 +97,39 @@ hr {
 /*=======================
 SECTION SUSCRIBITE
 ========================*/
+section.bannerSuscripcion {
+    display: flex;
+    position: relative;
+}
+section.bannerSuscripcion img { width: 100%; }
+section.bannerSuscripcion a { 
+    background: var(--color-ladrillo);
+    color: var(--color-arena);
+    border-radius: 20px;
+    padding: 5px 30px;
+    text-decoration: none;
+    position: absolute;
+    left: 45%;
+    top: 45%;   
+}
+/*=======================
+SECTION NOSOTROS
+========================*/
+section.nosotros {
+    display: flex;
+}
+section.nosotros div {
+    width: 50%;
+    margin: 15px;
+}
+section.nosotros div p {
+    margin-top: 15px;
+}
+section.nosotros img {
+    width: 50%;
 
-section img { width: 100%; }
+}
+
 
 /*=======================
 SECTION DETALLE SUSCRIPCION
