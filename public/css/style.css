@@ -25,6 +25,13 @@ body {
     color: var(--color-azul);
 }
 p{font-family: Open Sans;}
+h1{font-size: 24px;}
+hr {
+    border-color: var(--color-ladrillo);
+    opacity: 50%;
+    margin: 20px;
+}
+
 /*=======================
 HEADER
 ========================*/
@@ -88,11 +95,7 @@ header ul.navMenu {
 
 header ul li { list-style: none; }
 
-hr {
-    border-color: var(--color-ladrillo);
-    opacity: 50%;
-    margin: 10px 20px;
-}
+
 
 /*=======================
 SECTION SUSCRIBITE
@@ -118,16 +121,53 @@ SECTION NOSOTROS
 section.nosotros {
     display: flex;
 }
-section.nosotros div {
+section.nosotros article {
     width: 50%;
     margin: 15px;
 }
-section.nosotros div p {
+section.nosotros article p {
     margin-top: 15px;
 }
 section.nosotros img {
     width: 50%;
 
+}
+/*=======================
+SECTION ASOCIATE
+========================*/
+
+section.asociate {
+    display: flex;
+
+}
+h1.asociate{
+    margin: 15px 0px;
+    text-align: center;
+}
+section.asociate article h2 {
+    margin: 15px 0;
+    text-align: center;
+}
+section.asociate article {
+    margin: 20px;
+}
+section.asociate article img {
+    position: relative;
+    right: -50%;  
+}
+/*=======================
+SECTION PRODUCTOS
+========================*/
+section.productos {
+    display: flex;
+    margin: 0 5%;
+}
+section.productos article img {
+    position: relative;
+    right: -15%;  
+}
+section.productos article {
+    margin: 0 20px;
 }
 
 
