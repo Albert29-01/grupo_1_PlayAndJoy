@@ -169,44 +169,21 @@ section.productos article img {
 section.productos article {
     margin: 0 20px;
 }
-
-
 /*=======================
-SECTION DETALLE SUSCRIPCION
+SECTION PIE DE PAGINA
 ========================*/
+footer h1 {
+    text-align: center;
+    
+}
+   
+footer section.redSocial {
 
-section.detalleSuscripcion {
     display: flex;
+    justify-content: center;
+    
+}
+footer section.redSocial a img {
+    margin: 15px;
 }
 
-section.detalleSuscripcion img {
-    width: 50%;
-}
-
-section.detalleSuscripcion div {
-    display: flex;
-    width: 50%;
-    margin: 0 20px;
-    flex-direction: column;
-}
-
-section.detalleSuscripcion div h1 { 
-    font-size: 30px; 
-    margin-bottom: 20px;
-}
-
-section.detalleSuscripcion div h2 { 
-    font-size: 24px; 
-    margin-bottom: 20px;
-}
-
-section.detalleSuscripcion div div.mediosDePago {
-    display: flex;
-    flex-direction: row;
-}
-
-section.detalleSuscripcion div div.mediosDePago img { 
-    width: auto;
-    height: 34px;
-    margin-right: 10px; 
-}
