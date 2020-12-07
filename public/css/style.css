@@ -84,6 +84,10 @@ header div form input{
     opacity: 50%;
 }
 
+header div form img {
+    position: relative;
+    right: 25px;
+}
 
 header div nav a img { margin-right: 15px; }
 
