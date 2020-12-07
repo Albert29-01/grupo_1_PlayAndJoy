@@ -24,8 +24,11 @@ body {
     font-family: Quicksand;
     color: var(--color-azul);
 }
-p{font-family: Open Sans;}
-h1{font-size: 24px;}
+
+p {font-family: Open Sans;}
+
+h1 {font-size: 24px;}
+
 hr {
     border-color: var(--color-ladrillo);
     opacity: 50%;
@@ -36,9 +39,6 @@ hr {
 HEADER
 ========================*/
 
-header {
-    
-}
 
 header div {
     display: flex;
@@ -94,8 +94,6 @@ header ul.navMenu {
 }
 
 header ul li { list-style: none; }
-
-
 
 /*=======================
 SECTION SUSCRIBITE
@@ -176,7 +174,7 @@ footer h1 {
     text-align: center;
     
 }
-   
+
 footer section.redSocial {
 
     display: flex;
@@ -187,3 +185,4 @@ footer section.redSocial a img {
     margin: 15px;
 }
 
+=======
