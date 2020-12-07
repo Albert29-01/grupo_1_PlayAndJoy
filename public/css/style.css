@@ -103,6 +103,7 @@ section.bannerSuscripcion {
     position: relative;
 }
 section.bannerSuscripcion img { width: 100%; }
+
 section.bannerSuscripcion a { 
     background: var(--color-ladrillo);
     color: var(--color-arena);
@@ -128,7 +129,6 @@ section.nosotros article p {
 }
 section.nosotros img {
     width: 50%;
-
 }
 /*=======================
 SECTION ASOCIATE
@@ -172,17 +172,14 @@ SECTION PIE DE PAGINA
 ========================*/
 footer h1 {
     text-align: center;
-    
 }
 
 footer section.redSocial {
-
     display: flex;
-    justify-content: center;
-    
+    justify-content: center;  
 }
+
 footer section.redSocial a img {
     margin: 15px;
 }
 
-=======
