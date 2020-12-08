@@ -65,6 +65,18 @@ header div nav.navIngreso {
     display: flex;
     align-items: center;
     margin: 25px 0;
+    margin-right: 20px;
+}
+
+header div nav.navIngreso a {
+    background: var(--color-azul);
+    border-radius: 20px;
+}
+
+header div nav.navIngreso a img.carrito { 
+    margin: 5px;
+    position: relative;
+    top: 2px;
 }
 
 
