@@ -39,7 +39,6 @@ hr {
 HEADER
 ========================*/
 
-
 header div {
     display: flex;
     justify-content: space-between;
@@ -54,11 +53,13 @@ header div {
     margin-right: 20px;
     text-decoration: none;
     border-radius: 20px;
+    border: none;
 }
 
 header a img.logo {
     display: flex;
     margin-right: 15px;
+    flex-grow: 0.25;
 }
 
 header div nav.navIngreso {
@@ -81,10 +82,11 @@ header div nav.navIngreso a img.carrito {
 
 
 header div form { 
-    width: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
     margin-right: 20px;
+    position: relative;
 }
 
 header div form input{ 
@@ -97,8 +99,8 @@ header div form input{
 }
 
 header div form img {
-    position: relative;
-    right: 25px;
+    position: absolute;
+    right: 5px;
 }
 
 header div nav a img { margin-right: 15px; }
@@ -110,6 +112,31 @@ header ul.navMenu {
 }
 
 header ul li { list-style: none; }
+
+@media (max-width: 425px) {
+    header div { width: 100%;}
+
+    header a img.logo {
+        display: flex;
+        margin-right: 15px;
+        width: 120px;
+        height: auto;
+    } 
+    
+    header div form {
+        margin-right: 5px;
+    }
+
+    header div nav.navIngreso {
+        margin: 5px;
+        justify-content: flex-end;
+    }
+
+    .botonStandar {
+        font-size: 10px;
+        margin-right: auto;
+    }
+}
 
 /*=======================
 SECTION SUSCRIBITE
@@ -130,6 +157,16 @@ section.bannerSuscripcion a {
     left: 45%;
     top: 45%;   
 }
+
+@media (max-width: 425px) { 
+    section.bannerSuscripcion a {
+    font-size: 10px;
+    position: absolute;
+    left: 36%;
+    top: 40%; 
+    }
+}
+
 /*=======================
 SECTION NOSOTROS
 ========================*/
@@ -146,14 +183,32 @@ section.nosotros article p {
 section.nosotros img {
     width: 50%;
 }
+
+@media (max-width: 425px) {
+    section.nosotros {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 15px;
+    }
+    section.nosotros article {
+        width: 100%;
+        margin: 0px;
+        margin-bottom: 15px;
+    }
+    section.nosotros img {
+        width: 100%;
+    }
+}
 /*=======================
 SECTION ASOCIATE
 ========================*/
 
 section.asociate {
     display: flex;
-
+    align-items: center;
 }
+
 h1.asociate{
     margin: 15px 0px;
     text-align: center;
@@ -164,10 +219,21 @@ section.asociate article h2 {
 }
 section.asociate article {
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-section.asociate article img {
-    position: relative;
-    right: -50%;  
+section.asociate article img { width: 25%; }
+
+@media (max-width: 425px) {
+    section.asociate {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section.asociate article {
+        margin: 5%;
+    }
 }
 /*=======================
 SECTION PRODUCTOS
@@ -182,6 +248,23 @@ section.productos article img {
 }
 section.productos article {
     margin: 0 20px;
+}
+
+@media (max-width: 425px) {
+    section.productos {
+        display: flex;
+        flex-direction: column;
+    }
+    section.productos article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    section.productos article img {
+        width: 70%;
+        margin-bottom: 15px;
+    }
 }
 /*=======================
 SECTION PIE DE PAGINA
