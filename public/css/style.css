@@ -30,7 +30,7 @@ p {font-family: Open Sans;}
 h1 {font-size: 24px;}
 
 hr {
-    border-color: var(--color-ladrillo);
+    border: solid 1px var(--color-ladrillo);
     opacity: 50%;
     margin: 20px;
 }
@@ -240,31 +240,31 @@ SECTION PRODUCTOS
 ========================*/
 section.productos {
     display: flex;
-    margin: 0 5%;
-}
-section.productos article img {
-    position: relative;
-    right: -15%;  
+    margin: 0 2.5%;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 section.productos article {
-    margin: 0 20px;
+    margin-right: 15px;
+    width: 15%;
 }
 
 @media (max-width: 425px) {
-    section.productos {
-        display: flex;
-        flex-direction: column;
-    }
+    section.productos { margin: 0 15px; }
+
     section.productos article {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin: 0;
+        margin-right: 5px;
         margin-bottom: 15px;
+        width: 45%;
     }
-    section.productos article img {
-        width: 70%;
-        margin-bottom: 15px;
-    }
+
+    section.productos article p { text-align: center; }
+
+    section.productos article img { margin-bottom: 15px; }
 }
 /*=======================
 SECTION PIE DE PAGINA
