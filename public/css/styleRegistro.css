@@ -23,8 +23,12 @@ body {
     
     font-family: Quicksand;
     color: var(--color-azul);
-    margin: 0 35%;
-    
+    margin: 0 35%;   
+}
+@media (max-width: 425px) {
+    body {
+        margin: 0 10%;
+    }
 }
 p{font-family: Open Sans;}
 h1{font-size: 24px;}
