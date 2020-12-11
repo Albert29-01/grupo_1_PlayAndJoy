@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../public/css/styleSuscriptionDetail.css">
     <title>Play & Joy - Suscripción</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <header>
         <div>
-            <a href=""><img width="240" height="90" class="logo" src="../../public/img/logo-transparente.png" alt="Logo de Play & Joy"> </a>
+            <a href=""><img class="logo" src="../../public/img/logo-transparente.png" alt="Logo de Play & Joy"> </a>
             <form action="validar.php" method="POST">
                 <input type=“text” name=“search”>
                 <img src="../../public/img/lupa.png" alt="lupa">
             </form>
             <nav class="navIngreso">
                 <a href="" class="botonStandar">Ingresar</a>
-                <a href=""><img class="carrito" src="../../public/img/Carrito.png" alt="Botón carrito de compras"> </a>
+                <a href="" class="menuMobile"><img src="../../public/img/mobileMenu.png" alt="Menú desplegable"> </a>
+                <a href="" ><img class="carrito" src="../../public/img/Carrito.png" alt="Botón carrito de compras"> </a>
             </nav>
         </div>
         <ul class="navMenu">
@@ -26,7 +28,7 @@
         </ul>
         <hr>        
     </header>
-    <section class="detalleSuscripcion">
+    <section class="detalleSuscrip">
         <img class="suscripcion" src="../../public/img/imagenSuscripcion.png" alt="Gatito dentro de una caja">
         <article>
             <h1>SUSCRIPCIÓN</h1>
@@ -39,70 +41,70 @@
                 <img src="../../public/img/Master.png" alt="Master Card">
             </div>
             <h3>Detalle</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore eaque modi dolor hic rem quos quaerat enim consequuntur vitae mollitia!</p>
-            </article>
-        </section>
-        <form class="opcionesSuscrip" action="validar.php" method="POST">
-            <div>
-                <label>Tipo de café</label>
-                <select name=“Cafe”>
-                    <option value="none" selected disabled hidden> 
-                        Selecciona una opción 
-                    </option>
-                    <option value=”Fuerte”>Fuerte</option>
-                    <option value=“Suave”>Suave</option>
-                    <option value=“Descaf”>Descafeinado</option>
-                </select>
-            </div>
-            <div>
-                <label>Cepa de vino</label>
-                <select name="Vino">
-                    <option value="none" selected disabled hidden> 
-                        Selecciona una opción 
-                    </option>
-                    <option value=”Tinto”>Tinto</option>
-                    <option value=“Blanco”>Blanco</option>
-                    <option value=“Rosado”>Rosado</option>
-                    <option value="Blend">Blend</option>
-                </select>
-            </div>
-            <div>
-                <label>Género literario</label>
-                <select name=“Libro”>
-                    <option value="none" selected disabled hidden> 
-                        Selecciona una opción 
-                    </option>
-                    <option value=”CFx”>Ciencia Ficción</option>
-                    <option value=“Ro”>Romántico</option>
-                    <option value=“Sus”>Suspenso</option>
-                    <option value=“Bio”>Biografía</option>
-                    <option value=“Dr”>Drama</option>
-                    <option value=“Tr”>Terror</option>
-                </select>
-            </div>
-            <div>
-                <label>Estilo musical</label>
-                <select name=“Musica”>
-                    <option value="none" selected disabled hidden> 
-                        Selecciona una opción 
-                    </option>
-                    <option value=”Rock”>Rock</option>
-                    <option value=“Cl”>Clásica</option>
-                    <option value=“Pop”>Pop</option>
-                    <option value="Jazz">Jazz</option>
-                    <option value=“Blues”>Blues</option>
-                </select>
-            </div>
-            <div>
-                <label>Cantidad</label>
-                <input type=“number” name=“cantidad”>
-            </div>
-            <button class="addCart" type=“submit”><img src="../../public/img/carrito2.png">Añadir al carrito</button>
-        </form>
-        <hr>
-        <section class="productos">
-            <h2 class="prodSimi">Productos Similares</h2>
-            <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore eaque modi dolor hic rem quos quaerat enim consequuntur vitae mollitia!</p>
+        </article>
+    </section>
+    <form class="opcionesSuscrip" action="validar.php" method="POST">
+        <div>
+            <label>Tipo de café</label>
+            <select name=“Cafe”>
+                <option value="none" selected disabled hidden> 
+                    Selecciona una opción 
+                </option>
+                <option value=”Fuerte”>Fuerte</option>
+                <option value=“Suave”>Suave</option>
+                <option value=“Descaf”>Descafeinado</option>
+            </select>
+        </div>
+        <div>
+            <label>Cepa de vino</label>
+            <select name="Vino">
+                <option value="none" selected disabled hidden> 
+                    Selecciona una opción 
+                </option>
+                <option value=”Tinto”>Tinto</option>
+                <option value=“Blanco”>Blanco</option>
+                <option value=“Rosado”>Rosado</option>
+                <option value="Blend">Blend</option>
+            </select>
+        </div>
+        <div>
+            <label>Género literario</label>
+            <select name=“Libro”>
+                <option value="none" selected disabled hidden> 
+                    Selecciona una opción 
+                </option>
+                <option value=”CFx”>Ciencia Ficción</option>
+                <option value=“Ro”>Romántico</option>
+                <option value=“Sus”>Suspenso</option>
+                <option value=“Bio”>Biografía</option>
+                <option value=“Dr”>Drama</option>
+                <option value=“Tr”>Terror</option>
+            </select>
+        </div>
+        <div>
+            <label>Estilo musical</label>
+            <select name=“Musica”>
+                <option value="none" selected disabled hidden> 
+                    Selecciona una opción 
+                </option>
+                <option value=”Rock”>Rock</option>
+                <option value=“Cl”>Clásica</option>
+                <option value=“Pop”>Pop</option>
+                <option value="Jazz">Jazz</option>
+                <option value=“Blues”>Blues</option>
+            </select>
+        </div>
+        <div class="cant">
+            <label>Cantidad</label>
+            <input type=“number” name=“cantidad”>
+        </div>
+        <button class="addCart" type=“submit”><img src="../../public/img/carrito2.png">Añadir al carrito</button>
+    </form>
+    <hr>
+    <section class="productos">
+        <h2 class="prodSimi">Productos Similares</h2>
+        <div>
             <article>
                 <img src="../../public/img/Producto.png" alt="cafetera">
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, quasi!</p>
@@ -123,16 +125,20 @@
                 <img src="../../public/img/Producto.png" alt="Cafetera">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, perferendis.</p>
             </article>
+            <article class="hidden">
+                <img src="../../public/img/Producto.png" alt="Cafetera">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, perferendis.</p>
+            </article>
         </div>
+    </section>
+    <hr>
+    <footer>
+        <h1>CONTACTANOS</h1>
+        <section class="redSocial">
+            <a href=""><img src="../../public/img/Facebook.png" alt="Facebook"></a>
+            <a href=""><img src="../../public/img/Instagram.png" alt="Instagram"></a>
+            <a href=""><img src="../../public/img/Mail.png" alt="Mail"></a>
         </section>
-        <hr>
-        <footer>
-            <h1>CONTACTANOS</h1>
-            <section class="redSocial">
-                <a href=""><img src="../../public/img/Facebook.png" alt="Facebook"></a>
-                <a href=""><img src="../../public/img/Instagram.png" alt="Instagram"></a>
-                <a href=""><img src="../../public/img/Mail.png" alt="Mail"></a>
-            </section>
-        </footer>   
-    </body>
-    </html>
+    </footer>   
+</body>
+</html>

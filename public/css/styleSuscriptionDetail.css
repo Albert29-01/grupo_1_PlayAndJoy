@@ -15,18 +15,24 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 100%;
+}
+
 /*=======================
 BODY
 ========================*/
 
 body {
-    
     font-family: Quicksand;
     color: var(--color-azul);
 }
-p{font-family: Open Sans;}
+p {
+    font-family: Open Sans;
+    font-size: 1rem;
+}
 
-h1{font-size: 24px;}
+h1 {font-size: 1.5rem;}
 
 hr {
     border-color: var(--color-ladrillo);
@@ -47,29 +53,25 @@ header div {
 .botonStandar {
     background: var(--color-azul);
     color: var(--color-beige);
-    font-size: 14px;
-    padding: 5px 15px;
-    margin-right: 20px;
+    font-size: 1rem;
+    padding: 5px 1rem;
+    margin-right: 1rem;
     text-decoration: none;
     border-radius: 20px;
+    border: none;
 }
 
 header a img.logo {
+    width: 15rem;
     display: flex;
-    margin-right: 15px;
-}
-
-header div form { 
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
+    margin-right: 1rem;
+    flex-grow: 0.25;
 }
 
 header div nav.navIngreso {
     display: flex;
     align-items: center;
-    margin: 25px 0;
+    margin: 1.5rem 0;
     margin-right: 20px;
 }
 
@@ -78,10 +80,24 @@ header div nav.navIngreso a {
     border-radius: 20px;
 }
 
+header div nav.navIngreso a.menuMobile {
+    background: none;
+    display: none;
+}
+
 header div nav.navIngreso a img.carrito { 
     margin: 5px;
     position: relative;
     top: 2px;
+}
+
+
+header div form { 
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    position: relative;
 }
 
 header div form input{ 
@@ -94,58 +110,93 @@ header div form input{
 }
 
 header div form img {
-    position: relative;
-    right: 25px;
+    position: absolute;
+    right: 5px;
 }
+
+header div nav a img { margin-right: 15px; }
 
 header ul.navMenu {
     display: flex;
     justify-content: space-around;
-    margin: 5px 30%;
+    margin: 5px 10rem;
 }
 
 header ul li { list-style: none; }
+
+@media (max-width: 425px) {
+    header div { width: 100%;}
+
+    header a img.logo {
+        display: flex;
+        margin-right: 1rem;
+        width: 7.5rem;
+    } 
+    
+    header div form {
+        margin-right: 5px;
+    }
+
+    header div nav.navIngreso {
+        margin: 5px;
+        justify-content: flex-end;
+    }
+
+    header div nav.navIngreso a.menuMobile {display: block;}
+
+    .botonStandar {
+        display: none;
+    }
+}
 
 /*=======================
 SECTION DETALLE SUSCRIPCION
 ========================*/
 
-section.detalleSuscripcion {
+section.detalleSuscrip {
     display: flex;
-    margin: 0 20px;
-    margin-bottom: 20px;
+    margin: 0 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-section.detalleSuscripcion img.suscripcion {
-        margin-right:20px;
-}
+section.detalleSuscrip img.suscripcion { margin-right:1rem; }
 
-section.detalleSuscripcion article {
+section.detalleSuscrip article {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
 
-section.detalleSuscripcion article h1 { 
-    font-size: 30px; 
-    margin-bottom: 20px;
+section.detalleSuscrip article h1 { 
+    font-size: 2rem; 
+    margin-bottom: 1.5rem;
 }
 
-section.detalleSuscripcion article h2 { 
-    font-size: 24px; 
-    margin-bottom: 20px;
+section.detalleSuscrip article h2 { 
+    font-size: 1.5rem; 
+    margin-bottom: 1.5rem;
 }
 
-section.detalleSuscripcion article div.mediosDePago {
+section.detalleSuscrip article div.mediosDePago {
     display: flex;
     flex-direction: row;
 }
 
-section.detalleSuscripcion article div.mediosDePago img { 
+section.detalleSuscrip article div.mediosDePago img { 
     height: 34px;
-    margin-right: 15px;
+    margin-right: 1rem;
 }
-section.detalleSuscripcion article h3 { margin: 15px 0; }
+section.detalleSuscrip article h3 { margin: 1rem 0; }
+
+@media (max-width: 425px) {
+    section.detalleSuscrip {
+        display: block;
+    }
+
+    section.detalleSuscrip img.suscripcion {width: 100%;}
+
+    section.detalleSuscrip article {width: 100%;}
+}
 
 /*=======================
 FORMULARIO OPCIONES SUSCRIPCION
@@ -157,16 +208,16 @@ form.opcionesSuscrip {
     align-items: center;
 }
 
-form.opcionesSuscrip div { margin-bottom: 15px; }
+form.opcionesSuscrip div { margin-bottom: 1rem; }
 
-form.opcionesSuscrip label { font-size: 24px; }
+form.opcionesSuscrip label { font-size: 1.5rem; }
 
 form.opcionesSuscrip div select {
     background: var(--color-gris);
     opacity: 50%;
     border: none;
     border-radius: 20px ;
-    font-size: 18px; 
+    font-size: 1.125rem; 
 }
 
 form.opcionesSuscrip div input {
@@ -174,14 +225,15 @@ form.opcionesSuscrip div input {
     opacity: 50%;
     border: none;
     border-radius: 20px ;
-    width: 30px;
-    height: 24px;
+    width: 2rem;
+    height: 1.5rem;
     position: relative;
     top: -5px;
 }
 
 form.opcionesSuscrip button.addCart {
     font-family: Quicksand;
+    font-size: 1rem;
     display: inline-flex;
     justify-content: space-around;
     align-items: center;
@@ -192,27 +244,61 @@ form.opcionesSuscrip button.addCart {
     padding: 10px;
     width: 200px;
     height: 40px;
-    font-size: 16px;
+}
+
+@media (max-width: 425px) {
+    form.opcionesSuscrip {width: 100%;}
+
+    form.opcionesSuscrip div { 
+        display: flex;
+        flex-direction: column;
+     }
+
+    form.opcionesSuscrip div.cant {display: block;}
 }
 
 /*=======================
 SECTION PRODUCTOS SIMILARES
 ========================*/
-.prodSimi { 
-    margin-bottom: 15px; 
-    margin-left: 20px;
-}
-
 section.productos div {
     display: flex;
-    margin: 0 5%;
+    margin: 0 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-section.productos div article img {
-    position: relative;
-    right: -15%;  
+
+.prodSimi { 
+    margin-bottom: 1rem; 
+    margin-left: 1.5rem;
 }
+
 section.productos div article {
-    margin: 0 20px;
+    margin-right: 1rem;
+    width: 15%;
+}
+
+section.productos div article.hidden {display: none;}
+
+@media (max-width: 425px) {
+    section.productos { margin: 0 1rem; }
+
+    .prodSimi { margin-left: 0; }
+
+    section.productos div article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        margin-right: 5px;
+        margin-bottom: 1rem;
+        width: 45%;
+    }
+
+    section.productos div article.hidden {display: block;}
+
+    section.productos div article p { text-align: center; }
+
+    section.productos div article img { margin-bottom: 1rem; }
 }
 /*=======================
 SECTION PIE DE PAGINA
@@ -229,4 +315,3 @@ footer section.redSocial {
 footer section.redSocial a img {
     margin: 15px;
 }
-
