@@ -74,6 +74,11 @@ header div nav.navIngreso a {
     border-radius: 20px;
 }
 
+header div nav.navIngreso a.menuMobile {
+    background: none;
+    display: none;
+}
+
 header div nav.navIngreso a img.carrito { 
     margin: 5px;
     position: relative;
@@ -132,9 +137,10 @@ header ul li { list-style: none; }
         justify-content: flex-end;
     }
 
+    header div nav.navIngreso a.menuMobile {display: block;}
+
     .botonStandar {
-        font-size: 10px;
-        margin-right: auto;
+        display: none;
     }
 }
 
@@ -249,6 +255,8 @@ section.productos article {
     width: 15%;
 }
 
+section.productos article.hiden {display: none;}
+
 @media (max-width: 425px) {
     section.productos { margin: 0 15px; }
 
@@ -261,6 +269,8 @@ section.productos article {
         margin-bottom: 15px;
         width: 45%;
     }
+
+    section.productos article.hiden {display: block;}
 
     section.productos article p { text-align: center; }
 
