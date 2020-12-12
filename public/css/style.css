@@ -150,8 +150,13 @@ SECTION SUSCRIBITE
 section.bannerSuscripcion {
     display: flex;
     position: relative;
+    background-image: url("../../public/img/BannerSuscripcion.png");
+    height: 50vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-section.bannerSuscripcion img { width: 100%; }
 
 section.bannerSuscripcion a { 
     background: var(--color-ladrillo);
@@ -164,12 +169,23 @@ section.bannerSuscripcion a {
     top: 45%;   
 }
 
+section.bannerSuscripcion a:hover {
+    background: var(--color-arena);
+    color: var(--color-ladrillo);
+}
+
 @media (max-width: 425px) { 
     section.bannerSuscripcion a {
     font-size: 10px;
     position: absolute;
     left: 36%;
     top: 40%; 
+    }
+}
+
+@media only screen and (max-device-width: 1366px) {
+    section.bannerSuscripcion {
+      background-attachment: scroll;
     }
 }
 
