@@ -1,0 +1,22 @@
+{
+  "name": "grupo_1_playandjoy",
+  "version": "1.0.0",
+  "description": "![Logo Play And Joy](./public/Logo/logo-transparente.png)",
+  "main": "/src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Albert29-01/grupo_1_PlayAndJoy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Albert29-01/grupo_1_PlayAndJoy/issues"
+  },
+  "homepage": "https://github.com/Albert29-01/grupo_1_PlayAndJoy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
