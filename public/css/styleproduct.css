@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@700&display=swap');
+
+:root {
+    --color-gris: #C0BCB4;
+    --color-azul: #383F5B;
+    --color-beige: #E7D8C4;
+    --color-ladrillo: #C36350;
+    --color-arena: #D4B489;
+    --color-petroleo: #96A79D;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*=======================
+BODY
+========================*/
+
+body {
+    
+    font-family: Quicksand;
+    color: var(--color-azul);
+}
+
+p {font-family: Open Sans;}
+
+h1 {font-size: 24px;}
+
+hr {
+    border-color: var(--color-ladrillo);
+    opacity: 50%;
+    margin: 20px;
+}
+
+/*=======================
+HEADER
+========================*/
+
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+.botonStandar {
+    background: var(--color-azul);
+    color: var(--color-beige);
+    font-size: 14px;
+    padding: 5px 15px;
+    margin-right: 20px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+header a img.logo {
+    display: flex;
+    margin-right: 15px;
+}
+
+header div form { 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+header div nav.navIngreso {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    margin-right: 20px;
+}
+
+header div nav.navIngreso a {
+    background: var(--color-azul);
+    border-radius: 20px;
+}
+
+header div nav.navIngreso a img.carrito { 
+    margin: 5px;
+    position: relative;
+    top: 2px;
+}
+
+header div form input{ 
+    width: 100%;
+    height: 22px;
+    border: none;
+    border-radius: 20px;
+    background: var(--color-gris);
+    opacity: 50%;
+}
+
+header div form img {
+    position: relative;
+    right: 25px;
+}
+
+header ul.navMenu {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 30%;
+}
+
+header ul li { list-style: none; }
+
+/*=======================
+DETALLE PRODUCTO
+========================*/
+
+section.detalleProd {
+    display: flex;
+}
+section.detalleProd .images {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+section.detalleProd .images .miniatura img {
+    margin-left: 15px;
+}
+section.detalleProd .images .miniatura img:first-child {
+    margin-left: 0;
+}
+
+section.detalleProd article {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+section.detalleProd article h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+section.detalleProd article h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+section.detalleProd article .mediosDePago img {
+    margin-right: 5px;
+}
+section.detalleProd article h3 {
+    margin: 15px 0;
+}
+section.detalleProd article p {
+    font-family: open Sans;
+}
+section.detalleProd article form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 150px;
+}
+
+section.detalleProd article form div input {
+    background: var(--color-gris);
+    opacity: 50%;
+    border: none;
+    border-radius: 20px ;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    top: -5px;
+}
+section.detalleProd article form button {
+    font-family: Quicksand;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+    background: var(--color-azul);
+    color: var(--color-beige);
+    border-radius: 20px;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+}
+
+/*=======================
+RESEÑAS
+========================*/
+
+section.resenia {
+    margin-left: 20px;
+}
+section.resenia .titulo {
+    display: flex;
+}
+section.resenia .titulo h1 {
+    font-size: 28px;
+}
+section.resenia .titulo h1.der {
+    margin-left: 10px;
+    opacity: 50%;
+}
+
+section.resenia .comment1 {
+    margin: 20px 0;
+}
+section.resenia .comment1 .one {
+    display: flex;
+}
+section.resenia .comment1 .one img {
+    margin-right: 15px;
+}
+section.resenia .comment1 .one .comen img {}
+section.resenia .comment1 .one .comen p {
+    margin-top: 10px;
+}
+
+section.resenia .comment1 .two {
+    display: flex;
+    margin-top: 20px;
+}
+section.resenia .comment1 .two img {
+    margin-right: 15px;
+}
+section.resenia .comment1 .two .comen img {}
+section.resenia .comment1 .two .comen p {
+    margin-top: 10px;
+}
+
+/*=======================
+SECTION PRODUCTOS SIMILARES
+========================*/
+.prodSimi { 
+    margin-bottom: 15px; 
+    margin-left: 20px;
+}
+
+section.productos div {
+    display: flex;
+    margin: 0 5%;
+}
+section.productos div article img {
+    position: relative;
+    right: -15%;  
+}
+section.productos div article {
+    margin: 0 20px;
+}
+/*=======================
+SECTION PIE DE PAGINA
+========================*/
+footer h1 {
+    text-align: center;
+}
+
+footer section.redSocial {
+    display: flex;
+    justify-content: center;  
+}
+
+footer section.redSocial a img {
+    margin: 15px;
+}
