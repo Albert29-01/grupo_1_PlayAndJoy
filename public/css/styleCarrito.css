@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@700&display=swap');
+
+:root {
+    --color-gris: #C0BCB4;
+    --color-azul: #383F5B;
+    --color-beige: #E7D8C4;
+    --color-ladrillo: #C36350;
+    --color-arena: #D4B489;
+    --color-petroleo: #96A79D;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*=======================
+BODY
+========================*/
+
+body {
+    
+    font-family: Quicksand;
+    color: var(--color-azul);
+}
+
+p {font-family: Open Sans;}
+
+h1 {font-size: 24px;}
+
+hr {
+    border: 0.3px solid var(--color-ladrillo);
+    opacity: 50%;
+    margin: 4vw;
+}
+
+/*=======================
+HEADER
+========================*/
+header {
+    padding: 1vw;
+    margin: 1vw 2vh 1vw 1vh;
+}
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header div form input {
+    width: 30vw;
+    height: 4vh;
+    border: none;
+    border-radius: 20px;
+    background: var(--color-gris);
+    opacity: 50%;
+    margin-left: -5px;
+}
+header div form img {
+    position: relative;
+    right: 18px;
+}
+header div nav.secciones {
+    position: relative;
+    right: 5%;
+}
+header div nav.navIngreso {
+    background: var(--color-azul);
+    border-radius: 20px;
+    position: relative;
+    right: 5%;
+    width: 8vw;
+    height: auto;
+}
+
+header div nav.navIngreso a img.carrito {
+    margin: 1.8vw 2vw 1vw 1.7vw;
+}
+
+/*=======================
+CARRITO
+========================*/
+section.carrito div.imgcarrito {
+    display: flex;
+    justify-content: center;
+}
+section.carrito div.imgcarrito img.shop {
+    width: 8vw;
+    height: auto;
+}
+
+/*=======================
+DETALLE
+========================*/
+
+section.listado {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1vw;
+    margin-right: 2vw;
+}
+section.listado div.delete {
+    margin: 9vw 3vw 0vw 5vw;
+}
+section.listado div.delete ul {
+    list-style-type: none;
+}
+section.listado div.product {
+    margin: 0 2vw;
+}
+section.listado div.product ul {
+    list-style-type: none;
+}
+section.listado div.product ul h2 {
+    font-size: 0.9em;
+    margin-bottom: 2vw;
+    margin-left: 3vw;
+}
+section.listado div.product ul li {
+    font-family: open sans;
+    font-size: 0.6em;
+    color: var(--color-gris);
+    padding-top: 2vw;
+}
+
+section.listado div.cantidad {
+    margin: 0 2vw;
+}
+section.listado div.cantidad ul {
+    list-style-type: none;
+}
+section.listado div.cantidad ul h2 {
+    font-size: 0.9em;
+}
+section.listado div.cantidad ul li input {
+    background: var(--color-gris);
+    opacity: 50%;
+    border: none;
+    border-radius: 20px ;
+    width: 6vw;
+    height: auto;
+    position: relative;
+    top: 3vw;
+    right: -6vw;
+}
+
+section.listado div.precio {
+    margin: 0 2vw;
+}
+section.listado div.precio ul{
+    list-style-type: none;
+}
+section.listado div.precio ul h2 {
+    font-size: 0.9em;
+    margin-bottom: 3vw;
+}
+section.listado div.precio ul li {
+    font-family: open sans;
+    font-size: 0.6em;
+    color: var(--color-gris);
+    margin-bottom: 2.2vw;
+    margin-left: 1vw;
+}
+
+/*=======================
+IMPORTE
+========================*/
+section.importe div.title {
+    margin: 0 7vw;
+    font-size: 0.7em;
+}
+
+section.importe div.sub {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 7vw;
+}
+section.importe div.sub p {
+    margin: 0 12vw;
+    font-size: 0.6em;
+}
+section.importe div.sub p.price { 
+    color: var(--color-gris);
+}
+
+section.importe div.envio {
+    display: flex;
+    justify-content: flex-end;
+}
+section.importe div.envio p {
+    margin: 0 12vw;
+    font-size: 0.6em;
+}
+section.importe div.envio p.env {
+    color: var(--color-gris);
+}
+
+section.importe div.total h3 {
+    position: relative;
+    left: 40vw;
+    background-color: var(--color-gris);
+    border-radius: 8vw;
+    width: 50vw;
+    margin-top: 1vw;
+    font-size: 0.7em;
+    font-family: open sans;
+    padding: 0 2vw;
+}
+
+/*=======================
+OPCIONES
+========================*/
+section.opciones div.opc h2 {
+    margin: 0 7vw;
+    font-size: 1em;
+}
+
+section.opciones div.efect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vw;
+    
+}
+section.opciones div.efect button.cash {
+    background-color: var(--color-gris);
+    text-decoration: none;
+    border: none;
+    border-radius: 16vw;
+    text-align: center;
+    padding: 1vw 6vw;
+    font-family: Quicksand;
+    font-size: 0.8em;
+    color: var(--color-azul);
+    
+}
+section.opciones div.efect button.tc {
+    background-color: var(--color-gris);
+    text-decoration: none;
+    border: none;
+    border-radius: 16vw;
+    text-align: center;
+    padding: 4px 68px; 
+    font-family: Quicksand;
+    font-size: 0.8em;
+    color: var(--color-azul);
+    margin: 4vw;
+}
+
+section.opciones div.mediosDePago {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+section.opciones div.finish {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 3vw 4vw 0vw 0vw;
+}
+section.opciones div.finish nav.delete button.trash {
+    background-color: var(--color-beige);
+    text-decoration: none;
+    border: none;
+    border-radius: 100vw;
+    padding: 2vw 2.5vw;
+}
+section.opciones div.finish nav.finCompra button.fin {
+    background-color: var(--color-ladrillo);
+    color: var(--color-beige);
+    text-decoration: none;
+    border: none;
+    border-radius: 16vw;
+    padding: 0 10vw;
+    font-family: Quicksand;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+section.opciones a {
+    position: relative;
+    left: 35vw;
+    text-decoration: none;
+    font-family: quicksand;
+    font-size: 0.8em;
+    color: var(--color-azul);
+}
+
+/*=======================
+PRODUCTOS SIMILARES
+========================*/
+
+section.productos h2.prodSimi {
+    margin: 0 7vw;
+    font-size: 1em;
+}
+section.productos div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 3vw 0vw;
+}
+
+section.productos div article p {
+    font-size: 0.4em;
+}
+
+section.foot {
+    display: flex;
+    justify-content: center;
+}
+section.foot footer h1 {
+    margin: 0 4vw;
+    font-size: 1.2em;
+}
+section.foot footer section.redSocial {
+    position: relative;
+    left: 4vw;
+    margin-top: 1vw;
+}
