@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@700&display=swap');
+
+:root {
+    --color-gris: #C0BCB4;
+    --color-azul: #383F5B;
+    --color-beige: #E7D8C4;
+    --color-ladrillo: #C36350;
+    --color-arena: #D4B489;
+    --color-petroleo: #96A79D;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+/*=======================
+BODY
+========================*/
+
+body {
+    font-family: Quicksand;
+    color: var(--color-azul);
+}
+
+/*=======================
+HEADER
+========================*/
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+header img.logo {
+    width: 15rem;
+}
+
+/*=======================
+FORMULARIO
+========================*/
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input.campo {
+    background: var(--color-gris);
+    opacity: 50%;
+    border: none;
+    border-radius: 20px;
+    margin: 1rem 0;
+    width: 240px;
+    height: 1.5rem;
+}
+
+form button {
+    background: var(--color-ladrillo);
+    color: var(--color-arena);
+    font-family: Quicksand; 
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+form button:hover {
+    color: var(--color-ladrillo);
+    background: var(--color-arena);
+}
+
+form small input {
+    margin: 1rem 0;
+}
+
+/*=======================
+SECTION
+========================*/
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section small { margin-bottom: 1rem; }
+
+section div {
+    background: #E5E5E5;
+    border-radius: 20px;
+    padding: 5px 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+section div img {
+    margin: 0 10px;
+}
+
+section div a {
+    text-decoration: none;
+}
+
