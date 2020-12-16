@@ -44,107 +44,200 @@ hr {
 HEADER
 ========================*/
 
-header div {
+.logo {
+    width: 15rem;
+}
+
+.ppal {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    }
-
-.botonStandar {
-    background: var(--color-azul);
-    color: var(--color-beige);
-    font-size: 1rem;
-    padding: 5px 1rem;
-    margin-right: 1rem;
-    text-decoration: none;
-    border-radius: 20px;
-    border: none;
+    margin-right: 0.5rem;
 }
 
-header a img.logo {
-    width: 15rem;
-    display: flex;
-    margin-right: 1rem;
-}
-
-header div nav.navIngreso {
-    display: flex;
-    align-items: center;
-    margin: 1.5rem 0;
-    margin-right: 20px;
-}
-
-header div nav.navIngreso a {
-    background: var(--color-azul);
-    border-radius: 20px;
-}
-
-header div nav.navIngreso a.menuMobile {
-    background: none;
-    display: none;
-}
-
-header div nav.navIngreso a img.carrito { 
-    margin: 5px;
-    position: relative;
-    top: 2px;
-}
-
-
-header div form { 
+header section.ppal form {
     width: 50%;
-    display: flex;
-    align-items: center;
-    margin-right: 1.5rem;
     position: relative;
 }
 
-header div form input{ 
-    width: 100%;
-    height: 22px;
-    border: none;
-    border-radius: 20px;
+#searchBar {
     background: var(--color-gris);
     opacity: 50%;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 1.5rem;
 }
 
-header div form img {
+header section.ppal form label img {
     position: absolute;
     right: 5px;
 }
 
-header div nav a img { margin-right: 1rem; }
-
-header ul.navMenu {
-    display: flex;
-    justify-content: space-around;
-    margin: 5px 10rem;
+.ingreso > li {
+    display: inline-block;
+    margin-right: 5px;
 }
 
-header ul li { list-style: none; }
+.ingreso > li > a {
+    display: block;
+    padding: 5px 20px;
+    color: var(--color-beige);
+    font-style: 'Quicksand';
+    text-decoration: none;
+    background: var(--color-azul);
+    border-radius: 20px;
+}
 
-@media (max-width: 425px) {
-    header div { width: 100%;}
+.ingreso > li > a.burger { 
+    background: none;
+    display: none;
+}
 
-    header a img.logo {
-        margin-right: 1rem;
-        width: 7.5rem;
-    } 
-    
-    header div form {
-        margin-right: 5px;
+.ingreso > li > a.cart {
+    padding: 5px 0.625rem;
+}
+
+.nav ul.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 25%;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu > li > a {
+    display: block;
+    padding: 5px 20px;
+    color: var(--color-beige);
+    font-style: 'Quicksand';
+    text-decoration: none;
+    background: var(--color-azul);
+    border-radius: 20px;
+}
+
+.menu li a:hover {
+    color: var(--color-gris);
+    transition: all .3s;
+}
+
+.subMenu {
+    position: absolute;
+    background: var(--color-azul);
+    border-radius: 20px;
+    width: 100%;
+    visibility: hidden;
+    list-style: none;
+    z-index: 1;
+}
+
+.subMenu li a {
+    display: block;
+    padding: 5px 15px;
+    color: var(--color-beige);
+    font-style: 'Quicksand';
+    text-decoration: none;
+}
+
+.menu li:hover .subMenu{
+    visibility: visible;
+}
+
+.menuMobile, #burger, label.hidden , #suscrip, #prod {display: none;}
+
+@media (max-width:768px){
+    .logo {width: 7.5rem;}
+
+    .ppal {margin-right: 0rem;}
+
+    header section.ppal form {
+        width: 35%;
     }
 
-    header div nav.navIngreso {
-        margin: 5px;
-        justify-content: flex-end;
+    label.hidden {
+        display: block;
     }
 
-    header div nav.navIngreso a.menuMobile {display: block;}
-
-    .botonStandar {
+    .menuMobile {
+        position: absolute;
+        background: var(--color-azul);
+        border-radius: 20px;
+        width: 100%;
         display: none;
+        list-style: none;
+        margin-left: -22%;
+        z-index: 1;
     }
+    
+    .menuMobile li a {
+        display: block;
+        padding: 5px 15px;
+        color: var(--color-beige);
+        font-style: 'Quicksand';
+        text-decoration: none;
+    }
+
+    .menuMobile li label {
+        display: block;
+        padding: 5px 15px;
+        color: var(--color-beige);
+        font-style: 'Quicksand';
+    }
+ 
+    #burger:checked ~ .menuMobile {
+        display: block;
+    }
+
+    .submenuSuscrip {
+        background: var(--color-azul);
+        border-radius: 20px;
+        width: 100%;
+        display: none;
+        position: relative;
+        left: 1rem;
+        list-style: none;
+    }
+
+    #suscrip:checked ~ .submenuSuscrip {
+        display: block;
+    }
+    
+    .submenuSuscrip li a {
+        display: block;
+        padding: 5px 15px;
+        color: var(--color-beige);
+        font-style: 'Quicksand';
+        text-decoration: none;
+    }
+
+    .submenuProd {
+        background: var(--color-azul);
+        border-radius: 20px;
+        width: 100%;
+        display: none;
+        position: relative;
+        left: 1rem;
+        list-style: none;
+    }
+
+    #prod:checked ~ .submenuProd {
+        display: block;
+    }
+    
+    .submenuProd li a {
+        display: block;
+        padding: 5px 15px;
+        color: var(--color-beige);
+        font-style: 'Quicksand';
+        text-decoration: none;
+    }
+    
+    .nav {display: none;}
+
+    .ingreso > li > a.ingresar{display: none;}
 }
 
 /*=======================
