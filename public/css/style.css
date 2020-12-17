@@ -393,6 +393,7 @@ SECTION PIE DE PAGINA
 ========================*/
 footer h1 {
     text-align: center;
+    transition: font-size 5s;
 }
 
 footer section.redSocial {
@@ -404,3 +405,6 @@ footer section.redSocial a img {
     margin: 1rem;
 }
 
+#contacto:target h1 {
+    font-size: 150%;
+}
