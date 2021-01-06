@@ -7,21 +7,8 @@
     <link rel="stylesheet" href="/css/styleCarrito.css">
 </head>
 <body>
-    <header>
-        <div>
-            <a href="http://localhost:3000"><img width="120vw" height="55vh" src="/img/logo-transparente.png" alt="Logo Play & Joy"></a>
-            <form action="validad.php" method="POST">
-                <input type="text" name="search">
-                <img width="9vw" height="10vh" src="/img/lupa.png" alt="">
-            </form>
-            <nav class="secciones">
-                <a href=""><img width="20px" height="16.7" src="/img/secciones.png" alt=""></a>
-            </nav>
-            <nav class="navIngreso">
-                <a href="http://localhost:3000/carrito"><img width="14px" height="15px" class="carrito" src="/img/Carrito.png" alt="Botón carrito de compras"> </a>
-            </nav>
-        </div>
-    </header>
+    <%- include('./partials/header') %>
+    <hr>
     <section class="carrito">
     <div class="imgcarrito">
         <img class="shop" width="25px" height="27px" src="/img/carrito3.png" alt="carrito de compras">
@@ -132,15 +119,6 @@
     </div>
     </section>
     <hr>
-    <section class="foot">
-        <footer>
-            <h1>Contactanos</h1>
-            <section class="redSocial">
-                <a href="https://www.facebook.com/"><img src="/img/Facebook.png" alt="Facebook"></a>
-            <a href="https://www.instagram.com/"><img src="/img/Instagram.png" alt="Instagram"></a>
-            <a href="https://mail.google.com/"><img src="/img/Mail.png" alt="Mail"></a>
-            </section>
-        </footer>
-    </section> 
+    <%- include('./partials/footer') %>
 </body>
 </html>

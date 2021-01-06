@@ -1,39 +1,37 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const publicPath = path.join(__dirname, 'public')
+const mainRouter = require ('./routes/mainRouter');
 
-app.use(express.static(publicPath));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,'views'));
 app.use(express.static(path.join(__dirname, '../public')));
 
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, './views/index.html'))
-        
-})
+app.get('/', mainRouter);
 
 app.get('/register', function(req, res) {
-    res.sendFile(path.join(__dirname, './views/registro.html'))
+    res.sendFile(path.join(__dirname, './views/registro'))
     
 })
 
 app.get('/suscription', function(req, res) {
-    res.sendFile(path.join(__dirname, './views/suscriptionDetail.html'))
+    res.sendFile(path.join(__dirname, './views/suscriptionDetail'))
     
 })
 
 app.get('/carrito', function(req, res) {
-    res.sendFile(path.join(__dirname, './views/carrito.html'))
+    res.sendFile(path.join(__dirname, './views/carrito'))
     
 })
 
 app.get('/login', function(req, res) {
-    res.sendFile(path.join(__dirname, './views/login.html'))
+    res.sendFile(path.join(__dirname, './views/login'))
     
 })
 
 app.get('/product', function(req, res) {
-    res.sendFile(path.join(__dirname, './views/product.html'))
+    res.sendFile(path.join(__dirname, './views/product'))
     
 })
 
