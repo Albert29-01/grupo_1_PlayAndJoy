@@ -4,16 +4,22 @@
 <body>
     <%- include('../partials/header')%>
     <form action="" method="POST" class="carga">
+        <h1 class="carga">Carga de Producto</h1>
         <label for="nombreProducto">Nombre del Producto</label>
-        <input type="text" id="nombreProducto">
+        <input type="text" id="nombreProducto" required>
         <label for="precio">Precio</label>
-        <input type="number" id="precio">
+        <input type="number" id="precio" required>
         <label for="detalle">Detalle</label>
-        <textarea name=“detalle” id="detalle"></textarea>
+        <textarea name=“detalle” id="detalle" rows="3" required></textarea>
         <label for="imagen">Imágen</label>
-        <input type="file" id="imagen">
+        <input type="file" id="imagen" required>
         <label for="infoAd">Información Adicional</label>
-        <textarea name="infoAd" id="infoAd"></textarea>
+        <textarea name="infoAd" id="infoAd" rows="5"></textarea>
+        <div>
+        <button type=“submit” class="carga">CARGAR</button>
+        <button type=“button” class="carga">EDITAR</button>
+        <button type=“reset” class="reset"><img src="/img/basura2.png" alt="tacho de basura"></button>
+        </div>
     </form>
     <%- include('../partials/footer')%>
 </body>

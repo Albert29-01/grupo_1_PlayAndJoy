@@ -94,16 +94,15 @@ form.opcionesSuscrip div { margin-bottom: 1rem; }
 form.opcionesSuscrip label { font-size: 1.5rem; }
 
 form.opcionesSuscrip div select {
-    background: var(--color-gris);
-    opacity: 50%;
+    background-color: rgba(192, 188, 180, 0.5);
     border: none;
     border-radius: 20px ;
-    font-size: 1.125rem; 
+    font-size: 1.125rem;
+    padding: 0 10px; 
 }
 
 form.opcionesSuscrip div input {
-    background: var(--color-gris);
-    opacity: 50%;
+    background-color: rgba(192, 188, 180, 0.5);
     border: none;
     border-radius: 20px ;
     width: 2rem;

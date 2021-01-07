@@ -14,12 +14,61 @@ FORMULARIO
 form.carga {
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: rgba(250, 250, 250, 0.7);
+    padding: 20px 20%;
+}
+
+@media (max-width: 425px) { 
+    form.carga {
+    padding: 2rem;
+    }
+}
+
+form.carga h1.carga {
+    margin: 0;
+    margin-bottom: 2rem;
 }
 
 form.carga input, textarea {
-    background: var(--color-gris);
-    opacity: 50%;
+    background-color: rgba(192, 188, 180, 0.5);
     border-radius: 20px;
     border: none;
+    padding: 5px 20px;
+    margin-bottom: 1.5rem;
+}
+
+form.carga input {
+    height: 2rem;
+}
+
+form.carga textarea {
+    resize: none;
+}
+
+form.carga div {
+    display: flex;
+    justify-content: space-around;
+}
+
+form.carga div button.carga {
+    align-self: center;
+    width: max-content;
+    background: var(--color-ladrillo);
+    color: var(--color-arena);
+    font-family: Quicksand; 
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+form.carga div button.carga:hover {
+    color: var(--color-ladrillo);
+    background: var(--color-arena);
+}
+
+form.carga div button.reset {
+    background: none;
+    border: none;
+    width: max-content;
+    align-self: center;
 }

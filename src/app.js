@@ -26,12 +26,16 @@ app.get('/users/cart',function(req, res) {
     res.render('./users/carrito')
 });
 
-app.get('/products/',function(req, res) {
+app.get('/products',function(req, res) {
     res.render('./products/product')
 });
 
 app.get('/products/carga',function(req, res) {
     res.render('./products/cargaProducto')
+});
+
+app.get('/suscriptions',function(req, res) {
+    res.render('./suscriptions/suscriptionDetail')
 });
 
 /*app.get('/products', productsRouter);

@@ -26,6 +26,7 @@ hr {
 @media (max-width: 425px) { 
     body {
     margin: 0;
+    padding: 0;
     }
 }
 
