@@ -1,182 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@700&display=swap');
-
-:root {
-    --color-gris: #C0BCB4;
-    --color-azul: #383F5B;
-    --color-beige: #E7D8C4;
-    --color-ladrillo: #C36350;
-    --color-arena: #D4B489;
-    --color-petroleo: #96A79D;
-}
-
 /*=======================
 BODY
 ========================*/
 
-body {
-    font-family: Quicksand;
-    color: var(--color-azul);
-}
-p {
-    font-family: Open Sans;
-    font-size: 1rem;
-}
-
 h1 {font-size: 1.5rem;}
 
-hr {
-    border-color: var(--color-ladrillo);
-    opacity: 50%;
-    margin: 1.5rem;
-}
+h2 {font-size: 1rem;}
 
 /*=======================
-SECTION DETALLE SUSCRIPCION
+SECTION SUSCRIPCIONES
 ========================*/
 
-section.detalleSuscrip {
+section.suscripciones {
     display: flex;
-    margin: 0 1.5rem;
-    margin-bottom: 1.5rem;
+    justify-content: space-around;
+    background-color: rgba(250, 250, 250, 0.7);
+    padding: 1.5rem;
 }
 
-section.detalleSuscrip img.suscripcion { margin-right:1rem; }
-
-section.detalleSuscrip article {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-}
-
-section.detalleSuscrip article h1 { 
-    font-size: 2rem; 
-    margin-bottom: 1.5rem;
-}
-
-section.detalleSuscrip article h2 { 
-    font-size: 1.5rem; 
-    margin-bottom: 1.5rem;
-}
-
-section.detalleSuscrip article div.mediosDePago {
-    display: flex;
-    flex-direction: row;
-}
-
-section.detalleSuscrip article div.mediosDePago img { 
-    height: 34px;
-    margin-right: 1rem;
-}
-section.detalleSuscrip article h3 { margin: 1rem 0; }
-
-@media (max-width: 425px) {
-    section.detalleSuscrip {
-        display: block;
-    }
-
-    section.detalleSuscrip img.suscripcion {width: 100%;}
-
-    section.detalleSuscrip article {width: 100%;}
-}
-
-/*=======================
-FORMULARIO OPCIONES SUSCRIPCION
-========================*/
-
-form.opcionesSuscrip {
+section.suscripciones article{
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-form.opcionesSuscrip div { margin-bottom: 1rem; }
-
-form.opcionesSuscrip label { font-size: 1.5rem; }
-
-form.opcionesSuscrip div select {
-    background-color: rgba(192, 188, 180, 0.5);
-    border: none;
-    border-radius: 20px ;
-    font-size: 1.125rem;
-    padding: 0 10px; 
-}
-
-form.opcionesSuscrip div input {
-    background-color: rgba(192, 188, 180, 0.5);
-    border: none;
-    border-radius: 20px ;
-    width: 2rem;
-    height: 1.5rem;
-    position: relative;
-    top: -5px;
-}
-
-form.opcionesSuscrip button.addCart {
-    font-family: Quicksand;
-    font-size: 1rem;
-    display: inline-flex;
     justify-content: space-around;
     align-items: center;
-    border: none;
-    background: var(--color-azul);
-    color: var(--color-beige);
+    width: 30%;
     border-radius: 20px;
-    padding: 10px;
-    width: 200px;
-    height: 40px;
-}
-
-@media (max-width: 425px) {
-    form.opcionesSuscrip {width: 100%;}
-
-    form.opcionesSuscrip div { 
-        display: flex;
-        flex-direction: column;
-     }
-
-    form.opcionesSuscrip div.cant {display: block;}
-}
-
-/*=======================
-SECTION PRODUCTOS SIMILARES
-========================*/
-section.productos div {
-    display: flex;
-    margin: 0 1rem;
+    border: solid 5px var(--color-petroleo);
     flex-wrap: wrap;
-    justify-content: space-between;
+    height: 100vh;
 }
 
-.prodSimi { 
-    margin-bottom: 1rem; 
-    margin-left: 1.5rem;
+section.suscripciones article img {
+    width: 80%;
 }
 
-section.productos div article {
-    margin-right: 1rem;
-    width: 15%;
-}
-
-section.productos div article.hidden {display: none;}
-
-@media (max-width: 425px) {
-    section.productos { margin: 0 1rem; }
-
-    .prodSimi { margin-left: 0; }
-
-    section.productos div article {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0;
-        margin-right: 5px;
-        margin-bottom: 1rem;
-        width: 45%;
-    }
-
-    section.productos div article.hidden {display: block;}
-
-    section.productos div article p { text-align: center; }
-
-    section.productos div article img { margin-bottom: 1rem; }
-}

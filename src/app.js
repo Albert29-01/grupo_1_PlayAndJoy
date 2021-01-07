@@ -35,6 +35,10 @@ app.get('/products/carga',function(req, res) {
 });
 
 app.get('/suscriptions',function(req, res) {
+    res.render('./suscriptions/suscriptions')
+});
+
+app.get('/suscriptions/detail',function(req, res) {
     res.render('./suscriptions/suscriptionDetail')
 });
 
