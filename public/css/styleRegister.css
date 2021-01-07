@@ -20,18 +20,37 @@ BODY
 ========================*/
 
 body.register {
-    
     font-family: Quicksand;
     color: var(--color-azul);
-    margin: 0 35%;   
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e7d8c4' fill-opacity='0.49'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");   
 }
+
 @media (max-width: 425px) {
     body.register {
         margin: 0 10%;
+        height: 200vh;
     }
 }
+
+section.register{
+    background-color: #ffffff;
+    border: solid 2px var(--color-gris);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
+    padding-bottom: 15px;
+}
+
 p{font-family: Open Sans;}
+
 h1{font-size: 24px;}
+
 hr {
     border-color: var(--color-ladrillo);
     opacity: 50%;
@@ -50,43 +69,43 @@ header.register {
 h1 {
     text-align: center;
     margin: 15px 0px;
-   
+    
 }
 /*=======================
 FORM
 ========================*/
-form {
+form.register {
     display: flex;
     flex-direction: column;
     margin: 0 15px;
     
-   
+    
 }
-form div.date {
+
+form.register div.date {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-form div.date input {
-    width: 80%;
 
+form.register div.date input {
+    width: 80%;
 }
 
 div {
-
- text-align: left;
- margin: 10px 0;
-       
+    text-align: left;
+    margin: 10px 0;
 }
 
-.campo {
-    
+form.register input.campo {
     font: size 18px;
     width: 100%;
-    border: hidden;
+    border: none;
     border-bottom: solid 2px var(--color-ladrillo);   
     margin-bottom: 15px;
-    
+    background: none;
+    border-radius: 0;
+    opacity: 100%;
 }
 
 section.localidadProvincia {
@@ -98,11 +117,15 @@ section.localidadProvincia div {
     flex-direction: column;
 }
 
+.localidad {
+    margin-right: 15px;
+}
+
 section.localidadProvincia div input {
     width: 100%;
     border: hidden;
     border-bottom: solid 2px var(--color-ladrillo);   
-
+    
 }
 /*=======================
 CONDICIONES GRALES.
@@ -110,7 +133,7 @@ CONDICIONES GRALES.
 section.opciones {
     margin: 15px 0;
     text-align: center;
- 
+    
 }
 /*=======================
 BOTON SUBMIT

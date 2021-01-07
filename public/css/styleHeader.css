@@ -23,6 +23,8 @@ body {
 HEADER
 ========================*/
 
+header {background-color: #ffffff;}
+
 .logo {
     width: 15rem;
 }

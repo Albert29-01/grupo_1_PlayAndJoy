@@ -2,11 +2,12 @@
 <html lang="en">
     <%- include('../partials/head')%>
 <body class="register">
+    <section class="register">
     <header class="register">
         <a href="http://localhost:3000"><img src="/img/logo-transparente.png" alt="Logo" width="240px" height="90px"></a>
         <h1>Crea tu cuenta</h1>
     </header>   
-        <form action="index.html" method="get">
+        <form action="index.html" method="get" class="register">
             <label for="nombre">Nombre</label>
             <input class="campo" type="text" id="nombre" name="nombre" required>
             <label for="apellido">Apellido</label>
@@ -15,51 +16,30 @@
             <label for="fecha">Fecha de nacimiento</label>
             <input class="campo" type="date" id="date" name="date" required>
         </div>
-        
-    
-        
-            <label for="domicilio">Domicilio</label>
-            <input class="campo" type="text" id="domicilio" name="domicilio" required>
-        
-
-        
+        <label for="domicilio">Domicilio</label>
+        <input class="campo" type="text" id="domicilio" name="domicilio" required>
         <section class="localidadProvincia">
-        <div>
+        <div class="localidad">
             <label for="localidad">Localidad</label>
             <input type="text" id="localidad" name="localidad" required>
         </div>
         <div>
-        
             <label for="provincia">Provincia</label>
             <input type="text" id="provincia" name="provincia" required>
         </div>
         </section>
-        
-    
-          
-            <label for="email">E-mail</label>
-            <input class="campo" type="email" id="email" name="email" required>
-        
-
-        
-            <label for="password">Contraseña</label>
-            <input class="campo" type="password" id="password" name="password" required>
-            <label for="password">Repetir contraseña</label>
-            <input class="campo" type="password" id="password" name="password" required> <!-- Falta ver coómo verificar que ambas contrasñas sean iguales -->
-        
-            
-    
+        <label for="email">E-mail</label>
+        <input class="campo" type="email" id="email" name="email" required>
+        <label for="password">Contraseña</label>
+        <input class="campo" type="password" id="password" name="password" required>
+        <label for="passwordConfirm">Repetir contraseña</label>
+        <input class="campo" type="password" id="passwordConfirm" name="passwordConfirm" required> <!-- Falta ver coómo verificar que ambas contrasñas sean iguales -->
         <section class="opciones">
             <input type="checkbox" name="genero" value="informacion"> Deseo recibir más información<br>
             <input type="checkbox" name="genero" value="terminosCondiciones" required> Acepto términos y condiciones<br>
         </section>
-
-        
-            <button class="boton_personalizado" type="submit">CREAR CUENTA</button>
-        
-        
-            
+        <button class="boton_personalizado" type="submit">CREAR CUENTA</button>
         </form>
-      
+    </section>
 </body>
 </html>

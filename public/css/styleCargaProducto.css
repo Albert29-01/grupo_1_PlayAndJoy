@@ -1,0 +1,25 @@
+/*=======================
+BODY
+========================*/
+
+body {
+    font-family: Quicksand;
+    color: var(--color-azul);
+}
+
+/*=======================
+FORMULARIO
+========================*/
+
+form.carga {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+form.carga input, textarea {
+    background: var(--color-gris);
+    opacity: 50%;
+    border-radius: 20px;
+    border: none;
+}

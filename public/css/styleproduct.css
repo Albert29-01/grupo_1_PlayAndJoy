@@ -172,23 +172,3 @@ section.productos div article img {
 section.productos div article {
     margin: 0 20px;
 }
-/*=======================
-SECTION PIE DE PAGINA
-========================*/
-footer h1 {
-    text-align: center;
-    transition: font-size 5s;
-}
-
-footer section.redSocial {
-    display: flex;
-    justify-content: center;  
-}
-
-footer section.redSocial a img {
-    margin: 15px;
-}
-
-#contacto:target h1 {
-    font-size: 150%;
-}

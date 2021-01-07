@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head')%>
-<body>
+<body class="login">
+    <section class="login">
     <header class="login">
         <a href="http://localhost:3000"><img class="logo" src="/img/logo-transparente.png" alt="Logo Play & Joy"></a>
     </header>
-    <form action="validar.php" method="POST">
+    <form action="validar.php" method="POST" class="login">
         <label for="usuario">Usuario</label>
         <input class="campo" type="email" required>
         <label for="password">Contraseña</label>
@@ -25,6 +26,7 @@
             <img src="/img/facebook2.png" alt="logo facebook">
             <a href="">Ingresar con Facebook</a>
         </div>
-    </section>    
+    </section>
+    </section>  
 </body>
 </html>

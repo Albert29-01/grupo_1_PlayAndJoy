@@ -1,0 +1,15 @@
+/*=======================
+SECTION PIE DE PAGINA
+========================*/
+footer {
+    background-color: #ffffff;
+}
+
+footer h1 { text-align: center; }
+
+footer section.redSocial {
+    display: flex;
+    justify-content: center;  
+}
+
+footer section.redSocial a img { margin: 1rem;}

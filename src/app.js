@@ -18,6 +18,22 @@ app.get('/users/login',function(req, res) {
     res.render('./users/login')
 });
 
+app.get('/users/register',function(req, res) {
+    res.render('./users/registro')
+});
+
+app.get('/users/cart',function(req, res) {
+    res.render('./users/carrito')
+});
+
+app.get('/products/',function(req, res) {
+    res.render('./products/product')
+});
+
+app.get('/products/carga',function(req, res) {
+    res.render('./products/cargaProducto')
+});
+
 /*app.get('/products', productsRouter);
 
 app.get('/suscriptions', suscriptionsRouter);

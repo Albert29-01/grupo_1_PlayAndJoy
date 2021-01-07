@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head')%>
+<body>
+    <%- include('../partials/header')%>
+    <form action="" method="POST" class="carga">
+        <label for="nombreProducto">Nombre del Producto</label>
+        <input type="text" id="nombreProducto">
+        <label for="precio">Precio</label>
+        <input type="number" id="precio">
+        <label for="detalle">Detalle</label>
+        <textarea name=“detalle” id="detalle"></textarea>
+        <label for="imagen">Imágen</label>
+        <input type="file" id="imagen">
+        <label for="infoAd">Información Adicional</label>
+        <textarea name="infoAd" id="infoAd"></textarea>
+    </form>
+    <%- include('../partials/footer')%>
+</body>
+</html>
