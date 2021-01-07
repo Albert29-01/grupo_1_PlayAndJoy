@@ -8,12 +8,15 @@ const suscriptionsRouter = require ('./routes/suscriptionsRouter');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'views'));
+
 app.use(express.static(path.join(__dirname, '../public')));
 
 
 app.get('/', mainRouter);
 
-app.get('/users',usersRouter);
+app.get('/users/login',function(req, res) {
+    res.render('./users/login')
+});
 
 /*app.get('/products', productsRouter);
 
