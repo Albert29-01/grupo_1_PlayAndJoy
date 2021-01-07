@@ -1,29 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./partials/head')%>
-<body>
-    <header>
-
+<body class="register">
+    <header class="register">
         <a href="http://localhost:3000"><img src="/img/logo-transparente.png" alt="Logo" width="240px" height="90px"></a>
         <h1>Crea tu cuenta</h1>
-    </header>
-        
-        
-    
+    </header>   
         <form action="index.html" method="get">
-    
-            
-        
             <label for="nombre">Nombre</label>
             <input class="campo" type="text" id="nombre" name="nombre" required>
-         
-        
-        
             <label for="apellido">Apellido</label>
             <input class="campo" type="text" id="apellido" name="apellido" required>
-        
-
-        
         <div class="date">
             <label for="fecha">Fecha de nacimiento</label>
             <input class="campo" type="date" id="date" name="date" required>

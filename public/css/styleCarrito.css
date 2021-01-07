@@ -36,48 +36,6 @@ hr {
 }
 
 /*=======================
-HEADER
-========================*/
-header {
-    padding: 1vw;
-    margin: 1vw 2vh 1vw 1vh;
-}
-header div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header div form input {
-    width: 30vw;
-    height: 4vh;
-    border: none;
-    border-radius: 20px;
-    background: var(--color-gris);
-    opacity: 50%;
-    margin-left: -5px;
-}
-header div form img {
-    position: relative;
-    right: 18px;
-}
-header div nav.secciones {
-    position: relative;
-    right: 5%;
-}
-header div nav.navIngreso {
-    background: var(--color-azul);
-    border-radius: 20px;
-    position: relative;
-    right: 5%;
-    width: 8vw;
-    height: auto;
-}
-
-header div nav.navIngreso a img.carrito {
-    margin: 1.8vw 2vw 1vw 1.7vw;
-}
-
-/*=======================
 CARRITO
 ========================*/
 section.carrito div.imgcarrito {

@@ -32,13 +32,13 @@ body {
 HEADER
 ========================*/
 
-header {
+header.login {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
 }
 
-header img.logo {
+header.login img.logo {
     width: 15rem;
 }
 
@@ -83,15 +83,15 @@ form small input {
 SECTION
 ========================*/
 
-section {
+section.container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-section small { margin-bottom: 1rem; }
+section.container small { margin-bottom: 1rem; }
 
-section div {
+section.container div {
     background: #E5E5E5;
     border-radius: 20px;
     padding: 5px 1.5rem;
@@ -100,11 +100,11 @@ section div {
     align-items: center;
 }
 
-section div img {
+section.container div img {
     margin: 0 10px;
 }
 
-section div a {
+section.container div a {
     text-decoration: none;
 }
 

@@ -19,14 +19,14 @@
 BODY
 ========================*/
 
-body {
+body.register {
     
     font-family: Quicksand;
     color: var(--color-azul);
     margin: 0 35%;   
 }
 @media (max-width: 425px) {
-    body {
+    body.register {
         margin: 0 10%;
     }
 }
@@ -40,7 +40,7 @@ hr {
 /*=======================
 HEADER
 ========================*/
-header {
+header.register {
     display: flex;
     justify-content: center;
     flex-direction: column;
