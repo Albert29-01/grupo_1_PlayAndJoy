@@ -1,20 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@700&display=swap');
-
-:root {
-    --color-gris: #C0BCB4;
-    --color-azul: #383F5B;
-    --color-beige: #E7D8C4;
-    --color-ladrillo: #C36350;
-    --color-arena: #D4B489;
-    --color-petroleo: #96A79D;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 /*=======================
 BODY
 ========================*/
@@ -261,18 +244,4 @@ section.productos div {
 
 section.productos div article p {
     font-size: 0.4em;
-}
-
-section.foot {
-    display: flex;
-    justify-content: center;
-}
-section.foot footer h1 {
-    margin: 0 4vw;
-    font-size: 1.2em;
-}
-section.foot footer section.redSocial {
-    position: relative;
-    left: 4vw;
-    margin-top: 1vw;
 }

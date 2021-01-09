@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head')%>
-<body>
+<body class="carrito"> 
     <%- include('../partials/header') %>
-    <hr>
     <section class="carrito">
     <div class="imgcarrito">
         <img class="shop" width="25px" height="27px" src="/img/carrito3.png" alt="carrito de compras">
@@ -91,29 +90,10 @@
                 <button class="fin">Finalizar compra</button>
             </nav>
         </div>
-        <a href=""><p>Seguir comprando</p></a>
+        <a href="">Seguir comprando</a>
     </section>
     <hr>
-    <section class="productos">
-        <h2 class="prodSimi">Productos Similares</h2>
-        <div>
-        <a class="izq" href=""><img src="/img/vermasizq.png" alt=""></a>
-        <article>
-            <img width="88px" height="90px" src="/img/Producto.png" alt="">
-            <p>Lorem ipsum dolor sit amet.</p>
-        </article>
-        <article>
-            <img width="88px" height="90px" src="/img/Producto.png" alt="Cafetera">
-            <p>Lorem ipsum dolor sit amet.</p>
-        </article>
-        <article>
-            <img width="88px" height="90px" src="/img/Producto.png" alt="Cafetera">
-            <p>Lorem ipsum dolor sit amet.</p>
-        </article>
-        <a class="der" href=""><img src="/img/vermasder.png" alt=""></a>
-    </div>
-    </section>
-    <hr>
+    <%- include('../partials/sectionProducts') %>
     <%- include('../partials/footer') %>
 </body>
 </html>

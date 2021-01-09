@@ -30,3 +30,9 @@ body {
     background-attachment: fixed;
     background-position: center;
 }
+
+@media only screen and (max-device-width: 1023px) {
+    body {
+      background-attachment: scroll;
+    }
+}
