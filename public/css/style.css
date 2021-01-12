@@ -1,7 +1,6 @@
 @import 'styleHTML.css';
 @import 'styleHeader.css';
 @import 'styleIndex.css';
-@import 'styleSectionProducts.css';
 @import 'styleLogin.css';
 @import 'styleProduct.css';
 @import 'styleRegister.css';
@@ -9,4 +8,3 @@
 @import 'styleSuscription.css';
 @import 'styleCargaProducto.css';
 @import 'styleFooter.css';
-@import 'styleCarrito.css';

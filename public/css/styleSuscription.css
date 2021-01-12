@@ -1,13 +1,14 @@
 /*=======================
-SECTION SUSCRIPCIONES
+BODY
 ========================*/
 
-section.suscripciones h1 {
-    font-size: 1.5rem;
-    color: var(--color-ladrillo) ;
-}
+h1 {font-size: 1.5rem;}
 
-section.suscripciones h2 {font-size: 1rem;}
+h2 {font-size: 1rem;}
+
+/*=======================
+SECTION SUSCRIPCIONES
+========================*/
 
 section.suscripciones {
     display: flex;

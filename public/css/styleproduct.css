@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@700&display=swap');
+
+:root {
+    --color-gris: #C0BCB4;
+    --color-azul: #383F5B;
+    --color-beige: #E7D8C4;
+    --color-ladrillo: #C36350;
+    --color-arena: #D4B489;
+    --color-petroleo: #96A79D;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 /*=======================
 BODY
 ========================*/
@@ -119,7 +136,7 @@ section.resenia .comment1 .one {
 section.resenia .comment1 .one img {
     margin-right: 15px;
 }
-
+section.resenia .comment1 .one .comen img {}
 section.resenia .comment1 .one .comen p {
     margin-top: 10px;
 }
@@ -131,7 +148,7 @@ section.resenia .comment1 .two {
 section.resenia .comment1 .two img {
     margin-right: 15px;
 }
-
+section.resenia .comment1 .two .comen img {}
 section.resenia .comment1 .two .comen p {
     margin-top: 10px;
 }

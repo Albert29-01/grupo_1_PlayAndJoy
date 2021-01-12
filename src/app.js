@@ -12,13 +12,9 @@ app.set('views', path.join(__dirname,'views'));
 app.use(express.static(path.join(__dirname, '../public')));
 
 
-app.use('/', mainRouter);
+app.get('/', mainRouter);
 
-app.use('/user', usersRouter);
-
-
-
-/*app.get('/users', usersRouter);
+/*app.get('/users', userRouter);
 
 app.get('/users/register',function(req, res) {
     res.render('./users/registro')
@@ -28,8 +24,8 @@ app.get('/users/cart',function(req, res) {
     res.render('./users/carrito')
 });
 
-app.get('/products',function(req, res) {
-    res.render('./products/product')
+app.get('/products', function(req, res) {
+    res.render('product')
 });
 
 app.get('/products/carga',function(req, res) {
