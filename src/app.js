@@ -24,6 +24,10 @@ app.get('/suscriptions/carga',function(req, res) {
     res.render('./suscriptions/cargaSuscripcion')
 });
 
+app.get('/carrito',function(req, res) {
+    res.render('./users/carrito')
+});
+
 /*app.get('/users', userRouter);
 
 app.get('/users/register',function(req, res) {
