@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
-//const usersController = require ('../controllers/usersController');
+const usersController = require ('../controllers/usersController');
 
-router.get('/login',function(req, res) {
-    res.send('Esto es la vista de users login')
-});
+router.get('/login',usersController.login);
 
 //router.get('/register', usersController.register);
 
