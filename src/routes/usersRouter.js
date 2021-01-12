@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-
-
 //const usersController = require ('../controllers/usersController');
 
-router.get('/login', );
+router.get('/login',function(req, res) {
+    res.send('Esto es la vista de users login')
+});
 
 //router.get('/register', usersController.register);
 
