@@ -12,7 +12,7 @@ body {
 HEADER
 ========================*/
 
-header {background-color: rgba(250, 250, 250, 0.7)}
+header {background-color: rgba(250, 250, 250, 0.7);}
 
 .logo {
     width: 15rem;
