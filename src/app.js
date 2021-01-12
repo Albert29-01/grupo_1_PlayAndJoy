@@ -6,8 +6,6 @@ const usersRouter = require ('./routes/usersRouter');
 const productsRouter = require ('./routes/productsRouter');
 const suscriptionsRouter = require ('./routes/suscriptionsRouter');
 
-
-
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'views'));
 
