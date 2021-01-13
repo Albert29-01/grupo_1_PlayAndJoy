@@ -14,12 +14,12 @@ body.login {
 }
 
 section.login {
-    background-color: #ffffff;
+    background-color: rgba(250, 250, 250, 0.7);
     border: solid 2px var(--color-gris);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    padding: 10px 5px;
+    padding: 15px;
 }
 
 /*=======================

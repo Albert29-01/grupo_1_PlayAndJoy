@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head')%>
+<body>
+    <%- include('../partials/header')%>
+    <form action="" method="POST" class="carga">
+        <h1 class="carga">Carga de Suscripción</h1>
+        <label for="nombreProducto">Tipo de Suscripción</label>
+        <input type="text" id="tipoSuscripcion" required>
+        <label for="precio">Precio</label>
+        <input type="number" id="precio" required>
+        <label for="detalle">Detalle</label>
+        <textarea name=“detalle” id="detalle" rows="3" required></textarea>
+        <label for="imagen">Imágen</label>
+        <input type="file" id="imagen" required>
+        <div>
+        <input type='checkbox'id='vino'><label for="vino">Vino</label><br>
+        <input type='checkbox'id='musica'><label for="musica">Música</label><br>
+        <input type='checkbox'id='libro'><label for="libro">Libro</label><br>
+        <input type='checkbox'id='cafe'><label for="cafe">Café</label><br>
+        </div>
+        <div>
+        <button type=“submit” class="carga">CARGAR</button>
+        <button type=“button” class="carga">EDITAR</button>
+        <button type=“reset” class="reset"><img src="/img/basura2.png" alt="tacho de basura"></button>
+        </div>
+    </form>
+    <%- include('../partials/footer')%>
+</body>
+</html>
