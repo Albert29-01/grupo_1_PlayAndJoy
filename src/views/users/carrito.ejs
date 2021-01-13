@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head')%>
-<body>
+<body class="carrito"> 
     <%- include('../partials/header') %>
-    <hr>
     <div class="carrito">
-        <img src="/public/img/carrito3.png" alt="">
+        <img src="/public/img/carrito3.png" alt="carrito de compras">
     </div>
     <section>
-       <div>
-            <section class="listado">
-                    <div class="delete">
+        <div>
+             <section class="listado">
+                     <div class="delete">
                         <ul>
                             <li><a href=""><img src="/public/img/basura.png" alt=""></a></li>
                             <li><a href=""><img src="/public/img/basura.png" alt=""></a></li>
@@ -95,8 +94,36 @@
             </section>
         </div>
     </section>
-    <%- include('../partials/sectionProducts') %>
     <hr>
+    <section class="opciones">
+        <div class="opc">
+            <h2>Opciones de pago</h2>
+        </div>
+        <div class="efect">
+            <button class="cash">Efectivo/Transferencia bancaria</button>
+            <button class="tc">Tarjeta de crédito</button>
+        </div>
+        <div class="mediosDePago">
+            <img src="/img/Visa.png" alt="">
+            <img src="/img/Master.png" alt="">
+            <img src="/img/PayPal.png" alt="">
+            <img src="/img/Amex.png" alt="">
+            <img src="/img/Diners.png" alt="">
+        </div>
+        <div class="finish">
+            <nav class="delete">
+                <button class="trash"><img src="/img/basura2.png" alt=""></button>
+            </nav>
+            <nav class="finCompra">
+                <button class="fin">Finalizar compra</button>
+            </nav>
+        </div>
+        <a href="">Seguir comprando</a>
+    </section>
+    </div>
+</section>
+    <hr>
+    <%- include('../partials/sectionProducts') %>
     <%- include('../partials/footer') %>
 </body>
 </html>

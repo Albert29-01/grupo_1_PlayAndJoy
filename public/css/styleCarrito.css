@@ -1,20 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@700&display=swap');
-
-:root {
-    --color-gris: #C0BCB4;
-    --color-azul: #383F5B;
-    --color-beige: #E7D8C4;
-    --color-ladrillo: #C36350;
-    --color-arena: #D4B489;
-    --color-petroleo: #96A79D;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 /*=======================
 BODY
 ========================*/
@@ -33,18 +16,6 @@ hr {
     border: 0.3px solid var(--color-ladrillo);
     opacity: 50%;
     margin: 4vw;
-}
-
-/*=======================
-CARRITO
-========================*/
-section.carrito div.imgcarrito {
-    display: flex;
-    justify-content: center;
-}
-section.carrito div.imgcarrito img.shop {
-    width: 8vw;
-    height: auto;
 }
 
 /*=======================

@@ -1,14 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@700&display=swap');
-
-:root {
-    --color-gris: #C0BCB4;
-    --color-azul: #383F5B;
-    --color-beige: #E7D8C4;
-    --color-ladrillo: #C36350;
-    --color-arena: #D4B489;
-    --color-petroleo: #96A79D;
-}
-
 /*=======================
 BODY
 ========================*/
@@ -85,6 +74,8 @@ section.nosotros {
 section.nosotros article {
     width: 50%;
     margin: 1rem;
+    background-color: rgba(250, 250, 250, 0.7);
+    padding: 20px;
 }
 section.nosotros article p {
     margin-top: 1rem;
@@ -116,6 +107,8 @@ SECTION ASOCIATE
 section.asociate {
     display: flex;
     align-items: center;
+    background-color: rgba(250, 250, 250, 0.7);
+    padding: 20px;
 }
 
 h1.asociate{
@@ -132,7 +125,9 @@ section.asociate article {
     flex-direction: column;
     align-items: center;
 }
-section.asociate article img { width: 25%; }
+section.asociate article img { 
+    width: 3rem; 
+}
 
 @media (max-width: 425px) {
     section.asociate {
@@ -143,39 +138,4 @@ section.asociate article img { width: 25%; }
     section.asociate article {
         margin: 5%;
     }
-}
-/*=======================
-SECTION PRODUCTOS
-========================*/
-section.productos {
-    display: flex;
-    margin: 0 2.5%;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-section.productos article {
-    margin-right: 1rem;
-    width: 15%;
-}
-
-section.productos article.hiden {display: none;}
-
-@media (max-width: 425px) {
-    section.productos { margin: 0 1rem; }
-
-    section.productos article {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0;
-        margin-right: 5px;
-        margin-bottom: 1rem;
-        width: 45%;
-    }
-
-    section.productos article.hiden {display: block;}
-
-    section.productos article p { text-align: center; }
-
-    section.productos article img { margin-bottom: 1rem; }
 }

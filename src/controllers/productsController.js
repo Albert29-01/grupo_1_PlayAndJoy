@@ -1,3 +1,1 @@
-module.exports = {
-    product: 
-}
+module.exports = {}
