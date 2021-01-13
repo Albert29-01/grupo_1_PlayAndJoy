@@ -3,7 +3,7 @@ const router = express.Router();
 //const productsController = require ('../controllers/productsController');
 
 router.get('/:idProduct', function (req, res){
-    if (req.params == "carga"){
+    if (req.params.idProduct == "carga"){
         res.render ('./products/cargaProducto');
     } else {
         res.render ('./products/product');
