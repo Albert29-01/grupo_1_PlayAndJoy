@@ -14,7 +14,15 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/', mainRouter);
 
-app.use('/user', usersRouter);
+app.use('/users', usersRouter);
+
+app.get('/users/register',function(req, res) {
+    res.render('./users/registro')
+});
+
+app.get('/users/cart',function(req, res) {
+    res.render('./users/carrito')
+});
 
 /*app.get('/users', usersRouter);
 
