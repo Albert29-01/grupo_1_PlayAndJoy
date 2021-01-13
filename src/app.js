@@ -16,13 +16,7 @@ app.use('/', mainRouter);
 
 app.use('/users', usersRouter);
 
-app.get('/users/register',function(req, res) {
-    res.render('./users/registro')
-});
-
-app.get('/users/cart',function(req, res) {
-    res.render('./users/carrito')
-});
+app.use('/product', productsRouter);
 
 /*app.get('/users', usersRouter);
 

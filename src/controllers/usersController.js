@@ -1,11 +1,11 @@
 module.exports = {
     login: function (req, res) {
-        res.render('../views/users/login');
+        res.render('./users/login');
     },
     register: function (req, res) {
-        res.render('../views/users/registro');
+        res.render('./users/registro');
     },
     cart: function (req, res) {
-        res.render('../views/users/carrito');
+        res.render('./users/carrito');
     },   
 }
