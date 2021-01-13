@@ -26,12 +26,12 @@ section.detalleProd {
     display: flex;
 }
 section.detalleProd .images {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 3vw;
+    margin-right: 2vw;
 }
 
 section.detalleProd .images .miniatura img {
-    margin-left: 15px;
+    margin-left: 1vw;
 }
 section.detalleProd .images .miniatura img:first-child {
     margin-left: 0;
@@ -43,19 +43,19 @@ section.detalleProd article {
     width: 50%;
 }
 section.detalleProd article h1 {
-    font-size: 30px;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    margin-bottom: 1vw;
 }
 section.detalleProd article h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    margin-bottom: 1vw;
 }
 
 section.detalleProd article .mediosDePago img {
-    margin-right: 5px;
+    margin-right: 1vw;
 }
 section.detalleProd article h3 {
-    margin: 15px 0;
+    margin: 1vw 0;
 }
 section.detalleProd article p {
     font-family: open Sans;
@@ -64,7 +64,7 @@ section.detalleProd article form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 150px;
+    padding-top: 10vw;
 }
 
 section.detalleProd article form div input {
@@ -72,10 +72,10 @@ section.detalleProd article form div input {
     opacity: 50%;
     border: none;
     border-radius: 20px ;
-    width: 30px;
-    height: 24px;
+    width: 2.5vw;
+    height: 2vw;
     position: relative;
-    top: -5px;
+    top: -0.3vw;
 }
 section.detalleProd article form button {
     font-family: Quicksand;
@@ -86,10 +86,10 @@ section.detalleProd article form button {
     background: var(--color-azul);
     color: var(--color-beige);
     border-radius: 20px;
-    padding: 10px;
-    width: 200px;
-    height: 40px;
-    font-size: 16px;
+    padding: 1vw;
+    width: 15vw;
+    height: 3vw;
+    font-size: 1.1em;
 }
 
 /*=======================
@@ -97,61 +97,223 @@ RESEÑAS
 ========================*/
 
 section.resenia {
-    margin-left: 20px;
+    margin-left: 3vw;
 }
 section.resenia .titulo {
     display: flex;
 }
 section.resenia .titulo h1 {
-    font-size: 28px;
+    font-size: 2em;
 }
 section.resenia .titulo h1.der {
-    margin-left: 10px;
+    margin-left: 1vw;
     opacity: 50%;
 }
 
 section.resenia .comment1 {
-    margin: 20px 0;
+    margin: 2vw 0;
 }
 section.resenia .comment1 .one {
     display: flex;
 }
 section.resenia .comment1 .one img {
-    margin-right: 15px;
+    margin-right: 2vw;
 }
 
 section.resenia .comment1 .one .comen p {
-    margin-top: 10px;
+    margin-top: 1vw;
 }
 
 section.resenia .comment1 .two {
     display: flex;
-    margin-top: 20px;
+    margin-top: 2vw;
 }
 section.resenia .comment1 .two img {
-    margin-right: 15px;
+    margin-right: 2vw;
 }
 
 section.resenia .comment1 .two .comen p {
-    margin-top: 10px;
+    margin-top: 1vw;
 }
 
-/*=======================
-SECTION PRODUCTOS SIMILARES
-========================*/
-.prodSimi { 
-    margin-bottom: 15px; 
-    margin-left: 20px;
+@media (max-width: 768px){
+
+    section.detalleProd .images {
+        margin-left: 4vw;
+        margin-right: 0vw;
+    }
+
+    section.detalleProd .images .principal img {
+        width: 95%;
+    }
+    
+    section.detalleProd .images .miniatura img {
+        margin-left: 1vw;
+        width: 29%;
+        
+    }
+    
+    section.detalleProd article {
+        width: 60%;
+    }
+    section.detalleProd article h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0vw;
+    }
+    section.detalleProd article h2 {
+        font-size: 1.3rem;
+    }
+    section.detalleProd article h3 {
+        font-size: 0.8em;
+    }
+    section.detalleProd article p {
+        font-size: 0.8em;
+    }
+   
+    section.detalleProd article form {
+        padding-top: 12vw;
+    }
+    
+    section.detalleProd article form button {
+        padding: 1vw;
+        width: 20vw;
+        height: 4vw;
+        font-size: 0.7em;
+    }
+
+    section.resenia .titulo h1 {
+        font-size: 1.5em;
+    }
+    
+    section.resenia .comment1 .one img {
+        width: 15%;
+    }
+    section.resenia .comment1 .one img.perfil {
+        width: 12%;
+        height: 12%;
+    }
+    section.resenia .comment1 .one .comen p {
+        font-size: 0.8em;
+    }
+    
+    section.resenia .comment1 .two img {
+        width: 15%;
+    }
+    
+    section.resenia .comment1 .two img.perfil{
+        width: 12%;
+        height: 12%;
+    }
+    section.resenia .comment1 .two .comen p {
+        font-size: 0.8em;
+    }
 }
 
-section.productos div {
-    display: flex;
-    margin: 0 5%;
+@media (max-width: 425px){
+    
+    section.detalleProd {
+        display: flex;
+        flex-direction: column;
+    }
+    section.detalleProd .images {
+        margin-left: 9vw;
+        margin-right: 0vw;
+    }
+
+    section.detalleProd .images .principal img {
+        width: 90%;
+    }
+    section.detalleProd .images .miniatura {
+        display: none;
+    }
+
+    section.detalleProd article {
+        width: 98%;
+        padding: 0vw 9vw;
+    }
+    section.detalleProd article h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0vw;
+    }
+    section.detalleProd article h2 {
+        font-size: 1.2rem;
+    }
+    section.detalleProd article .mediosDePago img {
+        width: 8%;
+    }
+    section.detalleProd article h3 {
+        font-size: 0.8em;
+    }
+    section.detalleProd article p {
+        font-size: 0.7em;
+    }
+   
+    section.detalleProd article form div input {
+        width: 5vw;
+        height: 3.5vw;
+
+    }
+    
+    section.detalleProd article form button {
+        padding: 1vw;
+        width: 36vw;
+        height: 8vw;
+        font-size: 0.8em;
+    }
+
+    section.resenia {
+        margin-left: 5vw;
+    }
+
+    section.resenia .titulo h1 {
+        font-size: 1em;
+    }
+    
+    section.resenia .comment1 .one img {
+        width: 12%;
+    }
+    section.resenia .comment1 .one img.perfil {
+        width: 15%;
+        height: 15%;
+    }
+    section.resenia .comment1 .one .comen {
+        position: relative;
+        bottom: 2vw;
+    }
+    section.resenia .comment1 .one .comen p {
+        font-size: 0.6em;
+        margin-top: 0vw;
+    }
+    
+    section.resenia .comment1 .two img {
+        width: 12%;
+    }
+    
+    section.resenia .comment1 .two img.perfil{
+        width: 15%;
+        height: 15%;
+    }
+    section.resenia .comment1 .two .comen {
+        position: relative;
+        bottom: 2vw;
+    }
+    section.resenia .comment1 .two .comen p {
+        font-size: 0.6em;
+        margin-top: 0vw;
+    }
 }
-section.productos div article img {
-    position: relative;
-    right: -15%;  
-}
-section.productos div article {
-    margin: 0 20px;
+
+@media (max-width: 320px) {
+
+    section.detalleProd article form div input {
+        width: 5.5vw;
+        height: 4.5vw;
+
+    }
+    section.detalleProd article form button {
+        padding: 1vw;
+        width: 50vw;
+        height: 10vw;
+        font-size: 0.9em;
+    }
 }

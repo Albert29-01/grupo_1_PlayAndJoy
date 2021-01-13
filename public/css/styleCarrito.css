@@ -134,7 +134,7 @@ section.importe div.total h3 {
     left: 40vw;
     background-color: var(--color-gris);
     border-radius: 8vw;
-    width: 50vw;
+    width: 44vw;
     margin-top: 1vw;
     font-size: 2em;
     font-family: open sans;
@@ -222,7 +222,7 @@ section.opciones div.finish nav.finCompra button.fin {
 
 section.opciones a {
     position: relative;
-    left: 46vw;
+    left: 3vw;
     text-decoration: none;
     font-family: quicksand;
     font-size: 1.5em;
@@ -290,6 +290,7 @@ section.opciones a {
     
     section.importe div.total h3 {
         font-size: 1em;
+        width: 34vw;
     }
 
     section.opciones div.opc h2 {
@@ -329,7 +330,7 @@ section.opciones a {
     }
     
     section.opciones a {
-        left: 44vw;
+        left: 3vw;
         font-size: 0.8em;
     }
 }
@@ -391,6 +392,7 @@ section.opciones a {
     
     section.importe div.total h3 {
         font-size: 0.8em;
+        width: 52vw;
     }
 
     section.opciones div.opc h2 {
@@ -419,7 +421,7 @@ section.opciones a {
     }
     
     section.opciones a {
-        left: 40vw;
+        left: 3vw;
         font-size: 0.7em;
     }
 }
