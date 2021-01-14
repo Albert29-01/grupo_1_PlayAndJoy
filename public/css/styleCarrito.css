@@ -24,6 +24,7 @@ DETALLE
 div.carrito {
     display: flex;
     justify-content: center;
+    
 }
 div.carrito img {
     width: 4%;
@@ -34,74 +35,77 @@ section div section.listado{
     justify-content: center;
     align-items: center;
     margin-top: 2vw;
+    background-color: rgba(250, 250, 250, 0.7);
 }
 
 section div section.listado  div.delete {
-    margin: 0vw 4vw -4vw 0vw;
+    margin: 0vw 3vw -3vw 0vw;
 }
 section div section.listado div.delete ul {
-    margin-top: 1.5rem;
+    margin-top: 1vw;
 }
 section div section.listado div.delete ul li {
     list-style-type: none;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5vw;
 }
 section div section.listado div.delete ul li a img {
-    width: 140%;
+    width: 120%;
     padding: 0.25rem;
 }
 
 section div section.listado div.product ul h2 {
     margin-bottom: 2vw;
-    font-size: 2em;
+    font-size: 1.5rem;
 }
 section div section.listado div.product ul li {
     list-style-type: none;
     margin-bottom: 1rem;
     font-family: open sans;
-    font-size: 1.5em;
-    color: var(--color-gris);
+    font-size: 1rem;
+    color: var(--color-azul);
 }
 
 section div section.listado div.cantidad {
     margin: 0 6vw;
 }
 section div section.listado div.cantidad ul h2 {
-    margin-bottom: 2vw;
-    font-size: 2em;
+    margin-bottom: 1.2vw;
+    font-size: 1.5rem;
 }
 section div section.listado div.cantidad ul input {
     background: var(--color-gris);
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5vw;
+    margin-bottom: 1.4vw;
     opacity: 50%;
     border: none;
     border-radius: 20px ;
-    width: 2.5vw;
-    height: 2vw;
+    width: 2vw;
+    height: 1.5vw;
     position: relative;
-    right: -4vw;
+    right: -3vw;
 }
 
 section div section.listado div.precio ul h2 {
     margin-bottom: 2vw;
-    font-size: 2em;
+    font-size: 1.5rem;
 }
 section div section.listado div.precio ul li {
     list-style-type: none;
     margin-bottom: 1rem;
     font-family: open sans;
-    font-size: 1.5em;
-    color: var(--color-gris);
+    font-size: 1rem;
+    color: var(--color-azul);
 } 
 /*=======================
 IMPORTE
 ========================*/
-
+section.importe {
+    background-color: rgba(250, 250, 250, 0.7)
+}
 section.importe div.title {
     margin: 0 7vw;
-    font-size: 1.4em;
+    font-size: 1rem;
 }
 
 section.importe div.sub {
@@ -111,10 +115,10 @@ section.importe div.sub {
 }
 section.importe div.sub p {
     margin: 0 12vw;
-    font-size: 1.5em;
+    font-size: 1.3rem;
 }
 section.importe div.sub p.price { 
-    color: var(--color-gris);
+    color: var(--color-azul);
 }
 
 section.importe div.envio {
@@ -123,10 +127,10 @@ section.importe div.envio {
 }
 section.importe div.envio p {
     margin: 0 12vw;
-    font-size: 1.5em;
+    font-size: 1.3rem;
 }
 section.importe div.envio p.env {
-    color: var(--color-gris);
+    color: var(--color-azul);
 }
 
 section.importe div.total h3 {
@@ -136,7 +140,7 @@ section.importe div.total h3 {
     border-radius: 8vw;
     width: 44vw;
     margin-top: 1vw;
-    font-size: 2em;
+    font-size: 1.5rem;
     font-family: open sans;
     padding: 0 2vw;
 }
@@ -144,9 +148,12 @@ section.importe div.total h3 {
 /*=======================
 OPCIONES
 ========================*/
+section.opciones {
+    background-color: rgba(250, 250, 250, 0.7)
+}
 section.opciones div.opc h2 {
     margin: 0 7vw;
-    font-size: 2em;
+    font-size: 1.3rem;
 }
 
 section.opciones div.efect {
@@ -162,9 +169,9 @@ section.opciones div.efect button.cash {
     border: none;
     border-radius: 16vw;
     text-align: center;
-    padding: 1vw 6vw;
+    padding: 1vw 8vw;
     font-family: Quicksand;
-    font-size: 1.5em;
+    font-size: 1rem;
     color: var(--color-azul);
     
 }
@@ -176,10 +183,9 @@ section.opciones div.efect button.tc {
     text-align: center;
     padding: 1vw 12vw; 
     font-family: Quicksand;
-    font-size: 1.5em;
+    font-size: 1rem;
     color: var(--color-azul);
     margin-top: 1vw;
-    margin-bottom: 3vw;
 }
 
 section.opciones div.mediosDePago {
@@ -187,7 +193,7 @@ section.opciones div.mediosDePago {
     justify-content: center;
 }
 section.opciones div.mediosDePago img {
-    width: 5%;
+    width: 3%;
     margin: 1rem;
 }
 
@@ -202,11 +208,11 @@ section.opciones div.finish nav.delete button.trash {
     text-decoration: none;
     border: none;
     border-radius: 100vw;
-    padding: 2vw 2vw;
+    padding: 1vw 1vw;
     margin-right: 1vw;
 }
 section.opciones div.finish nav.delete button.trash img {
-    width: 2.5vw;
+    width: 2vw;
 }
 section.opciones div.finish nav.finCompra button.fin {
     background-color: var(--color-ladrillo);
@@ -214,26 +220,26 @@ section.opciones div.finish nav.finCompra button.fin {
     text-decoration: none;
     border: none;
     border-radius: 16vw;
-    padding: 0 8vw;
+    padding: 0.3vw 5vw;
     font-family: Quicksand;
-    font-size: 1.8em;
+    font-size: 1rem;
     text-transform: uppercase;
 }
 
 section.opciones a {
     position: relative;
-    left: 3vw;
+    left: 2vw;
     text-decoration: none;
     font-family: quicksand;
-    font-size: 1.5em;
+    font-size: 0.8rem;
     color: var(--color-azul);
 }
 
 @media (max-width:1024px) {
     section div section.listado div.cantidad ul input {
-        margin-bottom: 2.8vw;
-        width: 3vw;
-        height: 2.5vw;
+        margin-bottom: 2vw;
+        width: 2.5vw;
+        height: 2vw;
     }
 }
 
@@ -302,7 +308,7 @@ section.opciones a {
     }
 
     section.opciones div.efect button.tc {
-        padding: 1vw 13vw; 
+        padding: 1vw 15vw; 
         font-size: 1em;
         margin-bottom: 1vw;
     }
@@ -363,10 +369,10 @@ section.opciones a {
         font-size: 1em;
     }
     section div section.listado div.cantidad ul input {
-        margin-bottom: 3.7vw;
-        width: 3.5vw;
-        height: 3vw;
-        right: -4.5vw;
+        margin-bottom: 3vw;
+        width: 4vw;
+        height: 3.5vw;
+        right: -5vw;
     }
     
     section div section.listado div.precio ul h2 {
@@ -404,7 +410,7 @@ section.opciones a {
     }
 
     section.opciones div.efect button.tc {
-        padding: 1vw 16vw; 
+        padding: 1vw 18vw; 
         font-size: 0.8em;
     }
     
@@ -423,6 +429,20 @@ section.opciones a {
     section.opciones a {
         left: 3vw;
         font-size: 0.7em;
+    }
+}
+@media (max-width:375px) {
+
+    section div section.listado div.cantidad ul input {
+        margin-bottom: 3.4vw;
+        width: 4.5vw;
+        height: 4vw;
+        right: -6vw;
+    }
+
+    section.opciones div.efect button.tc {
+        padding: 1vw 20vw; 
+        font-size: 0.8em;
     }
 }
 
@@ -453,10 +473,10 @@ section.opciones a {
         font-size: 0.8em;
     }
     section div section.listado div.cantidad ul input {
-        margin-bottom: 3.7vw;
-        width: 3.5vw;
-        height: 3vw;
-        right: -4.5vw;
+        margin-bottom: 3vw;
+        width: 4vw;
+        height: 3.5vw;
+        right: -5vw;
     }
     
     section div section.listado div.precio ul h2 {
@@ -480,15 +500,18 @@ section.opciones a {
     }
 
     section.opciones div.efect button.tc {
-        padding: 1vw 16vw; 
+        padding: 1vw 18vw; 
         font-size: 0.6em;
+    }
+    section.opciones div.mediosDePago img {
+        margin: 0.3rem;
     }
     section.opciones div.finish nav.finCompra button.fin {
         padding: 0 6vw;
         font-size: 0.6em;
     }
     section.opciones a {
-        left: 40vw;
+        left: 2vw;
         font-size: 0.5em;
     }
 
