@@ -334,6 +334,7 @@ section.resenia .comment1 .two .comen p {
         margin-top: 0vw;
     }
 }
+
 @media (max-width: 320px) {
 
     section.detalleProd article h1 {
@@ -363,5 +364,4 @@ section.resenia .comment1 .two .comen p {
         bottom: 6vw;
     }
     
-    section.detalleProd 
 }

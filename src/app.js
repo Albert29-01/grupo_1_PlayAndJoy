@@ -18,6 +18,7 @@ app.use('/users', usersRouter);
 
 app.use('/product', productsRouter);
 
+app.use('/suscriptions', suscriptionsRouter);
 /*app.get('/users', usersRouter);
 
 app.get('/users/register',function(req, res) {
