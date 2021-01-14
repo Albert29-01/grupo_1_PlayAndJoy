@@ -19,51 +19,6 @@ app.use('/users', usersRouter);
 app.use('/product', productsRouter);
 
 app.use('/suscriptions', suscriptionsRouter);
-/*app.get('/users', usersRouter);
-
-app.get('/users/register',function(req, res) {
-    res.render('./users/registro')
-});
-
-app.get('/users/cart',function(req, res) {
-    res.render('./users/carrito')
-});
-
-app.get('/products', function(req, res) {
-    res.render('product')
-});
-
-app.get('/products/carga',function(req, res) {
-    res.render('./products/cargaProducto')
-});
-
-app.get('/suscriptions',function(req, res) {
-    res.render('./suscriptions/suscriptions')
-});
-
-app.get('/suscriptions/detail',function(req, res) {
-    res.render('./suscriptions/suscriptionDetail')
-});
-
-/*app.get('/products', productsRouter);
-
-app.get('/suscriptions', suscriptionsRouter);
-
-app.get('/suscription', function(req, res) {
-    res.render('suscriptionDetail')
-})
-
-app.get('/carrito', function(req, res) {
-    res.render('carrito')
-})
-
-app.get('/login', function(req, res) {
-    res.render('login')
-})
-
-app.get('/product', function(req, res) {
-    res.render('product')  
-})*/
 
 app.listen(3000, function() {
     console.log("El servidor está corriendo en el puerto 3000")

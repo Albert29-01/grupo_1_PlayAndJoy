@@ -40,3 +40,12 @@ section.productos article.hiden {display: none;}
 
     section.productos article img { margin-bottom: 1rem; }
 }
+
+@media (width: 768px) {
+    section.productos article a {
+        width: 15%;
+    }
+    section.productos article a img {
+        width: 100%;
+    }
+}

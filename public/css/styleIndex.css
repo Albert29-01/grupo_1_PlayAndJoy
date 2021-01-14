@@ -86,7 +86,7 @@ section.nosotros img {
     width: 50%;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
     section.nosotros {
         display: flex;
         flex-direction: column;

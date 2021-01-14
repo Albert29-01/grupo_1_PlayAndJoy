@@ -21,14 +21,39 @@ section.suscripciones article{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 30%;
+    width: 25vw;
     border-radius: 20px;
     border: solid 5px var(--color-petroleo);
-    flex-wrap: wrap;
     height: 100vh;
+    padding: 15px 0;
 }
 
 section.suscripciones article img {
     width: 80%;
+}
+
+section.suscripciones article ul {
+    margin: 0 1.5rem;
+    list-style: inside;
+    text-align: center;
+}
+
+section.suscripciones article a {
+    background: var(--color-azul);
+    color: var(--color-beige);
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 5px 1.5rem;
+}
+
+@media (max-width: 425px) {
+    section.suscripciones {
+        flex-direction: column;
+    }
+
+    section.suscripciones article {
+        width: 100%;
+        margin-bottom: 15px;
+    }
 }
 
