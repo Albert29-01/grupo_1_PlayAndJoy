@@ -25,7 +25,7 @@ Estos productos contarán con descuentos exclusivos para suscriptores.
 #### **A Medida:**   
 El cliente seleccionará los productos a los que quiera suscribirse.
 
-<img src= "https://i.pinimg.com/originals/3f/b6/05/3fb605f50711be5a0ac7ca7010835a0e.jpg" alt= "ViniloCafe" height="70" width= "70"><img src= "https://thumbs.dreamstime.com/z/vinilo-de-cristal-del-vino-43752545.jpg" alt= "ViniloVino" height="70" width= "70"><img src= "" alt= "LibroCafe" height="70"><img src= "https://cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/GJRWMZJVGE4WEMZYMZRTMMZSGI.jpg" alt= "LibroVino" height="70">
+<img src= "https://i.pinimg.com/originals/3f/b6/05/3fb605f50711be5a0ac7ca7010835a0e.jpg" alt= "ViniloCafe" height="70" width= "70"><img src= "https://thumbs.dreamstime.com/z/vinilo-de-cristal-del-vino-43752545.jpg" alt= "ViniloVino" height="70" width= "70"><img src= "https://www.google.com.ar/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fes%2Fphotos%2Flibros-caf%25C3%25A9-relajarse-interior-1803853%2F&psig=AOvVaw0AEG8pUR14jwAXg_4oY-nT&ust=1610790813622000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKDBn8rVne4CFQAAAAAdAAAAABAD" alt= "LibroCafe" height="70"><img src= "https://cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/GJRWMZJVGE4WEMZYMZRTMMZSGI.jpg" alt= "LibroVino" height="70">
 
 ## ✔Público objetivo
 
