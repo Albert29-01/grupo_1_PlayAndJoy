@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@700&display=swap');
+
+:root {
+    --color-gris: #C0BCB4;
+    --color-azul: #383F5B;
+    --color-beige: #E7D8C4;
+    --color-ladrillo: #C36350;
+    --color-arena: #D4B489;
+    --color-petroleo: #96A79D;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*=======================
+BODY
+========================*/
+
+body {
+    
+    font-family: Quicksand;
+    color: var(--color-azul);
+    margin: 0 35%;   
+}
+@media (max-width: 425px) {
+    body {
+        margin: 0 10%;
+    }
+}
+p{font-family: Open Sans;}
+h1{font-size: 24px;}
+hr {
+    border-color: var(--color-ladrillo);
+    opacity: 50%;
+    margin: 20px;
+}
+/*=======================
+HEADER
+========================*/
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px 0px;
+   
+}
+/*=======================
+FORM
+========================*/
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    
+   
+}
+form div.date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form div.date input {
+    width: 80%;
+
+}
+
+div {
+
+ text-align: left;
+ margin: 10px 0;
+       
+}
+
+.campo {
+    
+    font: size 18px;
+    width: 100%;
+    border: hidden;
+    border-bottom: solid 2px var(--color-ladrillo);   
+    margin-bottom: 15px;
+    
+}
+
+section.localidadProvincia {
+    display: flex;
+    justify-content: space-between;
+}
+section.localidadProvincia div {
+    display: flex;
+    flex-direction: column;
+}
+
+section.localidadProvincia div input {
+    width: 100%;
+    border: hidden;
+    border-bottom: solid 2px var(--color-ladrillo);   
+
+}
+/*=======================
+CONDICIONES GRALES.
+========================*/
+section.opciones {
+    margin: 15px 0;
+    text-align: center;
+ 
+}
+/*=======================
+BOTON SUBMIT
+========================*/
+.boton_personalizado {
+    font-family: Quicksand; 
+    font: size 18px; 
+    font-weight:bold; 
+    color: var(--color-arena);
+    background: var(--color-ladrillo); 
+    border:0px; 
+    width:200px; 
+    height:30px; 
+    border-radius: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.boton_personalizado:hover {
+    background: var(--color-arena);
+    color: var(--color-ladrillo);
+}
