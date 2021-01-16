@@ -11,7 +11,10 @@
 
 ### Continuar haciendo:
 
-  En concordancia con el sprint anterior, seguimos firmes en que la clave son las reuniones, ya que tenemos un dialogo bastante fluido y ameno. Debatimos ideas y realizamos el armado de nuestro tablero de trabajo. Tambien es fundamental la comunicación en cuanto a los cambios que vamos realizando en el repositorio.
+  En concordancia con el sprint anterior, seguimos firmes en que la clave son las reuniones, ya que tenemos un dialogo bastante fluido y ameno. Debatimos ideas y realizamos el armado de nuestro tablero de trabajo.
+  Tambien es fundamental la comunicación en cuanto a los cambios que vamos realizando en el repositorio.
+  
+  Seguir equivocándonos. A lo largo de estos 2 sprints, hemos metido mucho la pata y eso fue uno de los puntos que más nos enseñó
 
 			
 ### Conlusión:
