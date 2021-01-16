@@ -25,7 +25,7 @@ Estos productos contarán con descuentos exclusivos para suscriptores.
 #### **A Medida:**   
 El cliente seleccionará los productos a los que quiera suscribirse.
 
-<img src= "https://i.pinimg.com/originals/3f/b6/05/3fb605f50711be5a0ac7ca7010835a0e.jpg" alt= "ViniloCafe" height="70" width= "70"><img src= "https://thumbs.dreamstime.com/z/vinilo-de-cristal-del-vino-43752545.jpg" alt= "ViniloVino" height="70" width= "70"><img src= "https://cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/GJRWMZJVGE4WEMZYMZRTMMZSGI.jpg" alt= "LibroVino" height="70">
+<img src= "https://i.pinimg.com/originals/3f/b6/05/3fb605f50711be5a0ac7ca7010835a0e.jpg" alt= "ViniloCafe" height="70" width= "70"><img src= "https://thumbs.dreamstime.com/z/vinilo-de-cristal-del-vino-43752545.jpg" alt= "ViniloVino" height="70" width= "70"><img src= "https://cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/GJRWMZJVGE4WEMZYMZRTMMZSGI.jpg" alt= "LibroVino" height="70"><img src= "https://offloadmedia.feverup.com/valenciasecreta.com/wp-content/uploads/2017/01/21101418/cafe-librer%C3%ADas.jpg" alt= "libroCafe" height="70">
 
 ## ✔Público objetivo
 
