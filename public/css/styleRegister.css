@@ -15,8 +15,8 @@ body.register {
 
 @media (max-width: 425px) {
     body.register {
-        margin: 0 10%;
-        height: 200vh;
+        margin: 10%;
+        height: auto;
     }
 }
 
