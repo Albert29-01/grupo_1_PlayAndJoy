@@ -27,6 +27,7 @@ section.detalleSuscrip {
     display: flex;
     margin: 0 1.5rem;
     margin-bottom: 1.5rem;
+    background-color: rgba(250, 250, 250, 0.7);
 }
 
 section.detalleSuscrip img.suscripcion { margin-right:1rem; }
@@ -74,8 +75,10 @@ FORMULARIO OPCIONES SUSCRIPCION
 
 form.opcionesSuscrip {
     display: flex;
+    margin: 0 1.5rem;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(250, 250, 250, 0.7);
 }
 
 form.opcionesSuscrip div { margin-bottom: 1rem; }
