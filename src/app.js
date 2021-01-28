@@ -20,6 +20,10 @@ app.use('/product', productsRouter);
 
 app.use('/suscriptions', suscriptionsRouter);
 
+app.use((req,res)=>{
+    res.status(404).render('404_notFound');
+});
+
 app.listen(3000, function() {
     console.log("El servidor está corriendo en el puerto 3000")
     console.log("http://localhost:3000")
