@@ -6,14 +6,17 @@ body.notFound {
     font-family: 'Press Start 2P';
     color: #FFFFFF;
     height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 section.notFound {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 5%;
-    height: calc(100vh-footer);
+    margin: 0 10%;
+    height: 100vh;
 }
 
 section.notFound h1 {
@@ -50,12 +53,20 @@ footer.notFound {
     background: none;
     display: flex;
     flex-direction: row-reverse;
+    position: absolute;
+    left: 83vw;
+    top: 85vh;
 }
 
 @media only screen and (max-width: 768px) {
     section.notFound {
         flex-direction: column;
         justify-content: space-around;
+    }
+    section.notFound div.img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     section.notFound div.img img {
         width: 70vw;
@@ -66,5 +77,9 @@ footer.notFound {
     }
     section.notFound h2 {
         font-size: 25px;
+    }
+    footer.notFound {
+        left: 70vw;
+        top: 90vh;
     }
 }
