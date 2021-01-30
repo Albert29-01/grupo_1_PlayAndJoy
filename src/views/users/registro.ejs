@@ -7,7 +7,9 @@
         <a href="/"><img src="/img/logo-transparente.png" alt="Logo" width="240px" height="90px"></a>
         <h1>Crea tu cuenta</h1>
     </header>   
-        <form action="index.html" method="get" class="register">
+        <form action="/users/register" method="POST" class="register">
+            <label for="avatar">Avatar</label>
+            <input type="file" id="avatar">
             <label for="nombre">Nombre</label>
             <input class="campo" type="text" id="nombre" name="nombre" required>
             <label for="apellido">Apellido</label>

@@ -6,6 +6,8 @@ const usersController = require ('../controllers/usersController');
 router.get('/login', usersController.login);
 
 router.get('/register',usersController.register);
+router.post('/register',usersController.crearCuenta);
+
 
 router.get('/cart', usersController.cart); //conviene poner :id antes de cart?
 
