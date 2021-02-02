@@ -1,12 +1,25 @@
 const express = require('express');
+const path = require('path');
+const multer = require('multer');
 const router = express.Router();
 const usersController = require ('../controllers/usersController');
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, path.join(__dirname,'../../public/img/uploads/avatars'));
+    },
+    filename: function (req, file, cb) {
+      cb(null, req.body.email + '-' + Date.now() + path.extname(file.originalname));
+    }
+  });
+   
+var upload = multer({ storage: storage });
 
 
 router.get('/login', usersController.login);
 
 router.get('/register',usersController.register);
-router.post('/register',usersController.crearCuenta);
+router.post('/register',upload.any(),usersController.crearCuenta);
 
 
 router.get('/cart', usersController.cart); //conviene poner :id antes de cart?

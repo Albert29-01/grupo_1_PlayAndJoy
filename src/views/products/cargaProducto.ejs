@@ -3,7 +3,7 @@
     <%- include('../partials/head')%>
 <body>
     <%- include('../partials/header')%>
-    <form action="/admin/cargaProducto" method="POST" class="carga">
+    <form action="/admin/cargaProducto" method="POST" class="carga" enctype="multipart/form-data">
         <h1 class="carga">Carga de Producto</h1>
         <label for="nombreProducto">Nombre del Producto</label>
         <input type="text" id="nombreProducto" name="nombreProducto" required>

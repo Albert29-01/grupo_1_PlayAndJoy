@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head')%>
+<body>
+    <%- include('../partials/header') %>
+    <section class="productList">
+    <% for(let i=0; i < productsArray.length; i++){%>
+        <article>
+            <a href="/product/:idProduct"><img src="/img/Producto.png" alt="cafetera"></a>
+            <details>
+                <summary><%=productsArray[i].nombreProducto %> </summary>
+                <p><%=productsArray[i].detalle%></p>
+            </details>
+        </article>
+    <% } %>
+    </section>
+    <%- include('../partials/footer') %>
+</body>
+</html>
