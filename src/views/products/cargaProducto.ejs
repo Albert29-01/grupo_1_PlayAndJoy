@@ -3,7 +3,7 @@
     <%- include('../partials/head')%>
 <body>
     <%- include('../partials/header')%>
-    <form action="/admin/cargaProducto" method="POST" class="carga" enctype="multipart/form-data">
+    <form action="/admin/cargaProducto/<%= typeof producto.id != "undefined"? producto.id + "?_method=" + metodo : null %> " method="POST" class="carga" enctype="multipart/form-data">
         <h1 class="carga">Carga de Producto</h1>
         <label for="nombreProducto">Nombre del Producto</label>
         <input type="text" id="nombreProducto" name="nombreProducto" required>
@@ -24,7 +24,6 @@
         <textarea name="infoAd" id="infoAd" rows="5"></textarea>
         <div>
         <button type=“submit” class="carga">CARGAR</button>
-        <button type=“button” class="carga">EDITAR</button>
         <button type=“reset” class="reset"><img src="/img/basura2.png" alt="tacho de basura"></button>
         </div>
     </form>

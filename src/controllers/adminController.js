@@ -6,6 +6,12 @@ module.exports = {
     formCargaP: function (req, res){
         res.render ('./products/cargaProducto');
     },
+    formEditP: function(req,res) {
+        res.render ('./products/cargaProducto',{
+            metodo: "PUT",
+            producto: "",//acá recuperaríamos los datos del producto que queremos editar
+        });
+    },
     formCargaS: function (req, res){
         res.render ('./suscriptions/cargaSuscripcion');
     },

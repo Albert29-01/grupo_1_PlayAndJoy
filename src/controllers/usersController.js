@@ -10,7 +10,6 @@ module.exports = {
         res.render('./users/registro');
     },
     crearCuenta: function(req,res,next){
-        return res.send(req.files);
         if (req.body.password == req.body.passwordConfirm){
         let usuario = {
             id: usersArray.length+1,

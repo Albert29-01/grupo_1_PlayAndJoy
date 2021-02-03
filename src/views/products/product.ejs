@@ -4,6 +4,7 @@
 <body>
     <%- include('../partials/header') %>
     <section class="detalleProd">
+        <a href="/admin/editProducto/<%= product.id  %>"><button type=“button” class="carga">EDITAR</button></a>
         <div class="images">
             <div class="principal">
                 <img src="/img/product.png" alt="producto">
@@ -14,7 +15,6 @@
                 <img src="/img/product1.png" alt="producto">
             </div>
         </div>
-        
         <article>
             <h1>Nombre del Producto</h1>
             <h2>$ Precio</h2>

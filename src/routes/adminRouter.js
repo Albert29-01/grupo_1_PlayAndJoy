@@ -6,6 +6,8 @@ const multer = require ('multer');
 router.get('/cargaProducto', adminController.formCargaP);
 router.post('/cargaProducto', adminController.cargaProduct);
 
+router.get('/editProducto/:idProduct', adminController.formEditP);
+
 router.get('/cargaSuscription', adminController.formCargaS);
 router.post('/cargaSuscription', adminController.cargaSuscription);
 
