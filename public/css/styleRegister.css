@@ -73,6 +73,7 @@ form.register div.date {
 
 form.register div.date input {
     width: 80%;
+    padding: 5px 10px;
 }
 
 div {
@@ -89,6 +90,7 @@ form.register input.campo {
     background: none;
     border-radius: 0;
     opacity: 100%;
+    padding: 5px 10px;
 }
 
 section.localidadProvincia {
@@ -108,7 +110,7 @@ section.localidadProvincia div input {
     width: 100%;
     border: hidden;
     border-bottom: solid 2px var(--color-ladrillo);   
-    
+    padding: 5px 10px;
 }
 /*=======================
 CONDICIONES GRALES.
