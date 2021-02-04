@@ -20,7 +20,7 @@ body.register {
     }
 }
 
-section.register{
+section.register {
     background-color: rgba(250, 250, 250, 0.7);
     border: solid 2px var(--color-gris);
     border-radius: 20px;
@@ -31,8 +31,6 @@ section.register{
 }
 
 p{font-family: Open Sans;}
-
-h1{font-size: 24px;}
 
 hr {
     border-color: var(--color-ladrillo);
@@ -49,7 +47,8 @@ header.register {
     align-items: center;
 }
 
-h1 {
+header.register h1 {
+    font-size: 24px;
     text-align: center;
     margin: 15px 0px;
     

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head')%>
+<body>
+    <%- include('../partials/header') %>
+    <section class="detalleProd">
+        <a href="/admin/editProducto/<%= product  //falta el .id %>"><button type=“button” class="carga">EDITAR</button></a> 
+        <a href="/admin/deleteProducto/<%= product  //falta el .id %>"><button type=“button” class="carga">ELIMINAR</button></a>
+        <div class="images">
+            <div class="principal">
+                <img src="/img/product.png" alt="producto">
+            </div>
+            <div class="miniatura">
+                <img src="/img/product1.png" alt="producto">
+                <img src="/img/product1.png" alt="producto">
+                <img src="/img/product1.png" alt="producto">
+            </div>
+        </div>
+        <article>
+            <h1>Nombre del Producto</h1>
+            <h2>$ Precio</h2>
+            <div class="mediosDePago">
+                <img src="/img/Visa.png" alt="">
+                <img src="/img/Master.png" alt="">
+                <img src="/img/PayPal.png" alt="">
+                <img src="/img/Amex.png" alt="">
+                <img src="/img/Diners.png" alt="">
+            </div>
+            <h3>Detalle</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptate similique impedit, repellendus, sint officia placeat, tempora error iusto labore molestiae quibusdam odio harum a at perferendis est maxime hic.</p>
+            <form action="" method="POST">
+                    <div>
+                        <label>Cantidad</label>
+                        <input type="number" name="cantidad">
+                    </div>
+                <button class="addcart" type="submit"><img src="/img/carrito2.png" alt="">Añadir al carrito</button>
+            </form>
+        </article>
+    </section>
+    <hr>
+    <section class="resenia">
+        <div class="titulo">
+        <h1>Reseñas |</h1>
+        <h1 class="der">Informacion adicional</h1>
+        </div>
+        <div class="comment1">
+            <article class="one">
+                <img class="perfil" src="/img/perrito.png" alt="">
+                <div class="comen">
+                    <img src="/img/star.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum iste accusantium repudiandae voluptates excepturi repellendus.</p>
+                </div>
+            </article>
+            <article class="two">
+                <img class="perfil" src="/img/perrito.png" alt="">
+                <div class="comen">
+                    <img src="/img/star1.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum iste accusantium repudiandae voluptates excepturi repellendus.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <hr>
+    <h2 class="prodSimi">Productos Similares</h2>
+    <%- include('../partials/sectionProducts') %>  
+    <%- include('../partials/footer') %>
+</body>
+</html>

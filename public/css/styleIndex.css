@@ -108,6 +108,7 @@ SECTION ASOCIATE
 
 section.asociate {
     display: flex;
+    justify-content: space-around;
     align-items: center;
     background-color: rgba(250, 250, 250, 0.7);
     padding: 20px;

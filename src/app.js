@@ -6,11 +6,13 @@ const usersRouter = require ('./routes/usersRouter');
 const adminRouter = require ('./routes/adminRouter');
 const productsRouter = require ('./routes/productsRouter');
 const suscriptionsRouter = require ('./routes/suscriptionsRouter');
+const methodOverride = require ('method-override');
 
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'views'));
 
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());

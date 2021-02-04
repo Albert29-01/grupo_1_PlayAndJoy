@@ -11,7 +11,7 @@ section.productos {
 }
 
 section.productos article {
-    margin-right: 1rem;
+    margin: 0 1rem;
     width: 15%;
 }
 

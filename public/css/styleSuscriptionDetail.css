@@ -76,6 +76,7 @@ FORMULARIO OPCIONES SUSCRIPCION
 form.opcionesSuscrip {
     display: flex;
     margin: 0 1.5rem;
+    padding: 20px;
     flex-direction: column;
     align-items: center;
     background-color: rgba(250, 250, 250, 0.7);
@@ -139,9 +140,9 @@ section.productos div {
     justify-content: space-between;
 }
 
-.prodSimi { 
+.titulo { 
     margin-bottom: 1rem; 
-    margin-left: 1.5rem;
+    margin-left: 2.5rem;
 }
 
 section.productos div article {
@@ -153,8 +154,6 @@ section.productos div article.hidden {display: none;}
 
 @media (max-width: 425px) {
     section.productos { margin: 0 1rem; }
-
-    .prodSimi { margin-left: 0; }
 
     section.productos div article {
         display: flex;

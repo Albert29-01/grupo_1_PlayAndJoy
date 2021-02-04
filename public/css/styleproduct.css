@@ -10,7 +10,7 @@ body {
 
 p {font-family: Open Sans;}
 
-h1 {font-size: 24px;}
+h1 {font-size: 1.5rem;}
 
 hr {
     border-color: var(--color-ladrillo);
@@ -46,8 +46,6 @@ section.detalleProd article {
 section.detalleProd article h1 {
     font-size: 1.7rem;
     margin-bottom: 0.5vw;
-    position: relative; 
-    right: 13vw;
 }
 section.detalleProd article h2 {
     font-size: 1.5rem;
@@ -103,13 +101,13 @@ section.resenia {
     margin-left: 3vw;
     background-color: rgba(250, 250, 250, 0.7);
 }
-section.resenia .titulo {
+section.resenia .tituloResenia {
     display: flex;
 }
-section.resenia .titulo h1 {
+section.resenia .tituloResenia h1 {
     font-size: 2em;
 }
-section.resenia .titulo h1.der {
+section.resenia .tituloResenia h1.der {
     margin-left: 1vw;
     opacity: 50%;
 }

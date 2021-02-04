@@ -3,17 +3,28 @@ let productsArray = JSON.parse(fs.readFileSync('products.json',{encoding:'utf-8'
 let suscriptionsArray = JSON.parse(fs.readFileSync('suscriptions.json',{encoding:'utf-8'}));
 
 module.exports = {
-    formCargaP: function (req, res){
-        res.render ('./products/cargaProducto');
-    },
-    formEditP: function(req,res) {
-        res.render ('./products/cargaProducto',{
-            metodo: "PUT",
-            producto: "",//acá recuperaríamos los datos del producto que queremos editar
+    vistaProd: function (req, res){
+        res.render ('./admin/adminProduct', {
+            product: req.params,
         });
     },
+    formCargaP: function (req, res){
+        res.render ('./admin/cargaProducto');
+    },
+    formEditP: function(req,res) {
+        res.render ('./admin/cargaProducto',{
+            metodo: "PUT",
+            producto: undefined,//acá recuperaríamos los datos del producto que queremos editar
+        });
+    },
+    deleteProd: function (req, res){
+        res.render ('/lalala'); //acá enviaríamos los datos del producto eliminado
+    },
     formCargaS: function (req, res){
-        res.render ('./suscriptions/cargaSuscripcion');
+        res.render ('./admin/cargaSuscripcion');
+    },
+    editProd: function (req, res){
+        res.render ('/lalala'); //acá enviaríamos los datos del producto editado
     },
     cargaProduct:function(req,res){
         let producto = {
@@ -21,13 +32,13 @@ module.exports = {
             nombreProducto: req.body.nombreProducto,
             detalle: req.body.detalle,
             precio: req.body.precio,
-            imagen: req.body.imagen, //ver guardado de imagen
+            imagen: req.files[0].imagen,
             categoria: req.body.categoria,
             infoAd: req.body.infoAd,
         }
         productsArray.push(producto);
         fs.writeFileSync('products.json',JSON.stringify(productsArray));
-        res.redirect('/product/'+(productsArray.length));//MUESTRA LA VISTA DEL ÚLTIMO PRODUCTO CARGADO
+        res.redirect('/admin/admin/'+(productsArray.length));//MUESTRA LA VISTA DEL ÚLTIMO PRODUCTO CARGADO
     },
     cargaSuscription:function(req,res){
         let suscription = {

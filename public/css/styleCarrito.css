@@ -10,7 +10,7 @@ body {
 
 p {font-family: Open Sans;}
 
-h1 {font-size: 24px;}
+h1 {font-size: 1.5rem;}
 
 hr {
     border: 0.3px solid var(--color-ladrillo);
