@@ -4,15 +4,15 @@ let usersArray = JSON.parse(fs.readFileSync('users.json',{encoding:'utf-8'}));
 
 module.exports = {
     login: function (req, res) {
-        res.render('./users/login');
+        return res.render('./users/login');
     },
     register: function (req, res) {
-        res.render('./users/registro');
+        return res.render('./users/registro');
     },
     crearCuenta: function(req,res,next){
         if (req.body.password == req.body.passwordConfirm){
         let usuario = {
-            id: usersArray.length+1,
+            id: usersArray[usersArray.length-1].id+1,
             first_name: req.body.nombre,
             last_name: req.body.apellido,
             email: req.body.email,
@@ -22,13 +22,12 @@ module.exports = {
         }
         usersArray.push(usuario);
         fs.writeFileSync('users.json',JSON.stringify(usersArray));
-        res.send(req.body);
+        return res.redirect('/login');
         } else {
-            res.send("Las contraseñas no coinciden");
+            return res.send("Las contraseñas no coinciden");
         };
-        next();
     },
     cart: function (req, res) {
-        res.render('./users/carrito');
+        return res.render('./users/carrito');
     },   
 }

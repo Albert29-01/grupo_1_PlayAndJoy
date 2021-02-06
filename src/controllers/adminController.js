@@ -5,17 +5,22 @@ let suscriptionsArray = JSON.parse(fs.readFileSync('suscriptions.json',{encoding
 module.exports = {
     vistaProd: function (req, res){
         res.render ('./admin/adminProduct', {
-            product: req.params,
+            product: req.params.idProduct,
         });
     },
     formCargaP: function (req, res){
         res.render ('./admin/cargaProducto');
     },
     formEditP: function(req,res) {
-        res.render ('./admin/cargaProducto',{
-            metodo: "PUT",
-            producto: undefined,//acá recuperaríamos los datos del producto que queremos editar
-        });
+        for (let i=0; i<productsArray.length; i++){
+            if(productsArray[i].id == req.params.idProduct){
+                res.render ('./admin/cargaProducto',{
+                    metodo: "PUT",
+                    producto: productsArray[i],//acá recuperaríamos los datos del producto que queremos editar
+                });
+            }
+        }
+        res.send ('Producto no encontrado');
     },
     deleteProd: function (req, res){
         res.render ('/lalala'); //acá enviaríamos los datos del producto eliminado
@@ -28,17 +33,13 @@ module.exports = {
     },
     cargaProduct:function(req,res){
         let producto = {
-            id: productsArray.length+1,
-            nombreProducto: req.body.nombreProducto,
-            detalle: req.body.detalle,
-            precio: req.body.precio,
-            imagen: req.files[0].imagen,
-            categoria: req.body.categoria,
-            infoAd: req.body.infoAd,
+            id: productsArray[productsArray.length-1].id+1,
+            ...req.body,
+            imagen: req.files[0].filename,
         }
         productsArray.push(producto);
         fs.writeFileSync('products.json',JSON.stringify(productsArray));
-        res.redirect('/admin/admin/'+(productsArray.length));//MUESTRA LA VISTA DEL ÚLTIMO PRODUCTO CARGADO
+        res.redirect('/admin/admin/'+productsArray[productsArray.length-1].id);//MUESTRA LA VISTA DEL ÚLTIMO PRODUCTO CARGADO
     },
     cargaSuscription:function(req,res){
         let suscription = {

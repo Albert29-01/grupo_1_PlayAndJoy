@@ -3,25 +3,28 @@
     <%- include('../partials/head')%>
 <body>
     <%- include('../partials/header')%>
-    <form action="/admin/cargaProducto/<%= //typeof producto.id != "undefined"? producto.id + "?_method=" + metodo : null %> " method="POST" class="carga" enctype="multipart/form-data">
+    <form action="/admin/cargaProducto/<%=typeof producto != "undefined"? producto.id + "?_method=" + metodo : null %> " method="POST" class="carga" enctype="multipart/form-data">
         <h1 class="carga">Carga de Producto</h1>
         <label for="nombreProducto">Nombre del Producto</label>
-        <input type="text" id="nombreProducto" name="nombreProducto" required>
+        <input type="text" id="nombreProducto" name="nombreProducto" required value="<%=typeof producto != "undefined"? producto.nombreProducto: null%>">
         <label for="precio">Precio</label>
-        <input type="number" id="precio" name="precio" required>
+        <input type="number" id="precio" name="precio" required value="<%=typeof producto != "undefined"? producto.precio: null%>">
         <label for="categoria">Categoria</label>
         <select name="categoria" id="categoria" required>
-            <option value="Vn">Vino</option>
-            <option value="Mu">Música</option>
-            <option value="Li">Libro</option>
-            <option value="Ca">Café</option>
+            <option value="Vn" <%=typeof producto != "undefined" && producto.categoria == "Vn"? "selected": null%>>Vino</option>
+            <option value="Mu" <%=typeof producto != "undefined" && producto.categoria == "Mu"? "selected": null%>>Música</option>
+            <option value="Li" <%=typeof producto != "undefined" && producto.categoria == "Li"? "selected": null%>>Libro</option>
+            <option value="Ca" <%=typeof producto != "undefined" && producto.categoria == "Ca"? "selected": null%>>Café</option>
         </select>
         <label for="detalle">Detalle</label>
-        <textarea name=“detalle” id="detalle" rows="3" required></textarea>
+        <textarea name="detalle" id="detalle" rows="3" required><%=typeof producto != "undefined"? producto.detalle: null%></textarea>
         <label for="imagen">Imágen</label>
+        <% if (typeof producto != "undefined"){ %> 
+        <img src="/img/uploads/products/<%=producto.imagen %> " alt="">
+        <% } %> 
         <input type="file" id="imagen" name="imagen" required>
         <label for="infoAd">Información Adicional</label>
-        <textarea name="infoAd" id="infoAd" rows="5"></textarea>
+        <textarea name="infoAd" id="infoAd" rows="5"><%=typeof producto != "undefined"? producto.infoAd: null%></textarea>
         <div>
         <button type=“submit” class="carga">CARGAR</button>
         <button type=“reset” class="reset"><img src="/img/basura2.png" alt="tacho de basura"></button>

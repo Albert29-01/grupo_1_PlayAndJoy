@@ -4,7 +4,7 @@ const multer = require('multer');
 const router = express.Router();
 const usersController = require ('../controllers/usersController');
 
-var storage = multer.diskStorage({
+var storage = multer.diskStorage({ //ver que no se cargue la imagen si hay errores en el formulario
     destination: function (req, file, cb) {
       cb(null, path.join(__dirname,'../../public/img/uploads/avatars'));
     },
