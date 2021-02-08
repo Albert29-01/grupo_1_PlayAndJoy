@@ -1,22 +1,21 @@
-# LA RETROSPECTIVA SPRINT 2
+# LA RETROSPECTIVA SPRINT 3
 
 
 ### Comenzar a hacer:
 
-  Nuestro grupo para este sprint llegó a un acuerdo en la división de tareas, asi cada uno tenia diferentes vistas para maquetar. Decidimos implementar Parallax en el index y siempre probando cosas nuevas. 
+  Para este sprint cambiamos la metodología de trabajo e hicimos uso de la herramienta LIVE SHARE del VSCode para poder avanzar de forma colaborativa.
 
 ### Hacer más:
 
-  A través del nuestro canal de Discord compartimos mucha información, videos, tutoriales de ayuda y eso fue importante para el avance del proyecto. 
+  Investigar más sobre UX. Creemos que en este momento es nuestro punto más flaco.
 
 ### Continuar haciendo:
 
-  En concordancia con el sprint anterior, seguimos firmes en que la clave son las reuniones, ya que tenemos un dialogo bastante fluido y ameno. Debatimos ideas y realizamos el armado de nuestro tablero de trabajo.
-  Tambien es fundamental la comunicación en cuanto a los cambios que vamos realizando en el repositorio.
-  
-  Seguir equivocándonos. A lo largo de estos 2 sprints, hemos metido mucho la pata y eso fue uno de los puntos que más nos enseñó
+  Como mencionáramos anteriormente, creemos que una de las mejores ideas que tuvimos fue complementar las reuniones diarias con la utilización del Live Share ya que nos permitió mejorar la absorción y puesta en práctica de los conocimientos.
+
+  Juntos avanzamos en el proyecto, googleamos las dudas y discutimos acerca de la mejor manera de implementar aquellos que queríamos.
 
 			
 ### Conlusión:
 
-  En conclusión, tenemos una dinámica de grupo bastante buena. Cada vez con un poco más de confianza y siempre apoyándonos para poder sacar el proyecto adelante. 
+  En conclusión, seguimos creciendo como equipo y desafíandonos constantemente. Eso hace que estemos muy conformes con los resultados obtenidos al momento. 
