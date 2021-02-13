@@ -1,5 +1,5 @@
 const fs = require('fs');
-const bcrypt = require ('bcrypt');
+const bcrypt = require ('bcryptjs');
 let usersArray = JSON.parse(fs.readFileSync('users.json',{encoding:'utf-8'}));
 
 module.exports = {
