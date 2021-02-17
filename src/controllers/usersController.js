@@ -1,6 +1,8 @@
 const fs = require('fs');
 const bcrypt = require ('bcryptjs');
-let usersArray = JSON.parse(fs.readFileSync('users.json',{encoding:'utf-8'}));
+const path = require ('path');
+const route = path.join (__dirname, '../users.json');
+let usersArray = JSON.parse(fs.readFileSync(route,{encoding:'utf-8'}));
 
 module.exports = {
     login: function (req, res) {
@@ -21,7 +23,7 @@ module.exports = {
             birth_date: req.body.date,
         }
         usersArray.push(usuario);
-        fs.writeFileSync('users.json',JSON.stringify(usersArray));
+        fs.writeFileSync(route,JSON.stringify(usersArray));
         return res.redirect('/login');
         } else {
             return res.send("Las contraseñas no coinciden");
