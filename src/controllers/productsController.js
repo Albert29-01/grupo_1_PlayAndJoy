@@ -1,5 +1,9 @@
 const fs = require ('fs');
-let productsArray = JSON.parse(fs.readFileSync('products.json',{encoding:'utf-8'}));
+const path = require ('path');
+const rutaProduct = path.join(__dirname, '../products.json');
+
+
+let productsArray = JSON.parse(fs.readFileSync(rutaProduct,{encoding:'utf-8'}));
 
 module.exports = {
     list: function (req, res){

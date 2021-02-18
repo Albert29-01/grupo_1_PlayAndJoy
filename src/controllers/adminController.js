@@ -1,6 +1,11 @@
 const fs = require ('fs');
-let productsArray = JSON.parse(fs.readFileSync('products.json',{encoding:'utf-8'}));
-let suscriptionsArray = JSON.parse(fs.readFileSync('suscriptions.json',{encoding:'utf-8'}));
+const path = require ('path');
+const rutaProduct = path.join(__dirname, '../products.json');
+const rutaSuscriptions = path.join(__dirname, '../suscriptions.json');
+
+
+let productsArray = JSON.parse(fs.readFileSync(rutaProduct,{encoding:'utf-8'}));
+let suscriptionsArray = JSON.parse(fs.readFileSync(rutaSuscriptions,{encoding:'utf-8'}));
 
 module.exports = {
     vistaProd: function (req, res){
@@ -38,7 +43,7 @@ module.exports = {
             imagen: req.files[0].filename,
         }
         productsArray.push(producto);
-        fs.writeFileSync('products.json',JSON.stringify(productsArray));
+        fs.writeFileSync(rutaProduct,JSON.stringify(productsArray));
         res.redirect('/admin/admin/'+productsArray[productsArray.length-1].id);//MUESTRA LA VISTA DEL ÚLTIMO PRODUCTO CARGADO
     },
     cargaSuscription:function(req,res){
@@ -52,7 +57,7 @@ module.exports = {
         }
         console.log(req.body);
         suscriptionsArray.push(suscription);
-        fs.writeFileSync('suscriptions.json',JSON.stringify(suscriptionsArray));
+        fs.writeFileSync(rutaSuscriptions,JSON.stringify(suscriptionsArray));
         res.redirect('/suscriptions/'+(suscriptionsArray.length));//MUESTRA LA VISTA DE LA ÚLTIMA SUSCRIPCIÓN CARGADA
     },
 }
