@@ -6,7 +6,29 @@ let usersArray = JSON.parse(fs.readFileSync(route,{encoding:'utf-8'}));
 
 module.exports = {
     login: function (req, res) {
-        return res.render('./users/login');
+        return res.render('./users/login', {
+            errors: undefined,
+        });
+    },
+    session: function (req, res) {
+        let usuarioLogueado = undefined;
+       for (let i = 0; i < usersArray.length; i++) {
+            if(usersArray[i].email == req.body.email){
+                if(bcrypt.compareSync(req.body.password,usersArray[i].password)){
+                    usuarioLogueado = usersArray[i];
+                    break;
+                }
+            } 
+        }
+        if ( usuarioLogueado == undefined) {
+            return res.render('./users/login', {
+                errors: [
+                    {msg: 'Mail o contraseña incorrectas'}
+                ]
+            });
+        }
+       req.session.usuarioLogueado = usuarioLogueado;
+       return res.redirect('/');
     },
     register: function (req, res) {
         return res.render('./users/registro');
@@ -24,7 +46,7 @@ module.exports = {
         }
         usersArray.push(usuario);
         fs.writeFileSync(route,JSON.stringify(usersArray));
-        return res.redirect('/login');
+        return res.redirect('/users/login');
         } else {
             return res.send("Las contraseñas no coinciden");
         };

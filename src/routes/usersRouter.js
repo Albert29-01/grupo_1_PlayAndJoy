@@ -3,6 +3,7 @@ const path = require('path');
 const multer = require('multer');
 const router = express.Router();
 const usersController = require ('../controllers/usersController');
+const guestMiddlewares = require ('../middlewares/guestMiddlewares');
 
 var storage = multer.diskStorage({ //ver que no se cargue la imagen si hay errores en el formulario
     destination: function (req, file, cb) {
@@ -17,8 +18,9 @@ var upload = multer({ storage: storage });
 
 
 router.get('/login', usersController.login);
+router.post('/login',usersController.session);
 
-router.get('/register',usersController.register);
+router.get('/register', guestMiddlewares,usersController.register);
 router.post('/register',upload.any(),usersController.crearCuenta);
 
 
