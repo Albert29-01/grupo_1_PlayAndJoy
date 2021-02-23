@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head')%>
+<body>
+    <%- include('./partials/header') %>
+    <section>
+        <ul>
+            <li><a href="">Datos personales</a></li>
+            <li><a href="">Cambiar contraseña</a></li>
+            <li><a href="">Mis pedidos</a></li>
+            <li><a href="">Contacto</a></li>
+            <li><a href="">Cerrar sesión</a></li>
+        </ul>
+    </section>
+    <section class="formEditInfoPersonal">
+        <form action="/users/editProfile/<%=user.id %>?_method=PUT" method="POST" class="register" enctype="multipart/form-data">
+            <label for="avatar">Avatar</label>
+            <% if (typeof user != undefined ){ %> 
+                <img src="/img/uploads/products/<%=user.imagen %> " alt="">
+                <% } %> 
+            <input class="campo" type="file" id="avatar" name="avatar">
+            <label for="nombre">Nombre</label value="<%=user.first_name %>">
+            <input class="campo" type="text" id="nombre" name="nombre" required>
+            <label for="apellido">Apellido</label>
+            <input class="campo" type="text" id="apellido" name="apellido" value="<%=user.last_name %>" required>
+        <div class="date">
+            <label for="fecha">Fecha de nacimiento</label>
+            <input class="campo" type="date" id="date" name="date" required>
+        </div>
+            <label for="domicilio">Domicilio</label>
+            <input class="campo" type="text" id="domicilio" name="domicilio" value="<%=user.domicilio %>"required>
+        <section class="localidadProvincia">
+            <div class="localidad">
+                <label for="localidad">Localidad</label>
+                <input type="text" id="localidad" name="localidad" value="<%=user.localidad %>" required>
+            </div>
+            <div>
+                <label for="provincia">Provincia</label>
+                <input type="text" id="provincia" name="provincia" value="<%=user.provincia %>" required>
+            </div>
+        </section>
+            <label for="email">E-mail</label>
+            <input class="campo" type="email" id="email" name="email" value="<%=user.email %>" required>
+            <button type="submit" class="carga">GUARDAR</button>
+        </form>
+    </section>
+    <hr>
+    <h1 class="titulo">Más Vendidos</h1>
+    <%- include('./partials/sectionProducts') %>
+    <%- include('./partials/footer') %>
+</body>
+</html>

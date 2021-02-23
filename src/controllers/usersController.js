@@ -30,6 +30,20 @@ module.exports = {
        req.session.usuarioLogueado = usuarioLogueado;
        return res.redirect('/');
     },
+    profile: function (req, res) {
+        return res.render('./users/profile',{
+            user: req.session.usuarioLogueado,
+        });
+    },
+    editProfile: function (req, res) {
+        for (let i=0; i<usersArray.length; i++){
+            if(usersArray[i].id == req.params.idUser){
+                res.render ('./users/editProfile',{
+                    user: usersArray[i],//acá recuperaríamos los datos del producto que queremos editar
+                });
+            }
+        }
+    },
     register: function (req, res) {
         return res.render('./users/registro');
     },
@@ -43,6 +57,9 @@ module.exports = {
             password: bcrypt.hashSync(req.body.password, 12),
             imagen: req.files[0].filename,
             birth_date: req.body.date,
+            domicilio: req.body.domicilio,
+            localidad: req.body.localidad,
+            provincia: req.body.provincia,
         }
         usersArray.push(usuario);
         fs.writeFileSync(route,JSON.stringify(usersArray));

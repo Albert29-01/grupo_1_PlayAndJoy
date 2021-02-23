@@ -1,8 +1,8 @@
 function guestMiddlewares(req, res, next){
-    if(typeof req.session.usuarioLogueado == undefined){
+    if(req.session.usuarioLogueado == undefined){
         next()
     } else {
-        res.redirect('/users/login');
+        res.redirect('/users/profile');
     }
 }
 module.exports = guestMiddlewares;

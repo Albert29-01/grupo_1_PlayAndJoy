@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head')%>
+<body>
+    <%- include('../partials/header') %>
+    <section>
+        <ul>
+            <li><a href="">Datos personales</a></li>
+            <li><a href="">Cambiar contraseña</a></li>
+            <li><a href="">Mis pedidos</a></li>
+            <li><a href="">Contacto</a></li>
+            <li><a href="">Cerrar sesión</a></li>
+        </ul>
+    </section>
+    <section class="formEditInfoPersonal">
+        <form action="/users/register" method="POST" class="register" enctype="multipart/form-data">
+            <label for="avatar">Avatar</label>
+            <% if (typeof user != "undefined"){ %> 
+                <img src="/img/uploads/avatars/<%=user.imagen %> " height="200" width="200" alt="">
+                <% } %> 
+            <label for="nombre">Nombre</label>
+            <p class="campo"> <%=user.first_name %></p>
+            <label for="apellido">Apellido</label>
+            <p class="campo"><%=user.last_name %></p>
+            <label for="domicilio">Domicilio</label>
+            <p class="campo"><%=user.domicilio %></p>
+            <div class="localidad">
+                <label for="localidad">Localidad</label>
+                <p><%=user.localidad %></p>
+            </div>
+            <div>
+                <label for="provincia">Provincia</label>
+                <p><%=user.provincia %></p>
+            </div>
+            <label for="email">E-mail</label>
+            <p class="campo"><%=user.email %></p>
+            <label for="password">Contraseña</label>
+            <p class="campo"><%=user.password %></p>
+            <a href="/users/editProfile/<%= user.id %>"><button type=“button” class="carga">EDITAR</button></a> 
+        </form>
+    </section>
+    <hr>
+    <h1 class="titulo">Más Vendidos</h1>
+    <%- include('../partials/sectionProducts') %>
+    <%- include('../partials/footer') %>
+</body>
+</html>
