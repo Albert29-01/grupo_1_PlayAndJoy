@@ -37,10 +37,10 @@ module.exports = function(sequelize, dataTypes){
     const Suscripcion= sequelize.define (alias, cols, config);
     
     Suscripcion.associate = function(models){
-        Suscripcion.belongsTo(models.categoria, {as:"categoria", foreignKey:"id_categoria"});
+        Suscripcion.belongsTo(models.Categoria, {as:"categoria", foreignKey:"id_categoria"});
     };
 
-    Suscripcion.associate = function(models){
+    /*Suscripcion.associate = function(models){
         Suscripcion.belongsToMany(models.suscripcion, 
             { as: "suscripciones",
             through: "ventas_suscripciones",
@@ -49,6 +49,6 @@ module.exports = function(sequelize, dataTypes){
             timesTamps: true,
             underscored: true
         });
-    }
+    }*/
     return Suscripcion
 }

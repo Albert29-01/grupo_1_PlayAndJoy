@@ -27,6 +27,17 @@ module.exports = function(sequelize, dataTypes){
     }
 
     const Venta = sequelize.define (alias, cols, config);
+
+    /*Producto.associate = function(models){
+        Producto.belongsToMany(models.producto, 
+            { as: "productos",
+            through: "ventas_productos",
+            foreignKey: "id_producto",
+            otherKey: "id_usuario",
+            timesTamps: true,
+            underscored: true
+        });
+    }*/
     
     return Venta
 }

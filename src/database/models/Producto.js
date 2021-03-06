@@ -49,10 +49,13 @@ module.exports = function(sequelize, dataTypes){
     const Producto = sequelize.define (alias, cols, config);
     
     Producto.associate = function(models){
-        Producto.belongsTo(models.categoria, {as:"categoria", foreignKey:"id_categoria"});
+        Producto.belongsTo(models.Categoria, {
+            as:"categorias", 
+            foreignKey:"id_categoria"
+        });
     };
 
-    Producto.associate = function(models){
+    /*Producto.associate = function(models){
         Producto.belongsToMany(models.producto, 
             { as: "productos",
             through: "ventas_productos",
@@ -61,6 +64,6 @@ module.exports = function(sequelize, dataTypes){
             timesTamps: true,
             underscored: true
         });
-    }
-    return Producto
+    }*/
+    return Producto;
 }

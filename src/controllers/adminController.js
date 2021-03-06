@@ -1,5 +1,6 @@
 const fs = require ('fs');
 const path = require ('path');
+const db = require ('../database/models/index');
 const rutaProduct = path.join(__dirname, '../products.json');
 const rutaSuscriptions = path.join(__dirname, '../suscriptions.json');
 
@@ -17,7 +18,18 @@ module.exports = {
         res.render ('./admin/cargaProducto');
     },
     formEditP: function(req,res) {
-        for (let i=0; i<productsArray.length; i++){
+        db.Producto.findByPk({
+            where: {
+                id: req.params.idProduct
+            }
+        })
+        .then(function(resultado){
+            res.render ('./admin/cargaProducto',{
+                metodo: "PUT",
+                producto: resultado,//acá recuperaríamos los datos del producto que queremos editar
+            });
+        })
+        /*for (let i=0; i<productsArray.length; i++){
             if(productsArray[i].id == req.params.idProduct){
                 res.render ('./admin/cargaProducto',{
                     metodo: "PUT",
@@ -25,7 +37,7 @@ module.exports = {
                 });
             }
         }
-        res.send ('Producto no encontrado');
+        res.send ('Producto no encontrado');*/
     },
     deleteProd: function (req, res){
         res.render ('/lalala'); //acá enviaríamos los datos del producto eliminado
@@ -37,14 +49,25 @@ module.exports = {
         res.render ('/lalala'); //acá enviaríamos los datos del producto editado
     },
     cargaProduct:function(req,res){
-        let producto = {
+        db.Producto.create({
+            nombre: req.body.nombreProducto,
+            precio: req.body.precio,
+            detalle: req.body.detalle,
+            info_ad: req.body.infoAd,
+            imagen: req.files[0].filename,
+            id_categoria: req.body.categoria
+        })
+        .then(function(resultado){
+            res.redirect('/admin/admin/'+resultado.id)
+        })
+        /*let producto = {
             id: productsArray[productsArray.length-1].id+1,
             ...req.body,
             imagen: req.files[0].filename,
         }
         productsArray.push(producto);
         fs.writeFileSync(rutaProduct,JSON.stringify(productsArray));
-        res.redirect('/admin/admin/'+productsArray[productsArray.length-1].id);//MUESTRA LA VISTA DEL ÚLTIMO PRODUCTO CARGADO
+        res.redirect('/admin/admin/'+productsArray[productsArray.length-1].id);//MUESTRA LA VISTA DEL ÚLTIMO PRODUCTO CARGADO*/
     },
     cargaSuscription:function(req,res){
         let suscription = {

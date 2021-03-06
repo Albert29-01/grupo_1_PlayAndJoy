@@ -55,7 +55,7 @@ module.exports = function(sequelize, dataTypes){
        
     const Usuario = sequelize.define (alias, cols, config);
 
-    Usuario.associate = function(models){
+    /*Usuario.associate = function(models){
         Usuario.belongsToMany(models.usuario, 
             { as: "usuarios",
             through: "ventas_suscripciones",
@@ -75,7 +75,7 @@ module.exports = function(sequelize, dataTypes){
             timesTamps: true,
             underscored: true
         });
-    }
+    }*/
     
     return Usuario
 }
