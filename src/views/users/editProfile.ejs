@@ -16,7 +16,7 @@
         <form action="/users/editProfile/<%=user.id %>?_method=PUT" method="POST" class="register" enctype="multipart/form-data">
             <label for="avatar">Avatar</label>
             <% if (typeof user != undefined ){ %> 
-                <img src="/img/uploads/products/<%=user.imagen %> " alt="">
+                <img src="/img/uploads/avatars/<%=user.imagen %> " alt="">
                 <% } %> 
             <input class="campo" type="file" id="avatar" name="avatar">
             <label for="nombre">Nombre</label value="<%=user.first_name %>">
