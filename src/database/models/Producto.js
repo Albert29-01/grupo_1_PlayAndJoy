@@ -23,10 +23,6 @@ module.exports = function(sequelize, dataTypes){
         info_ad: {
             type: dataTypes.STRING(200)
         },
-        imagen: {
-            type: dataTypes.STRING(100),
-            notNull: true
-        },
         id_categoria: {
             type: dataTypes.INTEGER,
             notNull: true
@@ -54,6 +50,13 @@ module.exports = function(sequelize, dataTypes){
             foreignKey:"id_categoria"
         });
     };
+
+    Producto.associate = function(models){
+        Producto.hasMany(models.Image, {
+            as:"images", 
+            foreignKey:"id_product"
+        });
+    }  
 
     /*Producto.associate = function(models){
         Producto.belongsToMany(models.producto, 

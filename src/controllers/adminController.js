@@ -54,33 +54,31 @@ module.exports = {
             precio: req.body.precio,
             detalle: req.body.detalle,
             info_ad: req.body.infoAd,
-            imagen: req.files[0].filename,
             id_categoria: req.body.categoria
         })
         .then(function(resultado){
+            db.Image.create({
+                nombre: req.files[0].filename,
+                id_product: resultado.id
+            })
             res.redirect('/admin/admin/'+resultado.id)
         })
-        /*let producto = {
-            id: productsArray[productsArray.length-1].id+1,
-            ...req.body,
-            imagen: req.files[0].filename,
-        }
-        productsArray.push(producto);
-        fs.writeFileSync(rutaProduct,JSON.stringify(productsArray));
-        res.redirect('/admin/admin/'+productsArray[productsArray.length-1].id);//MUESTRA LA VISTA DEL ÚLTIMO PRODUCTO CARGADO*/
+        .catch(function(error){
+            console.log(error)
+        })
     },
     cargaSuscription:function(req,res){
-        let suscription = {
-            id: suscriptionsArray.length+1,
-            tipoSuscripcion: req.body.tipoSuscripcion,
-            detalle: req.body.detalle,
-            precio: req.body.precio,
-            imagen: req.body.imagen, //ver guardado de imagen
-            // ver recuperar datos checkbox
-        }
-        console.log(req.body);
-        suscriptionsArray.push(suscription);
-        fs.writeFileSync(rutaSuscriptions,JSON.stringify(suscriptionsArray));
-        res.redirect('/suscriptions/'+(suscriptionsArray.length));//MUESTRA LA VISTA DE LA ÚLTIMA SUSCRIPCIÓN CARGADA
+            db.Suscripcion.create({
+                tipoSuscripcion: req.body.tipoSuscripcion,
+                detalle: req.body.detalle,
+                precio: req.body.precio,
+                imagen: ""
+            })
+            .then(function(resultado){
+                res.redirect('/suscriptions/'+resultado.id)
+            })
+            .catch(function(error){
+                console.log(error)
+            })
     },
 }
