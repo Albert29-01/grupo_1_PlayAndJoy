@@ -10,19 +10,18 @@ let suscriptionsArray = JSON.parse(fs.readFileSync(rutaSuscriptions,{encoding:'u
 
 module.exports = {
     vistaProd: function (req, res){
-        res.render ('./admin/adminProduct', {
-            product: req.params.idProduct,
-        });
+        db.Producto.findByPk(req.params.idProduct)
+        .then(function(resultado){
+            res.render ('./admin/adminProduct', {
+                producto: resultado,
+            });
+        })
     },
     formCargaP: function (req, res){
         res.render ('./admin/cargaProducto');
     },
     formEditP: function(req,res) {
-        db.Producto.findByPk({
-            where: {
-                id: req.params.idProduct
-            }
-        })
+        db.Producto.findByPk(req.params.idProduct)
         .then(function(resultado){
             res.render ('./admin/cargaProducto',{
                 metodo: "PUT",

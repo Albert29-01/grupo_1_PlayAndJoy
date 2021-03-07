@@ -1,17 +1,29 @@
 const fs = require ('fs');
 const path = require ('path');
-const rutaProduct = path.join(__dirname, '../products.json');
+const db = require ('../database/models/index');
 
-
-let productsArray = JSON.parse(fs.readFileSync(rutaProduct,{encoding:'utf-8'}));
 
 module.exports = {
     list: function (req, res){
-        res.render ('./products/productList', {
-            productsArray: productsArray,
-        });
+        db.Producto.findAll({
+            where: {
+                deleted_at: null
+            },
+            include: ['images'] //no funciona la imagen
+        })
+        .then(function(resultado){
+            console.log("este es el resultado:",resultado)
+            res.render ('./products/productList', {
+                productsArray: resultado,
+            });
+        })
     },
     product: function (req, res){
-        res.render ('./products/product');
+        db.Producto.findByPk(req.params.idProduct)
+        .then(function(resultado){
+            res.render ('./products/product',{
+                producto: resultado,
+            });
+        })
     },
 }

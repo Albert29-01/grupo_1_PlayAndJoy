@@ -4,8 +4,8 @@
 <body>
     <%- include('../partials/header') %>
     <section class="detalleProd">
-        <a href="/admin/editProducto/<%= product  //falta el .id %>"><button type=“button” class="carga">EDITAR</button></a> 
-        <a href="/admin/deleteProducto/<%= product  //falta el .id %>"><button type=“button” class="carga">ELIMINAR</button></a>
+        <a href="/admin/editProducto/<%= producto.id %>"><button type=“button” class="carga">EDITAR</button></a> 
+        <a href="/admin/deleteProducto/<%= producto.id %>"><button type=“button” class="carga">ELIMINAR</button></a>
         <div class="images">
             <div class="principal">
                 <img src="/img/product.png" alt="producto">
@@ -17,8 +17,8 @@
             </div>
         </div>
         <article>
-            <h1>Nombre del Producto</h1>
-            <h2>$ Precio</h2>
+            <h1><%= producto.nombre %></h1>
+            <h2>$ <%= producto.precio %></h2>
             <div class="mediosDePago">
                 <img src="/img/Visa.png" alt="">
                 <img src="/img/Master.png" alt="">
@@ -27,7 +27,7 @@
                 <img src="/img/Diners.png" alt="">
             </div>
             <h3>Detalle</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptate similique impedit, repellendus, sint officia placeat, tempora error iusto labore molestiae quibusdam odio harum a at perferendis est maxime hic.</p>
+                <p><%= producto.detalle %></p>
             <form action="" method="POST">
                     <div>
                         <label>Cantidad</label>

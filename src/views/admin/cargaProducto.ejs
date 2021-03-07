@@ -6,7 +6,7 @@
     <form action="/admin/cargaProducto/<%=typeof producto != "undefined"? producto.id + "?_method=" + metodo : null %> " method="POST" class="carga" enctype="multipart/form-data">
         <h1 class="carga">Carga de Producto</h1>
         <label for="nombreProducto">Nombre del Producto</label>
-        <input type="text" id="nombreProducto" name="nombreProducto" required value="<%=typeof producto != "undefined"? producto.nombreProducto: null%>">
+        <input type="text" id="nombreProducto" name="nombreProducto" required value="<%=typeof producto != "undefined"? producto.nombre: null%>">
         <label for="precio">Precio</label>
         <input type="number" id="precio" name="precio" required value="<%=typeof producto != "undefined"? producto.precio: null%>">
         <label for="cantidad">Cantidad</label>
@@ -26,7 +26,7 @@
         <% } %> 
         <input type="file" id="imagen" name="imagen" required>
         <label for="infoAd">Información Adicional</label>
-        <textarea name="infoAd" id="infoAd" rows="5"><%=typeof producto != "undefined"? producto.infoAd: null%></textarea>
+        <textarea name="infoAd" id="infoAd" rows="5"><%=typeof producto != "undefined"? producto.info_ad: null%></textarea>
         <div>
         <button type=“submit” class="carga">CARGAR</button>
         <button type=“reset” class="reset"><img src="/img/basura2.png" alt="tacho de basura"></button>

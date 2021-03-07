@@ -6,7 +6,7 @@
     <section class="detalleProd">
         <div class="images">
             <div class="principal">
-                <img src="/img/product.png" alt="producto">
+                <img src="/img/uploads/products/" alt="producto">
             </div>
             <div class="miniatura">
                 <img src="/img/product1.png" alt="producto">
@@ -15,8 +15,8 @@
             </div>
         </div>
         <article>
-            <h1>Nombre del Producto</h1>
-            <h2>$ Precio</h2>
+            <h1><%=producto.nombre%></h1>
+            <h2>$<%=producto.precio%></h2>
             <div class="mediosDePago">
                 <img src="/img/Visa.png" alt="">
                 <img src="/img/Master.png" alt="">
@@ -25,7 +25,7 @@
                 <img src="/img/Diners.png" alt="">
             </div>
             <h3>Detalle</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptate similique impedit, repellendus, sint officia placeat, tempora error iusto labore molestiae quibusdam odio harum a at perferendis est maxime hic.</p>
+                <p><%=producto.detalle%></p>
             <form action="" method="POST">
                     <div>
                         <label>Cantidad</label>
@@ -61,6 +61,6 @@
     <hr>
     <h2 class="titulo">Productos Similares</h2>
     <%- include('../partials/sectionProducts') %>  
-    <%- include('../partials/footer') %>
+    <%- include('../partidals/footer') %>
 </body>
 </html>
