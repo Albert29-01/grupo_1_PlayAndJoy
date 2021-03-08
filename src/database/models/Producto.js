@@ -49,15 +49,11 @@ module.exports = function(sequelize, dataTypes){
             as:"categorias", 
             foreignKey:"id_categoria"
         });
-    };
-
-    Producto.associate = function(models){
         Producto.hasMany(models.Image, {
             as:"images", 
             foreignKey:"id_product",
-            targetKey: "id"
         });
-    }  
+    };
 
     /*Producto.associate = function(models){
         Producto.belongsToMany(models.producto, 
