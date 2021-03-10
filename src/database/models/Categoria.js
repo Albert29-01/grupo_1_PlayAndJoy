@@ -12,13 +12,10 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING(45),
             notNull: true
         },
-        deleted_at: {
-            type: dataTypes.DATE
-        }
     }
     let config = {
         tableName: 'categorias',
-        timestamps: true,
+        timestamps: false,
         underscored: true
     }
 
@@ -29,9 +26,6 @@ module.exports = function(sequelize, dataTypes){
             as:"productos", 
             foreignKey:"id_categoria"
         });
-    }
-
-    Categoria.associate = function(models){
         Categoria.hasMany(models.Suscripcion, {
             as:"suscripciones", 
             foreignKey:"id_categoria"

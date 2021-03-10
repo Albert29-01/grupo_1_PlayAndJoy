@@ -21,9 +21,9 @@ router.get('/cargaProducto', adminController.formCargaP);
 router.post('/cargaProducto',upload.any(), adminController.cargaProduct);
 
 router.get('/editProducto/:idProduct', adminController.formEditP);
-router.put('/editProducto/:idProduct', adminController.editProd);
+router.put('/cargaProducto/:idProduct',upload.any(), adminController.editProd);
 
-router.delete('/deleteProducto/:idProduct', adminController.deleteProd);
+router.get('/deleteProducto/:idProduct', adminController.deleteProd);
 
 router.get('/cargaSuscription', adminController.formCargaS);
 router.post('/cargaSuscription', adminController.cargaSuscription);

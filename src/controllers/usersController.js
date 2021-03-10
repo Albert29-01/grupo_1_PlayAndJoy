@@ -1,8 +1,6 @@
-const fs = require('fs');
 const bcrypt = require ('bcryptjs');
 const path = require ('path');
-const route = path.join (__dirname, '../users.json');
-let usersArray = JSON.parse(fs.readFileSync(route,{encoding:'utf-8'}));
+const db = require ('../database/models/index')
 
 module.exports = {
     login: function (req, res) {
@@ -12,7 +10,7 @@ module.exports = {
     },
     session: function (req, res) {
         let usuarioLogueado = undefined;
-       for (let i = 0; i < usersArray.length; i++) {
+        for (let i = 0; i < usersArray.length; i++) {
             if(usersArray[i].email == req.body.email){
                 if(bcrypt.compareSync(req.body.password,usersArray[i].password)){
                     usuarioLogueado = usersArray[i];
@@ -27,8 +25,8 @@ module.exports = {
                 ]
             });
         }
-       req.session.usuarioLogueado = usuarioLogueado;
-       return res.redirect('/');
+        req.session.usuarioLogueado = usuarioLogueado;
+        return res.redirect('/');
     },
     profile: function (req, res) {
         return res.render('./users/profile',{
@@ -45,30 +43,54 @@ module.exports = {
         }
     },
     register: function (req, res) {
-        return res.render('./users/registro');
+        return res.render('./users/registro',{
+            errors: undefined
+        });
     },
     crearCuenta: function(req,res,next){
-        if (req.body.password == req.body.passwordConfirm){
-        let usuario = {
-            id: usersArray[usersArray.length-1].id+1,
-            first_name: req.body.nombre,
-            last_name: req.body.apellido,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 12),
-            imagen: req.files[0].filename,
-            birth_date: req.body.date,
-            domicilio: req.body.domicilio,
-            localidad: req.body.localidad,
-            provincia: req.body.provincia,
-        }
-        usersArray.push(usuario);
-        fs.writeFileSync(route,JSON.stringify(usersArray));
-        return res.redirect('/users/login');
+        if (req.body.password == req.body.passwordConfirm){ 
+            db.Usuario.findOrCreate({
+                where: {
+                    email: req.body.email,
+                },
+                defaults: {
+                    first_name: req.body.nombre,
+                    last_name: req.body.apellido,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 12),
+                    imagen: req.files[0].filename,
+                    birth_date: req.body.date,
+                    domicilio: req.body.domicilio,
+                    localidad: req.body.localidad,
+                    provincia: req.body.provincia,
+                }
+            })
+            .then (function(resultado){
+                if(!resultado[1]){
+                    return res.render('./users/registro', {
+                        errors: [ 
+                            {
+                                errors:
+                                {msg: "Usuario ya existente"},
+                            }
+                        ]
+                    })
+                } else {
+                    return res.redirect('/users/login')
+                }
+            })
         } else {
-            return res.send("Las contraseñas no coinciden");
-        };
-    },
-    cart: function (req, res) {
-        return res.render('./users/carrito');
-    },   
+            return res.render('./users/registro', {
+                errors: [ 
+                    {
+                        errors:
+                        {msg: "Las contraseñas no coinciden"},
+                    }
+                ]
+            })
+        }
+},
+cart: function (req, res) {
+    return res.render('./users/carrito');
+},   
 }

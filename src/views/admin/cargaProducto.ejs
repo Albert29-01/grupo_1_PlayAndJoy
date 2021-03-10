@@ -13,10 +13,16 @@
         <input type="number" id="cantidad" name="cantidad" required value="<%=typeof producto != "undefined"? producto.stock: null%>">
         <label for="categoria">Categoria</label>
         <select name="categoria" id="categoria" required>
-            <option value="Vn" <%=typeof producto != "undefined" && producto.categoria == "Vn"? "selected": null%>>Vino</option>
-            <option value="Mu" <%=typeof producto != "undefined" && producto.categoria == "Mu"? "selected": null%>>Música</option>
-            <option value="Li" <%=typeof producto != "undefined" && producto.categoria == "Li"? "selected": null%>>Libro</option>
-            <option value="Ca" <%=typeof producto != "undefined" && producto.categoria == "Ca"? "selected": null%>>Café</option>
+            <% if (typeof categorias != "undefined") {%> 
+            <% for(let i=0; i< categorias.length; i++) {%> 
+            <option value=<%=categorias[i].id %>><%=categorias[i].nombre %></option>
+            <% } %> 
+            <% } else {%>
+            <option value=<%=producto.id_categoria%>  <%=typeof producto != "undefined" && producto.id_categoria == 1 ? "selected": null%>>Vino</option>
+            <option value=<%=producto.id_categoria%>  <%=typeof producto != "undefined" && producto.id_categoria == 2 ? "selected": null%>>Café</option>
+            <option value=<%=producto.id_categoria%> <%=typeof producto != "undefined" && producto.id_categoria == 3 ? "selected": null%>>Música</option>
+            <option value=<%=producto.id_categoria%>  <%=typeof producto != "undefined" && producto.id_categoria == 4 ? "selected": null%>>Libro</option>
+                <% } %> 
         </select>
         <label for="detalle">Detalle</label>
         <textarea name="detalle" id="detalle" rows="3" required><%=typeof producto != "undefined"? producto.detalle: null%></textarea>

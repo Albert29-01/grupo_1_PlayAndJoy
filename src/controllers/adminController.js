@@ -1,12 +1,7 @@
 const fs = require ('fs');
 const path = require ('path');
+/*const { DATE } = require('sequelize/types');*/
 const db = require ('../database/models/index');
-const rutaProduct = path.join(__dirname, '../products.json');
-const rutaSuscriptions = path.join(__dirname, '../suscriptions.json');
-
-
-let productsArray = JSON.parse(fs.readFileSync(rutaProduct,{encoding:'utf-8'}));
-let suscriptionsArray = JSON.parse(fs.readFileSync(rutaSuscriptions,{encoding:'utf-8'}));
 
 module.exports = {
     vistaProd: function (req, res){
@@ -18,7 +13,12 @@ module.exports = {
         })
     },
     formCargaP: function (req, res){
-        res.render ('./admin/cargaProducto');
+        db.Categoria.findAll()
+        .then(function(categorias){
+            return res.render ('./admin/cargaProducto',{
+                categorias
+            });
+        })
     },
     formEditP: function(req,res) {
         db.Producto.findByPk(req.params.idProduct)
@@ -28,30 +28,48 @@ module.exports = {
                 producto: resultado,//acá recuperaríamos los datos del producto que queremos editar
             });
         })
-        /*for (let i=0; i<productsArray.length; i++){
-            if(productsArray[i].id == req.params.idProduct){
-                res.render ('./admin/cargaProducto',{
-                    metodo: "PUT",
-                    producto: productsArray[i],//acá recuperaríamos los datos del producto que queremos editar
-                });
-            }
-        }
-        res.send ('Producto no encontrado');*/
     },
     deleteProd: function (req, res){
-        res.render ('/lalala'); //acá enviaríamos los datos del producto eliminado
+        db.Producto.update({
+            deleted_at: Date.now()
+        },{
+            where: {
+                id:req.params.idProduct,
+            }
+        })
+        return res.send("Producto " + req.params.idProduct + " eliminado con éxito!"); //acá enviaríamos los datos del producto eliminado
     },
     formCargaS: function (req, res){
         res.render ('./admin/cargaSuscripcion');
     },
     editProd: function (req, res){
-        res.render ('/lalala'); //acá enviaríamos los datos del producto editado
+        db.Producto.update({
+            nombre: req.body.nombreProducto,
+            precio: req.body.precio,
+            detalle: req.body.detalle,
+            stock: req.body.cantidad,
+            info_ad: req.body.infoAd,
+            id_categoria: req.body.categoria // no funciona la edición de categoria
+        },{
+            where: {
+                id:req.params.idProduct,
+            }
+        })
+        db.Image.update({
+            nombre: req.files[0].filename,
+        },{
+            where: {
+                id_product: req.params.idProduct
+            }
+        })
+        return res.send("Producto " + req.params.idProduct + " actualizado con éxito!");
     },
     cargaProduct:function(req,res){
         db.Producto.create({
             nombre: req.body.nombreProducto,
             precio: req.body.precio,
             detalle: req.body.detalle,
+            stock: req.body.cantidad,
             info_ad: req.body.infoAd,
             id_categoria: req.body.categoria
         })
