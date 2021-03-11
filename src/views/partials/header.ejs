@@ -9,7 +9,7 @@
                 <% if( typeof usuarioLogueado == "undefined") {%> 
                 <li><a href="/users/login" class="ingresar">Ingresar</a></li>
                 <% } else { %> 
-                    <li><a href="/users/profile" class="ingresar">Mi Cuenta</a></li>
+                    <li><a href="/users/profile/<%=usuarioLogueado.id %>" class="ingresar">Mi Cuenta</a></li>
                 <% } %> 
                 <li><input type="checkbox" id="burger">
                     <label for="burger" class="hidden"><img src="/img/mobileMenu.png" alt="burger"></label>
@@ -17,7 +17,7 @@
                         <% if( typeof usuarioLogueado == "undefined") {%> 
                             <li><a href="/users/login">Ingresar</a></li>
                             <% } else { %> 
-                                <li><a href="/users/profile">Mi Cuenta</a></li>
+                                <li><a href="/users/profile/<%=usuarioLogueado.id %>">Mi Cuenta</a></li>
                             <% } %>
                         <li><a href="/">Home</a></li>
                         <li><input type="checkbox" id="suscrip">

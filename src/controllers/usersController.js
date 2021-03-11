@@ -46,7 +46,12 @@ module.exports = {
             user: req.session.usuarioLogueado,
         });
     },
-    editProfile: function (req, res) { //TODAVIA NO FUNCIONA LA EDICION DE USUARIO
+    editProfile: function (req, res) { 
+        return res.render('./users/editProfile',{
+            user: req.session.usuarioLogueado,
+        });
+    },
+    updateProfile: function (req, res) {
         db.Usuario.update({
             first_name: req.body.nombre,
             last_name: req.body.apellido,

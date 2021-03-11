@@ -21,9 +21,10 @@ var upload = multer({ storage: storage });
 router.get('/login',guestMiddlewares,usersController.login);
 router.post('/login',usersController.session);
 
-router.get('/profile/:idUser',authMiddlewares,usersController.profile);
 router.get('/profile/:idUser/logout',authMiddlewares,usersController.logout);
-router.get('/editProfile/:idUser',authMiddlewares,usersController.editProfile);
+router.get('/profile/:idUser/editProfile',authMiddlewares,usersController.editProfile);
+router.put('/profile/:idUser/editProfile',authMiddlewares,usersController.updateProfile);
+router.get('/profile/:idUser',authMiddlewares,usersController.profile);
 
 router.get('/register',guestMiddlewares,usersController.register);
 router.post('/register',upload.any(),usersController.crearCuenta);
