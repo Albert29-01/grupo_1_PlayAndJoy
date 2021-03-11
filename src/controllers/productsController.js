@@ -9,10 +9,9 @@ module.exports = {
             where: {
                 deleted_at: null
             },
-            include: ['images'] //no funciona la imagen
+            include: ['images']
         })
         .then(function(resultado){
-            console.log("este es el resultado:",resultado)
             res.render ('./products/productList', {
                 productsArray: resultado,
             });

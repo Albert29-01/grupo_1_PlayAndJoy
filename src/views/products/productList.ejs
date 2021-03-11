@@ -7,7 +7,7 @@
     <section class="productList">
     <% for(let i=0; i < productsArray.length; i++){%>
         <article>
-            <a href="/product/<%=productsArray[i].id%>"><img src="/img/uploads/products/<%=productsArray[i].images%>"></a>
+            <a href="/product/<%=productsArray[i].id%>"><img width="200px" src="/img/uploads/products/<%= productsArray[i].images.length>0?productsArray[i].images[0].nombre: null%>"></a>
             <details>
                 <summary><%=productsArray[i].nombre %> </summary>
                 <p>$<%=productsArray[i].precio%></p>

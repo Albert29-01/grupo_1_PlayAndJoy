@@ -4,7 +4,7 @@ const multer = require('multer');
 const router = express.Router();
 const usersController = require ('../controllers/usersController');
 const guestMiddlewares = require ('../middlewares/guestMiddlewares');
-const authMiddlewares = require ('../middlewares/authMiddlewares')
+const authMiddlewares = require ('../middlewares/authMiddlewares');
 
 var storage = multer.diskStorage({ //ver que no se cargue la imagen si hay errores en el formulario
     destination: function (req, file, cb) {
@@ -21,7 +21,8 @@ var upload = multer({ storage: storage });
 router.get('/login',guestMiddlewares,usersController.login);
 router.post('/login',usersController.session);
 
-router.get('/profile',authMiddlewares,usersController.profile);
+router.get('/profile/:idUser',authMiddlewares,usersController.profile);
+router.get('/profile/:idUser/logout',authMiddlewares,usersController.logout);
 router.get('/editProfile/:idUser',authMiddlewares,usersController.editProfile);
 
 router.get('/register',guestMiddlewares,usersController.register);

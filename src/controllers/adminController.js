@@ -21,13 +21,17 @@ module.exports = {
         })
     },
     formEditP: function(req,res) {
-        db.Producto.findByPk(req.params.idProduct)
-        .then(function(resultado){
-            res.render ('./admin/cargaProducto',{
-                metodo: "PUT",
-                producto: resultado,//acá recuperaríamos los datos del producto que queremos editar
-            });
-        })
+        db.Categoria.findAll()
+        .then(function(categorias){
+            db.Producto.findByPk(req.params.idProduct)
+            .then(function(resultado){
+                res.render ('./admin/cargaProducto',{
+                    metodo: "PUT",
+                    producto: resultado,
+                    categorias//acá recuperaríamos los datos del producto que queremos editar
+                });
+            })
+        })        
     },
     deleteProd: function (req, res){
         db.Producto.update({
@@ -85,17 +89,17 @@ module.exports = {
         })
     },
     cargaSuscription:function(req,res){
-            db.Suscripcion.create({
-                tipoSuscripcion: req.body.tipoSuscripcion,
-                detalle: req.body.detalle,
-                precio: req.body.precio,
-                imagen: ""
-            })
-            .then(function(resultado){
-                res.redirect('/suscriptions/'+resultado.id)
-            })
-            .catch(function(error){
-                console.log(error)
-            })
+        db.Suscripcion.create({
+            tipoSuscripcion: req.body.tipoSuscripcion,
+            detalle: req.body.detalle,
+            precio: req.body.precio,
+            imagen: ""
+        })
+        .then(function(resultado){
+            res.redirect('/suscriptions/'+resultado.id)
+        })
+        .catch(function(error){
+            console.log(error)
+        })
     },
 }
