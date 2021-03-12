@@ -4,29 +4,25 @@
 <body>
     <%- include('../partials/header') %>
     <%- include('../partials/menuProfile') %>
-    <section class="formEditInfoPersonal">
-            <label for="avatar">Avatar</label>
+    <section class="infoPersonal">
+            <label>Avatar</label>
             <% if (typeof user != "undefined"){ %> 
-                <img src="/img/uploads/avatars/<%=user.imagen %> " height="200" width="200" alt="imagen de perfil del usuario">
+                <img src="/img/uploads/avatars/<%=user.imagen %> " height="200" width="auto" alt="imagen de perfil del usuario">
                 <% } %> 
-            <label for="nombre">Nombre</label>
-            <p class="campo"> <%=user.first_name %></p>
+            <label>Nombre</label>
+            <p> <%=user.first_name %></p>
             <label for="apellido">Apellido</label>
-            <p class="campo"><%=user.last_name %></p>
+            <p><%=user.last_name %></p>
             <label for="domicilio">Domicilio</label>
-            <p class="campo"><%=user.domicilio %></p>
-            <div class="localidad">
-                <label for="localidad">Localidad</label>
-                <p><%=user.localidad %></p>
-            </div>
-            <div>
-                <label for="provincia">Provincia</label>
-                <p><%=user.provincia %></p>
-            </div>
-            <label for="email">E-mail</label>
-            <p class="campo"><%=user.email %></p>
-        <a href="/users/profile/<%= user.id %>/editProfile"><button type=“button” class="carga">EDITAR</button></a> 
-    </section>
+            <p><%=user.domicilio %></p>
+            <label>Localidad</label>
+            <p><%=user.localidad %></p>  
+            <label>Provincia</label>
+            <p><%=user.provincia %></p>
+            <label>E-mail</label>
+            <p><%=user.email %></p>
+        </section>
+        <button type=“button” class="carga"><a href="/users/profile/<%= user.id %>/editProfile">EDITAR</a></button> 
     <hr>
     <h1 class="titulo">Más Vendidos</h1>
     <%- include('../partials/sectionProducts') %>

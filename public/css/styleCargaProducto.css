@@ -50,7 +50,7 @@ form.carga div {
     justify-content: space-around;
 }
 
-form.carga div button.carga {
+button.carga {
     align-self: center;
     width: max-content;
     background: var(--color-ladrillo);
@@ -61,9 +61,18 @@ form.carga div button.carga {
     padding: 5px 15px;
 }
 
-form.carga div button.carga:hover {
+button.carga a{
+    color: var(--color-arena);
+    font-family: Quicksand;
+}
+
+button.carga:hover {
     color: var(--color-ladrillo);
     background: var(--color-arena);
+}
+
+button.carga:hover a{
+    color: var(--color-ladrillo);
 }
 
 form.carga div button.reset {
