@@ -73,7 +73,7 @@ module.exports = {
             }
         })
         .then(function(usuarioActualizado){
-            return res.redirect('/users/profile/'+usuarioActualizado);
+            return res.redirect('/users/profile/'+req.session.usuarioLogueado.id);
         }) 
     },
     register: function (req, res) {
