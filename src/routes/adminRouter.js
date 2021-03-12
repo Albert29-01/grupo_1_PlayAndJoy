@@ -15,7 +15,8 @@ var storage = multer.diskStorage({
    
 var upload = multer({ storage: storage });
 
-router.get('/admin/:idProduct', adminController.vistaProd);
+router.get('/product/:idProduct', adminController.vistaProd);
+router.get('/suscription/:idSuscription', adminController.vistaSuscrip);
 
 router.get('/cargaProducto', adminController.formCargaP);
 router.post('/cargaProducto',upload.any(), adminController.cargaProduct);
@@ -27,5 +28,10 @@ router.get('/deleteProducto/:idProduct', adminController.deleteProd);
 
 router.get('/cargaSuscription', adminController.formCargaS);
 router.post('/cargaSuscription', adminController.cargaSuscription);
+
+router.get('/editSuscription/:idSuscription', adminController.formEditS);
+router.put('/cargaSuscription/:idSuscription', adminController.editSuscrip);
+
+router.get('/deleteSuscription/:idSuscription', adminController.deleteSuscrip);
 
 module.exports = router;

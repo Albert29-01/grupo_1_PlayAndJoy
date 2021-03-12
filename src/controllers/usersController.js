@@ -42,21 +42,26 @@ module.exports = {
         })
     },
     profile: function (req, res) {
-        return res.render('./users/profile',{
-            user: req.session.usuarioLogueado,
-        });
+        db.Usuario.findByPk(req.session.usuarioLogueado.id)
+        .then(function(user){
+            return res.render('./users/profile',{
+                user
+            });
+        })
     },
-    editProfile: function (req, res) { 
-        return res.render('./users/editProfile',{
-            user: req.session.usuarioLogueado,
-        });
+    editProfile: function (req, res) {
+        db.Usuario.findByPk(req.session.usuarioLogueado.id)
+        .then(function(user){
+            return res.render('./users/editProfile',{
+                user
+            });
+        })
     },
     updateProfile: function (req, res) {
         db.Usuario.update({
             first_name: req.body.nombre,
             last_name: req.body.apellido,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 12),
             imagen: req.files[0].filename,
             birth_date: req.body.date,
             domicilio: req.body.domicilio,
@@ -64,9 +69,12 @@ module.exports = {
             provincia: req.body.provincia,
         },{
             where: {
-                id: req.session.usuarioLogueado.id
+                id: req.params.idUser
             }
         })
+        .then(function(usuarioActualizado){
+            return res.redirect('/users/profile/'+usuarioActualizado);
+        }) 
     },
     register: function (req, res) {
         return res.render('./users/registro',{

@@ -3,19 +3,16 @@
     <%- include('../partials/head')%>
 <body>
     <%- include('../partials/header')%>
-    <form action="/admin/cargaSuscription" method="POST" class="carga">
+    <form action="/admin/cargaSuscription/<%=typeof suscripcion != "undefined"? suscripcion.id + "?_method=" + metodo : null %>" method="POST" class="carga">
         <h1 class="carga">Carga de Suscripción</h1>
         <label for="tipoSuscripcion">Tipo de Suscripción</label>
-        <input type="text" id="tipoSuscripcion" name="tipoSuscripcion" required>
+        <input type="text" id="tipoSuscripcion" name="tipoSuscripcion" required value="<%=typeof suscripcion != "undefined"? suscripcion.nombre: null%>">
         <label for="precio">Precio</label>
-        <input type="number" id="precio" name="precio" required>
+        <input type="number" id="precio" name="precio" required value="<%=typeof suscripcion != "undefined"? suscripcion.precio: null%>">
         <label for="detalle">Detalle</label>
-        <textarea name="detalle" id="detalle" rows="3" required></textarea>
-        <label for="imagen">Imágen</label>
-        <input type="file" id="imagen" name="imagen" required>
+        <textarea name="detalle" id="detalle" rows="3" required><%=typeof suscripcion != "undefined"? suscripcion.detalle: null%></textarea>
         <div>
         <button type=“submit” class="carga">CARGAR</button>
-        <button type=“button” class="carga">EDITAR</button>
         <button type=“reset” class="reset"><img src="/img/basura2.png" alt="tacho de basura"></button>
         </div>
     </form>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head')%>
+<body>
+    <%- include('../partials/header') %>
+    <section class="detalleSuscrip">
+        <a href="/admin/editSuscription/<%= suscripcion.id %>"><button type=“button” class="carga">EDITAR</button></a> 
+        <a href="/admin/deleteSuscription/<%= suscripcion.id %>"><button type=“button” class="carga">ELIMINAR</button></a>
+        <img class="suscripcion" src="/img/imagenSuscripcion.png" alt="Gatito dentro de una caja">
+        <article>
+            <h1><%= suscripcion.nombre %></h1>
+            <h2>$ <%= suscripcion.precio %></h2>
+            <div class="mediosDePago">
+                <img src="/img/Amex.png" alt="American Express">
+                <img src="/img/Visa.png" alt="Visa">
+                <img src="/img/Diners.png" alt="Diners">
+                <img src="/img/PayPal.png" alt="Pay Pal">
+                <img src="/img/Master.png" alt="Master Card">
+            </div>
+            <h3>Detalle</h3>
+            <p><%= suscripcion.detalle %></p>
+        </article>
+    </section>
+    <form class="opcionesSuscrip" action="validar.php" method="POST">
+        <div>
+            <label>Tipo de café</label>
+            <select name=“Cafe” required>
+                <option value="none" selected disabled hidden> 
+                    Selecciona una opción 
+                </option>
+                <option value=”Fuerte”>Fuerte</option>
+                <option value=“Suave”>Suave</option>
+                <option value=“Descaf”>Descafeinado</option>
+            </select>
+        </div>
+        <div>
+            <label>Cepa de vino</label>
+            <select name="Vino" required>
+                <option value="none" selected disabled hidden> 
+                    Selecciona una opción 
+                </option>
+                <option value=”Tinto”>Tinto</option>
+                <option value=“Blanco”>Blanco</option>
+                <option value=“Rosado”>Rosado</option>
+                <option value="Blend">Blend</option>
+            </select>
+        </div>
+        <div>
+            <label>Género literario</label>
+            <select name=“Libro” required>
+                <option value="none" selected disabled hidden> 
+                    Selecciona una opción 
+                </option>
+                <option value=”CFx”>Ciencia Ficción</option>
+                <option value=“Ro”>Romántico</option>
+                <option value=“Sus”>Suspenso</option>
+                <option value=“Bio”>Biografía</option>
+                <option value=“Dr”>Drama</option>
+                <option value=“Tr”>Terror</option>
+            </select>
+        </div>
+        <div>
+            <label>Estilo musical</label>
+            <select name=“Musica” required>
+                <option value="none" selected disabled hidden> 
+                    Selecciona una opción 
+                </option>
+                <option value=”Rock”>Rock</option>
+                <option value=“Cl”>Clásica</option>
+                <option value=“Pop”>Pop</option>
+                <option value="Jazz">Jazz</option>
+                <option value=“Blues”>Blues</option>
+            </select>
+        </div>
+        <div class="cant">
+            <label>Cantidad</label>
+            <input type=“number” name=“cantidad”>
+        </div>
+        <button class="addCart" type=“submit”><img src="/img/carrito2.png">Añadir al carrito</button>
+    </form>
+    <hr>
+    <h2 class="titulo">Productos Similares</h2>
+    <%- include('../partials/sectionProducts') %>  
+    <%- include('../partials/footer') %>  
+</body>
+</html>

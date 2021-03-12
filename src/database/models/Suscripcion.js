@@ -20,10 +20,6 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING(200),
             notNull: true
         },
-        id_categoria: {
-            type: dataTypes.INTEGER,
-            notNull: true
-        },
         deleted_at: {
             type: dataTypes.DATE
         }
@@ -36,10 +32,6 @@ module.exports = function(sequelize, dataTypes){
 
     const Suscripcion= sequelize.define (alias, cols, config);
     
-    Suscripcion.associate = function(models){
-        Suscripcion.belongsTo(models.Categoria, {as:"categoria", foreignKey:"id_categoria"});
-    };
-
     /*Suscripcion.associate = function(models){
         Suscripcion.belongsToMany(models.suscripcion, 
             { as: "suscripciones",

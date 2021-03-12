@@ -12,6 +12,14 @@ module.exports = {
             });
         })
     },
+    vistaSuscrip: function (req, res){
+        db.Suscripcion.findByPk(req.params.idSuscription)
+        .then(function(resultado){
+            res.render ('./admin/adminSuscription', {
+                suscripcion: resultado,
+            });
+        })
+    },
     formCargaP: function (req, res){
         db.Categoria.findAll()
         .then(function(categorias){
@@ -19,6 +27,9 @@ module.exports = {
                 categorias
             });
         })
+    },
+    formCargaS: function (req, res){
+        res.render ('./admin/cargaSuscripcion');
     },
     formEditP: function(req,res) {
         db.Categoria.findAll()
@@ -28,23 +39,37 @@ module.exports = {
                 res.render ('./admin/cargaProducto',{
                     metodo: "PUT",
                     producto: resultado,
-                    categorias//acá recuperaríamos los datos del producto que queremos editar
+                    categorias
                 });
             })
         })        
     },
+    formEditS: function(req,res){
+        db.Suscripcion.findByPk(req.params.idSuscription)
+        .then(function(resultado){
+            res.render ('./admin/cargaSuscripcion',{
+                metodo: "PUT",
+                suscripcion: resultado,
+            });
+        })
+    },
     deleteProd: function (req, res){
         db.Producto.update({
             deleted_at: Date.now()
-        },{
-            where: {
-                id:req.params.idProduct,
-            }
-        })
-        return res.send("Producto " + req.params.idProduct + " eliminado con éxito!"); //acá enviaríamos los datos del producto eliminado
+        },{            where: {
+            id:req.params.idProduct,
+        }
+    })
+    return res.send("Producto " + req.params.idProduct + " eliminado con éxito!");
     },
-    formCargaS: function (req, res){
-        res.render ('./admin/cargaSuscripcion');
+    deleteSuscrip:function (req, res){
+        db.Suscripcion.update({
+            deleted_at: Date.now()
+        },{            where: {
+            id:req.params.idSuscription,
+        }
+    })
+    return res.send("Suscripción " + req.params.idSuscription + " eliminada con éxito!");
     },
     editProd: function (req, res){
         db.Producto.update({
@@ -53,7 +78,7 @@ module.exports = {
             detalle: req.body.detalle,
             stock: req.body.cantidad,
             info_ad: req.body.infoAd,
-            id_categoria: req.body.categoria // no funciona la edición de categoria
+            id_categoria: req.body.categoria
         },{
             where: {
                 id:req.params.idProduct,
@@ -67,6 +92,18 @@ module.exports = {
             }
         })
         return res.send("Producto " + req.params.idProduct + " actualizado con éxito!");
+    },
+    editSuscrip: function (req, res){
+        db.Suscripcion.update({
+            nombre: req.body.tipoSuscripcion,
+            detalle: req.body.detalle,
+            precio: req.body.precio,
+        },{
+            where: {
+                id:req.params.idSuscription,
+            }
+        })
+        return res.send("Suscripción " + req.params.idSuscription + " actualizada con éxito!");
     },
     cargaProduct:function(req,res){
         db.Producto.create({
@@ -90,13 +127,12 @@ module.exports = {
     },
     cargaSuscription:function(req,res){
         db.Suscripcion.create({
-            tipoSuscripcion: req.body.tipoSuscripcion,
+            nombre: req.body.tipoSuscripcion,
             detalle: req.body.detalle,
             precio: req.body.precio,
-            imagen: ""
         })
         .then(function(resultado){
-            res.redirect('/suscriptions/'+resultado.id)
+            res.redirect('/admin/suscription/'+resultado.id)
         })
         .catch(function(error){
             console.log(error)

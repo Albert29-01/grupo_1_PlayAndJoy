@@ -117,7 +117,7 @@ CREATE TABLE `suscripciones` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +126,7 @@ CREATE TABLE `suscripciones` (
 
 LOCK TABLES `suscripciones` WRITE;
 /*!40000 ALTER TABLE `suscripciones` DISABLE KEYS */;
-INSERT INTO `suscripciones` VALUES (1,'',150585.00,'jdashjdashjdfn ','2021-03-06 16:13:22','2021-03-06 16:13:22',NULL);
+INSERT INTO `suscripciones` VALUES (1,'',150585.00,'jdashjdashjdfn ','2021-03-06 16:13:22','2021-03-11 23:57:34','2021-03-11 23:57:34'),(2,'',123.00,'este es un plan basico','2021-03-11 23:14:45','2021-03-11 23:14:45',NULL),(3,'basico',123.00,'Esta es una nueva suscripcion','2021-03-11 23:23:06','2021-03-11 23:23:06',NULL),(4,'EMI',123456.00,'puro vino','2021-03-11 23:24:46','2021-03-11 23:24:46',NULL),(5,'EMI',4565465.00,'mas vino','2021-03-11 23:27:15','2021-03-11 23:27:15',NULL),(6,'EMI',45648.00,'mas vino','2021-03-11 23:28:42','2021-03-11 23:28:42',NULL),(7,'ALBERT',987.00,'va de nuevo','2021-03-11 23:30:01','2021-03-11 23:56:38',NULL);
 /*!40000 ALTER TABLE `suscripciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +161,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Noelia','Carosella','undefined-1615335674848.jpg','noe.carosella@gmail.com','$2a$12$j7QmkfuwBC18Lzg8ImrLF.lAqqrWXazaRcTkIFiA.MBJzqdh.0oJm','1988-07-27','Siempreviva 123','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:21:15',NULL,'2021-03-10 00:21:15'),(2,'Sirius','Perrito','undefined-1615335789431.jpg','siri@gmail.com','$2a$12$hhJIsNnEF6Rl8Sf9c/8u.ufnbS7EsMjxwvH8Ny4/J2OOMvtnnf9jS','2020-12-28','Siempreviva 123','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:23:09',NULL,'2021-03-10 00:23:09'),(3,'Otro','Sirius','undefined-1615335918092.jpg','otroSirius@gmail.com','$2a$12$6n.9sEsJe/GzPNqoRTTUYuO4QTU1w0CPr79yfJRnDqHWajSHLyrl6','2020-12-28','Siempreviva 123','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:25:18',NULL,'2021-03-10 00:25:18');
+INSERT INTO `usuarios` VALUES (1,'Noelia','Carosella','undefined-1615503515669.jpg','noe.carosella@gmail.com','$2a$12$j7QmkfuwBC18Lzg8ImrLF.lAqqrWXazaRcTkIFiA.MBJzqdh.0oJm','2021-03-11','Elm Street 654','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:21:15',NULL,'2021-03-11 22:58:35'),(2,'Sirius','Perrito','undefined-1615335789431.jpg','siri@gmail.com','$2a$12$hhJIsNnEF6Rl8Sf9c/8u.ufnbS7EsMjxwvH8Ny4/J2OOMvtnnf9jS','2020-12-28','Siempreviva 123','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:23:09',NULL,'2021-03-10 00:23:09'),(3,'Otro','Sirius','undefined-1615335918092.jpg','otroSirius@gmail.com','$2a$12$6n.9sEsJe/GzPNqoRTTUYuO4QTU1w0CPr79yfJRnDqHWajSHLyrl6','2020-12-28','Siempreviva 123','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:25:18',NULL,'2021-03-10 00:25:18');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -228,4 +228,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-10 21:35:37
+-- Dump completed on 2021-03-11 21:03:47

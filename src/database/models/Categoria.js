@@ -26,10 +26,6 @@ module.exports = function(sequelize, dataTypes){
             as:"productos", 
             foreignKey:"id_categoria"
         });
-        Categoria.hasMany(models.Suscripcion, {
-            as:"suscripciones", 
-            foreignKey:"id_categoria"
-        });
     }
     
     return Categoria

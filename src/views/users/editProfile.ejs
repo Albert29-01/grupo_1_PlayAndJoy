@@ -3,17 +3,9 @@
     <%- include('../partials/head')%>
 <body>
     <%- include('../partials/header') %>
-    <section>
-        <ul>
-            <li><a href="">Datos personales</a></li>
-            <li><a href="">Cambiar contraseña</a></li>
-            <li><a href="">Mis pedidos</a></li>
-            <li><a href="">Contacto</a></li>
-            <li><a href="">Cerrar sesión</a></li>
-        </ul>
-    </section>
+    <%- include('../partials/menuProfile') %>
     <section class="formEditInfoPersonal">
-        <form action="/users/editProfile/<%=user.id %>?_method=PUT" method="POST" class="register" enctype="multipart/form-data">
+        <form action="?_method=PUT" method="POST" class="register" enctype="multipart/form-data">
             <label for="avatar">Avatar</label>
             <% if (typeof user != undefined ){ %> 
                 <img src="/img/uploads/avatars/<%=user.imagen %> " height="200" width="200" alt="">
