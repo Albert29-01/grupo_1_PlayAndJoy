@@ -152,7 +152,7 @@ CREATE TABLE `usuarios` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,7 +161,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Noelia','Carosella','undefined-1615503515669.jpg','noe.carosella@gmail.com','$2a$12$j7QmkfuwBC18Lzg8ImrLF.lAqqrWXazaRcTkIFiA.MBJzqdh.0oJm','2021-03-11','Elm Street 654','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:21:15',NULL,'2021-03-11 22:58:35'),(2,'Sirius','Perrito','undefined-1615335789431.jpg','siri@gmail.com','$2a$12$hhJIsNnEF6Rl8Sf9c/8u.ufnbS7EsMjxwvH8Ny4/J2OOMvtnnf9jS','2020-12-28','Siempreviva 123','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:23:09',NULL,'2021-03-10 00:23:09'),(3,'Otro','Sirius','undefined-1615335918092.jpg','otroSirius@gmail.com','$2a$12$6n.9sEsJe/GzPNqoRTTUYuO4QTU1w0CPr79yfJRnDqHWajSHLyrl6','2020-12-28','Siempreviva 123','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:25:18',NULL,'2021-03-10 00:25:18');
+INSERT INTO `usuarios` VALUES (1,'Noelia','Carosella','undefined-1615503515669.jpg','noe.carosella@gmail.com','$2a$12$j7QmkfuwBC18Lzg8ImrLF.lAqqrWXazaRcTkIFiA.MBJzqdh.0oJm','2021-03-11','Elm Street 654','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:21:15',NULL,'2021-03-11 22:58:35'),(2,'Sirius','Perrito','undefined-1615335789431.jpg','siri@gmail.com','$2a$12$hhJIsNnEF6Rl8Sf9c/8u.ufnbS7EsMjxwvH8Ny4/J2OOMvtnnf9jS','2020-12-28','Siempreviva 123','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:23:09',NULL,'2021-03-10 00:23:09'),(3,'Otro','Sirius','undefined-1615335918092.jpg','otroSirius@gmail.com','$2a$12$6n.9sEsJe/GzPNqoRTTUYuO4QTU1w0CPr79yfJRnDqHWajSHLyrl6','2020-12-28','Siempreviva 123','capital federal','Ciudad Autónoma de Buenos Aires','2021-03-10 00:25:18',NULL,'2021-03-10 00:25:18'),(4,'Alberto Eduardo ','Simonetti','undefined-1615663078670.jpg','albert@gmail.com','$2a$12$28KgQjNUZJ7JEb8t72sGD.EStm7FONLJsPDHkBuKRcI3RtZ/BVNRq','1967-01-29','Pareja 3578','Ciudad Autónoma de Buenos Aires ','Buenos Aires','2021-03-13 19:15:54',NULL,'2021-03-13 19:17:58');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -228,4 +228,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-11 21:03:47
+-- Dump completed on 2021-03-13 16:21:05
