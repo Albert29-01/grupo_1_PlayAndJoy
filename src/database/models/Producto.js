@@ -32,14 +32,12 @@ module.exports = function(sequelize, dataTypes){
             unsigned: true,
             notNull: true
         },
-        deleted_at: {
-            type: dataTypes.DATE
-        }
     }
     let config = {
         tableName: 'productos',
         timestamps: true,
-        underscored: true
+        underscored: true,
+        paranoid: true
     }
 
     const Producto = sequelize.define (alias, cols, config);

@@ -19,15 +19,13 @@ module.exports = function(sequelize, dataTypes){
         detalle: {
             type: dataTypes.STRING(200),
             notNull: true
-        },
-        deleted_at: {
-            type: dataTypes.DATE
         }
     }
     let config = {
         tableName: 'suscripciones',
         timestamps: true,
-        underscored: true
+        underscored: true,
+        paranoid: true
     }
 
     const Suscripcion= sequelize.define (alias, cols, config);

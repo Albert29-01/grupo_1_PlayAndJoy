@@ -54,18 +54,16 @@ module.exports = {
         })
     },
     deleteProd: function (req, res){
-        db.Producto.update({
-            deleted_at: Date.now()
-        },{            where: {
+        db.Producto.destroy({            
+            where: {
             id:req.params.idProduct,
         }
     })
     return res.send("Producto " + req.params.idProduct + " eliminado con éxito!");
     },
     deleteSuscrip:function (req, res){
-        db.Suscripcion.update({
-            deleted_at: Date.now()
-        },{            where: {
+        db.Suscripcion.destroy({            
+            where: {
             id:req.params.idSuscription,
         }
     })
