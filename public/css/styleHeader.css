@@ -35,24 +35,19 @@ header section.ppal form {
 header section.ppal form input{
     background-color: rgba(250, 250, 250, 0);
     border: none;
-    width: 100%;
+    width: 95%;
     height: 2rem;
-    background-image: url('../img/lupa.png');
     background-position: 10px 5px;
     background-repeat: no-repeat;
     padding-left: 40px;
 }
 
-header section.ppal form label{
-    border-left: solid 2px var(--color-azul);
-    position: relative;
+header section.ppal form button {
+    border-style: none;
+    background: none;
+    padding-top: 5px;
 }
 
-header section.ppal form label img {
-    position: absolute;
-    left: 0.625rem;
-    top: 1.5px;
-}
 
 .ingreso > li {
     display: inline-block;

@@ -4,40 +4,16 @@
 <body>
     <%- include('../partials/header') %>
     <section class="suscripciones">
+        <% for (let i = 0; i < suscriptionsArray.length; i++) { %> 
         <article>
             <img class="suscripcion" src="/img/imagenSuscripcion.png" alt="Gatito dentro de una caja">
-            <h2>PLAN PREMIUM</h2>
-            <h1>$ PRECIO</h1>
-            <p>Incluye:</p>
-            <ul>
-                <li>1 botella de vino cepa elegida</li>
-                <li>1 kilo de café variedad elegida</li>
-                <li>1 libro género elegido</li>
-                <li>1 vinilo estilo elegido</li>
-            </ul>
-            <a href="/suscriptions/:idSuscription">MÁS INFO</a>
+            <h2><%= suscriptionsArray[i].nombre  %></h2>
+            <h1>$ <%= suscriptionsArray[i].precio  %></h1>
+            <h3>Detalle:</h3>
+            <p><%= suscriptionsArray[i].detalle  %></p>
+            <a href="/suscriptions/<%= suscriptionsArray[i].id  %>">MÁS INFO</a>
         </article>
-        <article>
-            <img class="suscripcion" src="/img/imagenSuscripcion.png" alt="Gatito dentro de una caja">
-            <h2>PLAN BASICO</h2>
-            <h1>$ PRECIO</h1>
-            <p>Incluye:</p>
-            <ul>
-                <li>1 botella de vino cepa elegida o 1 kilo de café variedad elegida</li>
-                <li>1 libro género elegido o 1 vinilo estilo elegido</li>
-            </ul>
-            <a href="/suscriptions/:idSuscription">MÁS INFO</a>
-        </article>
-        <article>
-            <img class="suscripcion" src="/img/imagenSuscripcion.png" alt="Gatito dentro de una caja">
-            <h2>PLAN A MEDIDA</h2>
-            <h1>$ PRECIO</h1>
-            <p>Incluye:</p>
-            <ul>
-                <li>1 botella de vino cepa elegida o 1 kilo de café variedad elegida o 1 libro género elegido o 1 vinilo estilo elegido</li>
-            </ul>
-            <a href="/suscriptions/:idSuscription">MÁS INFO</a>
-        </article>
+        <% } %> 
     </section>
     <hr>
     <%- include('../partials/asociate') %>  

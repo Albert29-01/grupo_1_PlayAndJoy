@@ -6,8 +6,8 @@
     <section class="detalleSuscrip">
         <img class="suscripcion" src="/img/imagenSuscripcion.png" alt="Gatito dentro de una caja">
         <article>
-            <h1>SUSCRIPCIÓN</h1>
-            <h2>$ PRECIO</h2>
+            <h1><%= suscription.nombre   %></h1>
+            <h2>$ <%= suscription.precio   %></h2>
             <div class="mediosDePago">
                 <img src="/img/Amex.png" alt="American Express">
                 <img src="/img/Visa.png" alt="Visa">
@@ -16,7 +16,7 @@
                 <img src="/img/Master.png" alt="Master Card">
             </div>
             <h3>Detalle</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore eaque modi dolor hic rem quos quaerat enim consequuntur vitae mollitia!</p>
+            <p><%= suscription.detalle   %></p>
         </article>
     </section>
     <form class="opcionesSuscrip" action="validar.php" method="POST">
