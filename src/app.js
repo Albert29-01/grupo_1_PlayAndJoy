@@ -7,8 +7,9 @@ const adminRouter = require ('./routes/adminRouter');
 const productsRouter = require ('./routes/productsRouter');
 const suscriptionsRouter = require ('./routes/suscriptionsRouter');
 const methodOverride = require ('method-override');
+const cookieParser = require ('cookie-parser');
 const session = require('express-session');
-const userMiddleware = require("./middlewares/userMiddlewares")
+const userMiddleware = require("./middlewares/userMiddlewares");
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'views'));
@@ -19,6 +20,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(session({secret:"esto es una frase ultra secreta",resave: true,saveUninitialized: true}));
 
+app.use(cookieParser());
 app.use(userMiddleware);
 
 app.use('/', mainRouter);

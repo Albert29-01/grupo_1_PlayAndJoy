@@ -9,6 +9,7 @@ module.exports = {
     },
     logout:function (req, res) {
         req.session.usuarioLogueado = undefined;
+        res.cookie("remember",undefined,{maxAge:0});
         res.redirect('/');
     },
     session: function (req, res) {
@@ -27,6 +28,9 @@ module.exports = {
             } else {
                 if(bcrypt.compareSync(req.body.password,usuario.password)){
                     req.session.usuarioLogueado = usuario;
+                    if (req.body.remember != undefined){
+                        res.cookie("remember", req.session.usuarioLogueado.id,{maxAge:30 * 24 * 60 * 60 * 1000});
+                    }
                     return res.redirect('/');
                 } else {
                     return res.render('./users/login', {

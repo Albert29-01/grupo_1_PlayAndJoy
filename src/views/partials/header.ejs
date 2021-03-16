@@ -9,7 +9,7 @@
             <ul class="ingreso">
                 <% if( typeof usuarioLogueado == "undefined") {%> 
                     <li><a href="/users/login" class="ingresar">Ingresar</a></li>
-                    <% } else { %> 
+                    <% } else { %>
                         <li><a href="/users/profile/<%=usuarioLogueado.id %>" class="ingresar">Mi Cuenta</a></li>
                         <% } %> 
                         <li><input type="checkbox" id="burger">
