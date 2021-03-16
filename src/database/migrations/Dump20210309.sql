@@ -21,7 +21,6 @@ USE `playandjoy`;
 -- Table structure for table `categorias`
 --
 
-DROP TABLE IF EXISTS `categorias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categorias` (
@@ -45,7 +44,7 @@ UNLOCK TABLES;
 -- Table structure for table `images`
 --
 
-DROP TABLE IF EXISTS `images`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `images` (
@@ -73,7 +72,7 @@ UNLOCK TABLES;
 -- Table structure for table `productos`
 --
 
-DROP TABLE IF EXISTS `productos`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `productos` (
@@ -105,7 +104,7 @@ UNLOCK TABLES;
 -- Table structure for table `suscripciones`
 --
 
-DROP TABLE IF EXISTS `suscripciones`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `suscripciones` (
@@ -134,7 +133,7 @@ UNLOCK TABLES;
 -- Table structure for table `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuarios` (
@@ -169,7 +168,7 @@ UNLOCK TABLES;
 -- Table structure for table `ventas_productos`
 --
 
-DROP TABLE IF EXISTS `ventas_productos`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ventas_productos` (
@@ -196,7 +195,7 @@ UNLOCK TABLES;
 -- Table structure for table `ventas_suscripciones`
 --
 
-DROP TABLE IF EXISTS `ventas_suscripciones`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ventas_suscripciones` (
