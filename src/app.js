@@ -11,6 +11,8 @@ const cookieParser = require ('cookie-parser');
 const session = require('express-session');
 const userMiddleware = require("./middlewares/userMiddlewares");
 
+let port = process.env.PORT || 3000;
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'views'));
 
@@ -37,7 +39,7 @@ app.use((req,res)=>{
     res.status(404).render('404_notFound');
 });
 
-app.listen(process.env.PORT || 3000, function() {
-    console.log("El servidor está corriendo en el puerto 3000")
+app.listen(port, function() {
+    console.log(`El servidor está corriendo en el puerto: ${port}`)
     console.log("http://localhost:3000")
 })
