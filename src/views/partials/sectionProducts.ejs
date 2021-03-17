@@ -1,44 +1,15 @@
 <section class="productos">
-    <article>
-        <a href="/product/:idProduct"><img src="/img/Producto.png" alt="cafetera"></a>
-        <details>
-            <summary>Lorem, ipsum dolor.</summary>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, quasi!</p>
-        </details>
-    </article>
-    <article>
-        <a href="/product/:idProduct"><img src="/img/Producto.png" alt="cafetera"></a>
-        <details>
-            <summary>Lorem, ipsum dolor.</summary>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, quasi!</p>
-        </details>
-    </article>
-    <article>
-        <a href="/product/:idProduct"><img src="/img/Producto.png" alt="cafetera"></a>
-        <details>
-            <summary>Lorem, ipsum dolor.</summary>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, quasi!</p>
-        </details>
-    </article>
-    <article>
-        <a href="/product/:idProduct"><img src="/img/Producto.png" alt="cafetera"></a>
-        <details>
-            <summary>Lorem, ipsum dolor.</summary>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, quasi!</p>
-        </details>
-    </article>
-    <article>
-        <a href="/product/:idProduct"><img src="/img/Producto.png" alt="cafetera"></a>
-        <details>
-            <summary>Lorem, ipsum dolor.</summary>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, quasi!</p>
-        </details>
-    </article>
-    <article class="hiden">
-        <a href="/product/:idProduct"><img src="/img/Producto.png" alt="cafetera"></a>
-        <details>
-            <summary>Lorem, ipsum dolor.</summary>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, quasi!</p>
-        </details>
-    </article>
+    <% if(typeof productsList != 'undefined') {%> 
+        <% for(let i=0; i < productsList.length; i++){%>
+            <article>
+                <a href="/product/<%=productsList[i].id%>"><img width="200px" src="/img/uploads/products/<%= productsList[i].images.length>0?productsList[i].images[0].nombre: null%>"></a>
+                <details>
+                    <summary><%=productsList[i].nombre %> </summary>
+                    <p>$<%=productsList[i].precio%></p>
+                </details>
+            </article>
+        <% } %>
+        <% } else { %>
+            <h2>No tenemos productos para mostrar</h2>
+        <% } %>
 </section>

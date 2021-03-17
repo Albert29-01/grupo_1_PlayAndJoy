@@ -83,7 +83,9 @@ module.exports = {
         })
     },
     product: function (req, res){
-        db.Producto.findByPk(req.params.idProduct)
+        db.Producto.findByPk(req.params.idProduct,{
+            include: ['images']
+        })
         .then(function(resultado){
             res.render ('./products/product',{
                 producto: resultado,

@@ -136,18 +136,14 @@ header section.ppal form button {
         margin-right: 0px ;
     }
 
+    header section.ppal form input{
+        width: 75%;
+    }
+
     #searchBar {
         width: 85%;
         height: 1.5rem;
         margin-left: 0.625rem;
-    }
-
-    header section.ppal form label {
-        display: none;
-    }
-
-    header section.ppal form label img {
-        display: none;
     }
 
     label.hidden {
