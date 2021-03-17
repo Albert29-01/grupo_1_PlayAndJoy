@@ -7,8 +7,6 @@ module.exports = {
     "database": "playandjoy",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    //"port": "3307"
-
   },
   "test": {
     "username": "root",
@@ -18,10 +16,10 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": process.env.DB_USER,
-    "password": process.env.DB_PASS,
-    "database": process.env.DB_NAME,
-    "host": process.env.DB_HOST,
+    "username": "229723",
+    "password": "8B^Dus3tl4r$",
+    "database": "jsongirlify_playandjoy",
+    "host":"mysql-jsongirlify.alwaysdata.net",
     "dialect": "mysql"
   }
 }
