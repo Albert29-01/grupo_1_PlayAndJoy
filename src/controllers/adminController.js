@@ -11,6 +11,9 @@ module.exports = {
                 producto: resultado,
             });
         })
+        .catch(function(e){
+            res.render("404_notFound")
+        })
     },
     vistaSuscrip: function (req, res){
         db.Suscripcion.findByPk(req.params.idSuscription)
@@ -19,6 +22,9 @@ module.exports = {
                 suscripcion: resultado,
             });
         })
+        .catch(function(e){
+            res.render("404_notFound")
+        })
     },
     formCargaP: function (req, res){
         db.Categoria.findAll()
@@ -26,6 +32,9 @@ module.exports = {
             return res.render ('./admin/cargaProducto',{
                 categorias
             });
+        })
+        .catch(function(e){
+            res.render("404_notFound")
         })
     },
     formCargaS: function (req, res){
@@ -42,7 +51,10 @@ module.exports = {
                     categorias
                 });
             })
-        })        
+        }) 
+        .catch(function(e){
+            res.render("404_notFound")
+        })       
     },
     formEditS: function(req,res){
         db.Suscripcion.findByPk(req.params.idSuscription)
@@ -51,6 +63,9 @@ module.exports = {
                 metodo: "PUT",
                 suscripcion: resultado,
             });
+        })
+        .catch(function(e){
+            res.render("404_notFound")
         })
     },
     deleteProd: function (req, res){
@@ -119,8 +134,8 @@ module.exports = {
             })
             res.redirect('/admin/admin/'+resultado.id)
         })
-        .catch(function(error){
-            console.log(error)
+        .catch(function(e){
+            res.render("404_notFound")
         })
     },
     cargaSuscription:function(req,res){
@@ -132,8 +147,8 @@ module.exports = {
         .then(function(resultado){
             res.redirect('/admin/suscription/'+resultado.id)
         })
-        .catch(function(error){
-            console.log(error)
+        .catch(function(e){
+            res.render("404_notFound")
         })
     },
 }

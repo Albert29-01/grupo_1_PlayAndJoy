@@ -41,8 +41,8 @@ module.exports = {
                 }
             }
         })
-        .catch(function(error){
-            res.json(error)
+        .catch(function(e){
+            res.render("404_notFound")
         })
     },
     profile: function (req, res) {
@@ -52,6 +52,9 @@ module.exports = {
                 user
             });
         })
+        .catch(function(e){
+            res.render("404_notFound")
+        })
     },
     editProfile: function (req, res) {
         db.Usuario.findByPk(req.session.usuarioLogueado.id)
@@ -59,6 +62,9 @@ module.exports = {
             return res.render('./users/editProfile',{
                 user
             });
+        })
+        .catch(function(e){
+            res.render("404_notFound")
         })
     },
     updateProfile: function (req, res) {
@@ -78,7 +84,10 @@ module.exports = {
         })
         .then(function(usuarioActualizado){
             return res.redirect('/users/profile/'+req.session.usuarioLogueado.id);
-        }) 
+        })
+        .catch(function(e){
+            res.render("404_notFound")
+        })
     },
     register: function (req, res) {
         return res.render('./users/registro',{
@@ -116,6 +125,9 @@ module.exports = {
                 } else {
                     return res.redirect('/users/login')
                 }
+            })
+            .catch(function(e){
+                res.render("404_notFound")
             })
         } else {
             return res.render('./users/registro', {

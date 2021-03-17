@@ -9,6 +9,9 @@ module.exports = {
                 suscription
             });
         })
+        .catch(function(e){
+            res.render("404_notFound")
+        })        
     },
     general: function (req, res){
         db.Suscripcion.findAll()
@@ -16,6 +19,9 @@ module.exports = {
             res.render ('./suscriptions/suscriptions',{
                 suscriptionsArray
             });
+        })
+        .catch(function(e){
+            res.render("404_notFound")
         })
     },  
 }

@@ -14,6 +14,9 @@ module.exports = {
                 productsArray: resultado,
             });
         })
+        .catch(function(e){
+            res.render("404_notFound")
+        })
     },
     cafe: function (req, res){
         db.Producto.findAll({
@@ -26,6 +29,9 @@ module.exports = {
             res.render ('./products/productList', {
                 productsArray: resultado,
             });
+        })
+        .catch(function(e){
+            res.render("404_notFound")
         })
     },
     vino: function (req, res){
@@ -40,6 +46,9 @@ module.exports = {
                 productsArray: resultado,
             });
         })
+        .catch(function(e){
+            res.render("404_notFound")
+        })
     },
     libros: function (req, res){
         db.Producto.findAll({
@@ -52,6 +61,9 @@ module.exports = {
             res.render ('./products/productList', {
                 productsArray: resultado,
             });
+        })
+        .catch(function(e){
+            res.render("404_notFound")
         })
     },
     musica: function (req, res){
@@ -66,6 +78,9 @@ module.exports = {
                 productsArray: resultado,
             });
         })
+        .catch(function(e){
+            res.render("404_notFound")
+        })
     },
     product: function (req, res){
         db.Producto.findByPk(req.params.idProduct)
@@ -74,21 +89,27 @@ module.exports = {
                 producto: resultado,
             });
         })
+        .catch(function(e){
+            res.render("404_notFound")
+        })
     },
     search: function(req,res){
         db.Producto.findAll({
             where: {
                 nombre: {
                     [Op.like]: '%'+req.query.search+'%',
-                    }
-                },
-                include: ['images']
-            })            
-            .then(function(resultado){
-                res.render('./products/productList',{
+                }
+            },
+            include: ['images']
+        })            
+        .then(function(resultado){
+            res.render('./products/productList',{
                 productsArray: resultado,
                 search: req.query.search //para que en la vista se imprima lo que estábamos buscando
-                }) // Hacer un if en la vista para que si no encontró nada, devuelva un mensaje
-            })
-        }
+            }) // Hacer un if en la vista para que si no encontró nada, devuelva un mensaje
+        })
+        .catch(function(e){
+            res.render("404_notFound")
+        })
+    }
 }
