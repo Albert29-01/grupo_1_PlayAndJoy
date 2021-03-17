@@ -8,7 +8,7 @@
         <h1>Crea tu cuenta</h1>
     </header>   
         <form action="/users/register" method="POST" class="register" enctype="multipart/form-data">
-            <ul>
+            <ul style="list-style: none">
             <% if( errors != undefined) {%> 
             <% for(let i = 0; i < errors.length; i++ ) { %>
                 <li style="color: red"><%= errors[i].errors.msg %> </li>
