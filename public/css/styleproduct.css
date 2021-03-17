@@ -78,7 +78,7 @@ section.detalleProd article form div input {
     position: relative;
     top: -0.3vw;
 }
-section.detalleProd article form button {
+section.detalleProd article form button.addcart {
     font-family: Quicksand;
     display: inline-flex;
     justify-content: space-around;
