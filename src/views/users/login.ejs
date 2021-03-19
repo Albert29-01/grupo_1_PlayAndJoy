@@ -8,12 +8,14 @@
     </header>
     <form action="" method="POST" class="login">
         <ul style="list-style: none">
-            <li style="color: red" ><%= errors == undefined ? null : errors[0].msg %></li>
-        </ul>
+            <% for(let i = 0; i < errors.length; i++ ) { %>
+                <li style="color: red"><%= errors[i].msg %> </li>
+            <% } %>
+            </ul>
         <label for="usuario">Usuario</label>
         <input class="campo" type="email" name="email" required>
         <label for="password">Contraseña</label>
-        <input class="campo" type="password" name="password" required>
+        <input class="campo" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
         <button class="botonEntrar" type="submit">ENTRAR</button>
         <small>
             <input type="checkbox" name="remember"> Recordar mi usuario y contraseña<br>

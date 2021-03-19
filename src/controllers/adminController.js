@@ -132,7 +132,7 @@ module.exports = {
                 nombre: req.files[0].filename,
                 id_product: resultado.id
             })
-            res.redirect('/admin/admin/'+resultado.id)
+            res.redirect('/admin/product/'+resultado.id)
         })
         .catch(function(e){
             res.render("404_notFound")
