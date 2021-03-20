@@ -23,15 +23,15 @@ router.get('/suscription/:idSuscription', adminController.vistaSuscrip);
 
 router.get('/cargaProducto', adminController.formCargaP);
 router.post('/cargaProducto',upload.any(),[
-  check("nombreProducto")
+   check("nombreProducto")
   .notEmpty().withMessage("El producto debe tener un nombre")
-  .isLength({min:5}).withMessage("El producto debe tener al menos 5 caracteres"),
+  .isLength({min:5}),
   check("detalle")
-  .isLength({min:20}).withMessage("El detalle debe tener al menos 20 caracteres"),
+  .isLength({min:20}),
   check("precio")
   .isDecimal({force_decimal: false, decimal_digits: '1,2', locale: 'en-US'}).withMessage("El precio debe tener formato 1000.00"),
   check("cantidad")
-  .isInt({allow_leading_zeroes: false }).withMessage("La cantidad debe ser mayor a 0 y un número entero"),
+  .isInt({allow_leading_zeroes: false }),
   /*body('imagen').custom(function(filename) {
     var extension = (path.extname(filename)).toString();
     console.log(extension)
