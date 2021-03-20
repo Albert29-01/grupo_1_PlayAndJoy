@@ -15,7 +15,7 @@ var storage = multer.diskStorage({ //ver que no se cargue la imagen si hay error
       cb(null, req.body.email + '-' + Date.now() + path.extname(file.originalname));
     }
   });
-   
+
 var upload = multer({ storage: storage });
 
 
@@ -41,7 +41,7 @@ router.post('/register',upload.any(),[
   check('nombre')
   .notEmpty().withMessage('Campo nombre requerido'),
   check('apellido')
-  .notEmpty().withMessage('Campo apellido requerido')
+  .notEmpty().withMessage('Campo apellido requerido'),
 ],usersController.crearCuenta);
 
 

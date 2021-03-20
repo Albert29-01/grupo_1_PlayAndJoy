@@ -5,6 +5,11 @@
     <%- include('../partials/header')%>
     <form action="/admin/cargaSuscription/<%=typeof suscripcion != "undefined"? suscripcion.id + "?_method=" + metodo : null %>" method="POST" class="carga">
         <h1 class="carga">Carga de Suscripción</h1>
+        <ul style="list-style: none">
+            <% for(let i = 0; i < errors.length; i++ ) { %>
+                <li style="color: red"><%= errors[i].msg %> </li>
+            <% } %>
+        </ul>
         <label for="tipoSuscripcion">Tipo de Suscripción</label>
         <input type="text" id="tipoSuscripcion" name="tipoSuscripcion" required value="<%=typeof suscripcion != "undefined"? suscripcion.nombre: null%>">
         <label for="precio">Precio</label>
