@@ -1,7 +1,9 @@
+//const Swal = require('sweetalert2')
+
 function myFunction() {
-    var nombreProducto = document.getElementById("nombreProducto").value;
-    var detalle = document.getElementById("detalle").value;
-    var cantidad = document.getElementById("cantidad").value;
+    let nombreProducto = document.getElementById("nombreProducto").value;
+    let detalle = document.getElementById("detalle").value;
+    let cantidad = document.getElementById("cantidad").value;
     
     
     if (nombreProducto=='' || nombreProducto.length < 5) {
@@ -21,17 +23,30 @@ function myFunction() {
     }
 }
 
-/*var formulario=document.querySelector('form')
-formulario.addEventListener('submit', function(event){
-    var image = document.getElementById('imagen').value
-    if (!(/\.(jpg|png|jpeg|gif)$/i).test(image)) {
+
+let imagen=document.getElementById('imagen')
+imagen.addEventListener('change', function(){
+    let file = this.files[0]
+    console.log(file)
+    if (/.(gif|jpeg|jpg|png)$/i.test(file.type)) {
         document.getElementById("errorImagen").innerText = '';
     }else {
-        event.preventDefault()
-        
-        document.getElementById("errorImagen").innerText = 'El archivo a adjuntar no es una imagen' */  //no funciona
+        document.getElementById("errorImagen").innerText = 'Los formatos de imagen admitidos son: .jpeg .jpg .gif .png'
     }
 })
+
+
+/*function formSubmit(event){
+    const delay = 5000;
+    setTimeout(formSubmit,delay)
+    event.preventDefault()
+    Swal.fire(
+        'Excelente!',
+        'Producto cargado exitosamente!',
+        'success'
+      )
+}*/
+
 
 
 

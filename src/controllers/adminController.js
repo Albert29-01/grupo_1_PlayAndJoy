@@ -193,9 +193,14 @@ module.exports = {
                         res.render("404_notFound")
                     })
                 } else {
-                    res.render ('./admin/cargaProducto',{
-                        errors: errors.errors
-                    });
+                    let errors = validationResult(req);
+                    db.Categoria.findAll()
+                    .then(function(categorias){
+                        return res.render ('./admin/cargaProducto',{
+                            categorias,
+                            errors: errors.errors
+                        });
+                    })
                 }
             },
             cargaSuscription:function(req,res){

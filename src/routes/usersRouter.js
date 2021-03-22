@@ -29,7 +29,27 @@ router.post('/login',[
 
 router.get('/profile/:idUser/logout',authMiddlewares,usersController.logout);
 router.get('/profile/:idUser/editProfile',authMiddlewares,usersController.editProfile);
-router.put('/profile/:idUser/editProfile',authMiddlewares,upload.any(),usersController.updateProfile);
+router.put('/profile/:idUser/editProfile',authMiddlewares,upload.any(),[
+  check('email').isEmail().withMessage('Debes ingresar un email válido'),
+  check('nombre')
+  .notEmpty().withMessage('Campo nombre requerido'),
+  check('apellido')
+  .notEmpty().withMessage('Campo apellido requerido'),
+  check('avatar').custom((value, {req}) => {
+    switch (req.files[0].mimetype){
+      case 'image/jpg':
+        return '.jpg';
+      case 'image/jpeg':
+        return '.jpeg';
+      case  'image/png':
+        return '.png';
+      case  'image/gif':
+        return '.gif';
+      default:
+        return false;
+    }
+}).withMessage('Los formatos de imagen admitidos son JPEG, JPG, GIF, PNG.'),
+],usersController.updateProfile);
 router.get('/profile/:idUser',authMiddlewares,usersController.profile);
 
 router.get('/register',guestMiddlewares,usersController.register);
@@ -42,6 +62,20 @@ router.post('/register',upload.any(),[
   .notEmpty().withMessage('Campo nombre requerido'),
   check('apellido')
   .notEmpty().withMessage('Campo apellido requerido'),
+  check('avatar').custom((value, {req}) => {
+    switch (req.files.mimetype){
+      case '.jpg':
+        return '.jpg';
+    case '.jpeg':
+        return '.jpeg';
+    case  '.png':
+        return '.png';
+    case  '.gif':
+        return '.gif';
+    default:
+        return false;
+    }
+}).withMessage('Los formatos de imagen admitidos son JPEG, JPG, GIF, PNG.'),
 ],usersController.crearCuenta);
 
 

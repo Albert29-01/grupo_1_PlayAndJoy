@@ -24,10 +24,9 @@ module.exports = {
             })
             .then(function(usuario){
                 if(usuario == null){
+                    errors.errors.push({msg: "Usuario no encontrado"})
                     return res.render('./users/login', {
-                        errors: [
-                            {msg: 'Usuario no encontrado'}
-                        ]
+                        errors: errors.errors
                     });
                 } else {
                     if(bcrypt.compareSync(req.body.password,usuario.password)){
@@ -37,10 +36,9 @@ module.exports = {
                         }
                         return res.redirect('/');
                     } else {
+                        errors.errors.push({msg: "Contraseña incorrecta"})
                         return res.render('./users/login', {
-                            errors: [
-                                {msg: 'Contraseña incorrecta'}
-                            ]
+                            errors: errors.errors
                         });
                     }
                 }
@@ -66,10 +64,12 @@ module.exports = {
         })
     },
     editProfile: function (req, res) {
+        let errors = validationResult(req);
         db.Usuario.findByPk(req.session.usuarioLogueado.id)
         .then(function(user){
             return res.render('./users/editProfile',{
-                user
+                user,
+                errors
             });
         })
         .catch(function(e){
@@ -77,26 +77,40 @@ module.exports = {
         })
     },
     updateProfile: function (req, res) {
-        db.Usuario.update({
-            first_name: req.body.nombre,
-            last_name: req.body.apellido,
-            email: req.body.email,
-            imagen: req.files[0].filename,
-            birth_date: req.body.date,
-            domicilio: req.body.domicilio,
-            localidad: req.body.localidad,
-            provincia: req.body.provincia,
-        },{
-            where: {
-                id: req.params.idUser
-            }
-        })
-        .then(function(usuarioActualizado){
-            return res.redirect('/users/profile/'+req.session.usuarioLogueado.id);
-        })
-        .catch(function(e){
-            res.render("404_notFound")
-        })
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            db.Usuario.update({
+                first_name: req.body.nombre,
+                last_name: req.body.apellido,
+                email: req.body.email,
+                imagen: req.files[0].filename,
+                birth_date: req.body.date,
+                domicilio: req.body.domicilio,
+                localidad: req.body.localidad,
+                provincia: req.body.provincia,
+            },{
+                where: {
+                    id: req.params.idUser
+                }
+            })
+            .then(function(usuarioActualizado){
+                return res.redirect('/users/profile/'+req.session.usuarioLogueado.id);
+            })
+            .catch(function(e){
+                res.render("404_notFound")
+            })
+        } else {
+            db.Usuario.findByPk(req.session.usuarioLogueado.id)
+            .then(function(user){
+                return res.render('./users/editProfile',{
+                    user,
+                    errors: errors.errors
+                });
+            })
+            .catch(function(e){
+                res.render("404_notFound")
+            })
+        }
     },
     register: function (req, res) {
         let errors = validationResult(req);
@@ -125,7 +139,7 @@ module.exports = {
                     }
                 })
                 .then (function(resultado){
-                    if(!resultado[1]){
+                    if(!resultado[1]){ // si devuelve FALSE es que no se creó el usuario
                         errors.errors.push({msg: "Usuario ya registrado"})
                         return res.render('./users/registro', {
                             errors: errors.errors

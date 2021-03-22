@@ -6,6 +6,11 @@
     <%- include('../partials/menuProfile') %>
     <section class="formEditInfoPersonal">
         <form action="?_method=PUT" method="POST" class="register" enctype="multipart/form-data">
+            <ul id="errors" style="list-style: none" >
+                <% for(let i = 0; i < errors.length; i++ ) { %>
+                    <li  style="color: red"><%= errors[i].msg %> </li>
+                <% } %>
+            </ul>
             <label for="avatar">Avatar</label>
             <% if (typeof user != undefined ){ %> 
                 <img src="/img/uploads/avatars/<%=user.imagen %> " height="200" width="200" alt="">
