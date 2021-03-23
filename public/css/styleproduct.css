@@ -26,9 +26,17 @@ section.detalleProd {
     display: flex;
     background-color: rgba(250, 250, 250, 0.7);
 }
+
 section.detalleProd .images {
     margin-left: 3vw;
     margin-right: 2vw;
+}
+
+section.detalleProd .images .principal img{
+    margin-right: 2vw;
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
 }
 
 section.detalleProd .images .miniatura img {

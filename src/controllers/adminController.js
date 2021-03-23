@@ -184,7 +184,7 @@ module.exports = {
                     })
                     .then(function(resultado){
                         db.Image.create({
-                            nombre: req.files[0].filename,
+                            nombre:  req.files.length != 0? req.files[0].filename: 'imagenDefault.png',
                             id_product: resultado.id
                         })
                         res.redirect('/admin/product/'+resultado.id)
