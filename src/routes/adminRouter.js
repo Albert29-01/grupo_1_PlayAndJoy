@@ -12,11 +12,27 @@ var storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
       cb(null, req.body.nombreProducto + '-' + Date.now() + path.extname(file.originalname));
-    }
+    },
   });
   
-   
-var upload = multer({ storage: storage });
+
+var upload = multer({ storage: storage,
+  fileFilter: function (req, file, cb) {
+    console.log(file.mimetype)
+    switch (file.mimetype){
+      case 'image/jpg':
+        return cb(null, true);
+      case 'image/jpeg':
+        return cb(null, true);
+      case  'image/png':
+        return cb(null, true);
+      case  'image/gif':
+        return cb(null, true);
+      default:
+        return cb(null, false);
+    }
+  }
+});
 
 router.get('/product/:idProduct', adminController.vistaProd);
 router.get('/suscription/:idSuscription', adminController.vistaSuscrip);
@@ -33,20 +49,7 @@ router.post('/cargaProducto',upload.any(),[
   .isDecimal({force_decimal: false, decimal_digits: '1,2', locale: 'en-US'}).withMessage("El precio debe tener formato 1000.00"),
   check("cantidad")
   .isInt({allow_leading_zeroes: false }),
-  check('imagen').custom((value, {req}) => {
-        switch (req.files[0].mimetype){
-          case 'image/jpg':
-            return '.jpg';
-        case 'image/jpeg':
-            return '.jpeg';
-        case  'image/png':
-            return '.png';
-        case  'image/gif':
-            return '.gif';
-        default:
-            return false;
-        }
-    }).withMessage('Los formatos de imagen admitidos son JPEG, JPG, GIF, PNG.'),
+  check('imagen').notEmpty().withMessage('Los formatos de imagen admitidos son JPEG, JPG, GIF, PNG.'),
 ], adminController.cargaProduct);
 
 
@@ -61,20 +64,7 @@ router.put('/cargaProducto/:idProduct',upload.any(),[
   .isDecimal({force_decimal: false, decimal_digits: '1,2', locale: 'en-US'}).withMessage("El precio debe tener formato 1000.00"),
   check("cantidad")
   .isInt({allow_leading_zeroes: false }).withMessage("La cantidad debe ser mayor a 0 y un número entero"),
-  check('imagen').custom((value, {req}) => {
-    switch (req.files[0].mimetype){
-      case 'image/jpg':
-        return '.jpg';
-      case 'image/jpeg':
-        return '.jpeg';
-      case  'image/png':
-        return '.png';
-      case  'image/gif':
-        return '.gif';
-      default:
-        return false;
-    }
-}).withMessage('Los formatos de imagen admitidos son JPEG, JPG, GIF, PNG.'),
+  check('imagen').notEmpty().withMessage('Los formatos de imagen admitidos son JPEG, JPG, GIF, PNG.'),
 ], adminController.editProd);
 
 router.get('/deleteProducto/:idProduct', adminController.deleteProd);

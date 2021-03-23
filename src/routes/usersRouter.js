@@ -16,7 +16,22 @@ var storage = multer.diskStorage({ //ver que no se cargue la imagen si hay error
     }
   });
 
-var upload = multer({ storage: storage });
+var upload = multer({ storage: storage,
+  fileFilter: function (req, file, cb) {
+    console.log(file.mimetype)
+    switch (file.mimetype){
+      case 'image/jpg':
+        return cb(null, true);
+      case 'image/jpeg':
+        return cb(null, true);
+      case  'image/png':
+        return cb(null, true);
+      case  'image/gif':
+        return cb(null, true);
+      default:
+        return cb(null, false);
+    }
+  } });
 
 
 router.get('/login',guestMiddlewares,usersController.login);
@@ -35,20 +50,7 @@ router.put('/profile/:idUser/editProfile',authMiddlewares,upload.any(),[
   .notEmpty().withMessage('Campo nombre requerido'),
   check('apellido')
   .notEmpty().withMessage('Campo apellido requerido'),
-  check('avatar').custom((value, {req}) => {
-    switch (req.files[0].mimetype){
-      case 'image/jpg':
-        return '.jpg';
-      case 'image/jpeg':
-        return '.jpeg';
-      case  'image/png':
-        return '.png';
-      case  'image/gif':
-        return '.gif';
-      default:
-        return false;
-    }
-}).withMessage('Los formatos de imagen admitidos son JPEG, JPG, GIF, PNG.'),
+  check('avatar').notEmpty().withMessage('Los formatos de imagen admitidos son JPEG, JPG, GIF, PNG.'),
 ],usersController.updateProfile);
 router.get('/profile/:idUser',authMiddlewares,usersController.profile);
 
@@ -62,20 +64,7 @@ router.post('/register',upload.any(),[
   .notEmpty().withMessage('Campo nombre requerido'),
   check('apellido')
   .notEmpty().withMessage('Campo apellido requerido'),
-  check('avatar').custom((value, {req}) => {
-    switch (req.files.mimetype){
-      case '.jpg':
-        return '.jpg';
-    case '.jpeg':
-        return '.jpeg';
-    case  '.png':
-        return '.png';
-    case  '.gif':
-        return '.gif';
-    default:
-        return false;
-    }
-}).withMessage('Los formatos de imagen admitidos son JPEG, JPG, GIF, PNG.'),
+  check('avatar').notEmpty().withMessage('Los formatos de imagen admitidos son JPEG, JPG, GIF, PNG.'),
 ],usersController.crearCuenta);
 
 
