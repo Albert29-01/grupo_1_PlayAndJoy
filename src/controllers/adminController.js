@@ -173,6 +173,7 @@ module.exports = {
             },
             cargaProduct:function(req,res){
                 let errors = validationResult(req);
+                console.log(errors)
                 if(errors.isEmpty()){
                     db.Producto.create({
                         nombre: req.body.nombreProducto,
@@ -184,7 +185,7 @@ module.exports = {
                     })
                     .then(function(resultado){
                         db.Image.create({
-                            nombre:  req.files.length != 0? req.files[0].filename: 'imagenDefault.png',
+                            nombre: req.files.imagen[0].filename,
                             id_product: resultado.id
                         })
                         res.redirect('/admin/product/'+resultado.id)

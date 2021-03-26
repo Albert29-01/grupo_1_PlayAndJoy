@@ -1,6 +1,7 @@
 const bcrypt = require ('bcryptjs');
 const db = require ('../database/models/index');
 const { validationResult } = require('express-validator');
+const provinciasRequest = require('../request/provinciasRequest')
 
 module.exports = {
     login: function (req, res) {
@@ -114,9 +115,18 @@ module.exports = {
     },
     register: function (req, res) {
         let errors = validationResult(req);
-        return res.render('./users/registro',{
-            errors
-        });
+        provinciasRequest.getProvincias()
+        .then(function(data){
+            console.log('NOE:', data.data.provincias)
+            return res.render('./users/registro',{
+                errors,
+                data
+            });
+        })
+        .catch(function(e){
+            console.log(e)
+            res.render("404_notFound")
+        })
     },
     crearCuenta: function(req,res,next){
         let errors = validationResult(req);
