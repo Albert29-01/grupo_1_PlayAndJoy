@@ -1,18 +1,20 @@
 const axios = require ('axios');
 const defaults = require('./default')
-const url = 'provincias'
+const url = 'municipios'
 
-const provinciasRequest = {
-    getProvincias: function(){
+const municipiosRequest = {
+    getMunicipios: function(id){
         return axios({
             ...defaults,
             method:'get',
             url:`${url}`,
             params: {
-                campos:'id,nombre'
+                provincia: id,
+                campos:'id,nombre',
+                max: 100
             }
         })
     }
 }
 
-module.exports = provinciasRequest;
+module.exports = municipiosRequest;

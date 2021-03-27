@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head')%>
+<%- include('../partials/head')%>
 <body class="register">
     <section class="register">
-    <header class="register">
-        <a href="/"><img src="/img/logo-transparente.png" alt="Logo" width="240px" height="90px"></a>
-        <h1>Crea tu cuenta</h1>
-    </header>   
+        <header class="register">
+            <a href="/"><img src="/img/logo-transparente.png" alt="Logo" width="240px" height="90px"></a>
+            <h1>Crea tu cuenta</h1>
+        </header>   
         <form action="/users/register" method="POST" class="register" enctype="multipart/form-data">
             <ul style="list-style: none">
-            <% for(let i = 0; i < errors.length; i++ ) { %>
-                <li style="color: red"><%= errors[i].msg %> </li>
-            <% } %>
-            </ul>
-            <label for="avatar">Avatar</label>
-            <input class="campo" type="file" id="avatar" name="avatar" accept="image/gif, image/jpeg, image/png, image/jpg">
-            <label for="nombre">Nombre</label>
-            <input class="campo" type="text" id="nombre" name="nombre" required>
-            <label for="apellido">Apellido</label>
-            <input class="campo" type="text" id="apellido" name="apellido" required>
-        <div class="date">
-            <label for="fecha">Fecha de nacimiento</label>
-            <input class="campo" type="date" id="date" name="date" required>
-        </div>
-        <label for="domicilio">Domicilio</label>
-        <input class="campo" type="text" id="domicilio" name="domicilio" required>
-        <section class="localidadProvincia">
-        <div class="localidad">
-            <label for="localidad">Localidad</label>
-            <input type="text" id="localidad" name="localidad" required>
-        </div>
-        <div>
-            <label for="provincia">Provincia</label>
-            <input type="text" id="provincia" name="provincia" required>
-        </div>
-        </section>
-        <label for="email">E-mail</label>
-        <input class="campo" type="email" id="email" name="email" required>
-        <label for="password">Contraseña</label>
-        <input class="campo" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-        <label for="passwordConfirm">Repetir contraseña</label>
-        <input class="campo" type="password" id="passwordConfirm" name="passwordConfirm" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-        <section class="opciones">
-            <input type="checkbox" name="genero" value="informacion"> Deseo recibir más información<br>
-            <input type="checkbox" name="genero" value="terminosCondiciones" required> Acepto términos y condiciones<br>
-        </section>
-        <button class="boton_personalizado" type="submit">CREAR CUENTA</button>
-        </form>
-    </section>
-</body>
-</html>
+                <% for(let i = 0; i < errors.length; i++ ) { %>
+                    <li style="color: red"><%= errors[i].msg %> </li>
+                    <% } %>
+                </ul>
+                <label for="avatar">Avatar</label>
+                <input class="campo" type="file" id="avatar" name="avatar" accept="image/gif, image/jpeg, image/png, image/jpg">
+                <label for="nombre">Nombre</label>
+                <input class="campo" type="text" id="nombre" name="nombre" required>
+                <label for="apellido">Apellido</label>
+                <input class="campo" type="text" id="apellido" name="apellido" required>
+                <div class="date">
+                    <label for="fecha">Fecha de nacimiento</label>
+                    <input class="campo" type="date" id="date" name="date" required>
+                </div>
+                <label for="domicilio">Domicilio</label>
+                <input class="campo" type="text" id="domicilio" name="domicilio" required>
+                <section class="localidadProvincia">
+                    <div>
+                        <label for="provincia">Provincia</label>
+                        <select name="provincia" id="provincia" onchange="myFunction(event)">
+                            <option value="none" selected disabled hidden> 
+                                Selecciona una provincia 
+                            </option>
+                            <% for(let i = 0; i< data.length; i++){ %>
+                                <option class="provincia" value='<%=data[i].id %>'><%=data[i].nombre%></option>
+                                <% } %> 
+                            </select>
+                        </div>
+                        <div class="localidad">
+                            <label for="municipios">Localidad</label>
+                            <select class="municipio" name="municipios" id="municipios">
+                                <option value="none" selected disabled hidden> 
+                                    Selecciona un municipio 
+                                </option>
+                                </select>
+                        </div>
+                    </section>
+                    <label for="email">E-mail</label>
+                    <input class="campo" type="email" id="email" name="email" required>
+                    <label for="password">Contraseña</label>
+                    <input class="campo" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    <label for="passwordConfirm">Repetir contraseña</label>
+                    <input class="campo" type="password" id="passwordConfirm" name="passwordConfirm" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    <section class="opciones">
+                        <input type="checkbox" name="genero" value="informacion"> Deseo recibir más información<br>
+                        <input type="checkbox" name="genero" value="terminosCondiciones" required> Acepto términos y condiciones<br>
+                    </section>
+                    <button class="boton_personalizado" type="submit">CREAR CUENTA</button>
+                </form>
+            </section>
+            <script type='text/javascript' src="/js/register.js"></script>
+        </body>
+        </html>

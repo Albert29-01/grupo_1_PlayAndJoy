@@ -1,7 +1,8 @@
 const bcrypt = require ('bcryptjs');
 const db = require ('../database/models/index');
 const { validationResult } = require('express-validator');
-const provinciasRequest = require('../request/provinciasRequest')
+const provinciasRequest = require('../request/provinciasRequest');
+const municipiosRequest = require('../request/municipiosRequest');
 
 module.exports = {
     login: function (req, res) {
@@ -78,40 +79,45 @@ module.exports = {
         })
     },
     updateProfile: function (req, res) {
-        let errors = validationResult(req);
-        if(errors.isEmpty()){
-            db.Usuario.update({
-                first_name: req.body.nombre,
-                last_name: req.body.apellido,
-                email: req.body.email,
-                imagen: req.files[0].filename,
-                birth_date: req.body.date,
-                domicilio: req.body.domicilio,
-                localidad: req.body.localidad,
-                provincia: req.body.provincia,
-            },{
-                where: {
-                    id: req.params.idUser
-                }
-            })
-            .then(function(usuarioActualizado){
-                return res.redirect('/users/profile/'+req.session.usuarioLogueado.id);
-            })
-            .catch(function(e){
-                res.render("404_notFound")
-            })
-        } else {
-            db.Usuario.findByPk(req.session.usuarioLogueado.id)
-            .then(function(user){
-                return res.render('./users/editProfile',{
-                    user,
-                    errors: errors.errors
-                });
-            })
-            .catch(function(e){
-                res.render("404_notFound")
-            })
-        }
+        db.Usuario.findByPk(req.params.idUser)
+        .then(function(resultado){
+            let avatar = resultado.imagen
+            let errors = validationResult(req);
+            if(errors.isEmpty()){
+                db.Usuario.update({
+                    first_name: req.body.nombre,
+                    last_name: req.body.apellido,
+                    email: req.body.email,
+                    imagen: req.files.avatar.length > 0?req.files.avatar[0].filename: avatar,
+                    birth_date: req.body.date,
+                    domicilio: req.body.domicilio,
+                    localidad: req.body.localidad,
+                    provincia: req.body.provincia,
+                },{
+                    where: {
+                        id: req.params.idUser
+                    }
+                })
+                .then(function(usuarioActualizado){
+                    return res.redirect('/users/profile/'+req.session.usuarioLogueado.id);
+                })
+                .catch(function(e){
+                    res.render("404_notFound")
+                    console.log(e)
+                })
+            } else {
+                db.Usuario.findByPk(req.session.usuarioLogueado.id)
+                .then(function(user){
+                    return res.render('./users/editProfile',{
+                        user,
+                        errors: errors.errors
+                    });
+                })
+                .catch(function(e){
+                    res.render("404_notFound")
+                })
+            }
+        })
     },
     register: function (req, res) {
         let errors = validationResult(req);
@@ -120,7 +126,7 @@ module.exports = {
             console.log('NOE:', data.data.provincias)
             return res.render('./users/registro',{
                 errors,
-                data
+                data: data.data.provincias
             });
         })
         .catch(function(e){
@@ -130,6 +136,8 @@ module.exports = {
     },
     crearCuenta: function(req,res,next){
         let errors = validationResult(req);
+        console.log('ERROR: ',errors)
+        console.log('FILE: ',req.files)
         if(errors.isEmpty()){
             if (req.body.password == req.body.passwordConfirm){ 
                 db.Usuario.findOrCreate({
@@ -141,7 +149,7 @@ module.exports = {
                         last_name: req.body.apellido,
                         email: req.body.email,
                         password: bcrypt.hashSync(req.body.password, 12),
-                        imagen: req.files.length != 0? req.files[0].filename: 'avatarDefault.jpg',
+                        imagen: req.files.avatar.length != 0? req.files.avatar[0].filename: 'avatarDefault.jpg',
                         birth_date: req.body.date,
                         domicilio: req.body.domicilio,
                         localidad: req.body.localidad,

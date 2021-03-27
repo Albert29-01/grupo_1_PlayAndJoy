@@ -12,10 +12,8 @@
                 <% } %>
             </ul>
             <label for="avatar">Avatar</label>
-            <% if (typeof user != undefined ){ %> 
-                <img src="/img/uploads/avatars/<%=user.imagen %> " height="200" width="200" alt="">
-                <% } %> 
-            <input type="file" id="avatar" name="avatar">
+            <img class="avatar" src="/img/uploads/avatars/<%= user != 'undefinded'? user.imagen: null %> " alt="imagen de perfil del usuario">
+            <input type="file" id="avatar" name="avatar" accept="image/gif, image/jpeg, image/png, image/jpg">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre" value="<%=user.first_name %>" required>
             <label for="apellido">Apellido</label>

@@ -6,9 +6,7 @@
     <%- include('../partials/menuProfile') %>
     <section class="infoPersonal">
             <label>Avatar</label>
-            <% if (typeof user != "undefined"){ %> 
-                <img src="/img/uploads/avatars/<%=user.imagen %> " height="200" width="auto" alt="imagen de perfil del usuario">
-                <% } %> 
+            <img class="avatar" src="/img/uploads/avatars/<%= user != 'undefinded'? user.imagen: null %> " alt="imagen de perfil del usuario">
             <label>Nombre</label>
             <p> <%=user.first_name %></p>
             <label for="apellido">Apellido</label>
