@@ -1,10 +1,27 @@
-const fs = require ('fs');
-const path = require ('path');
-/*const { DATE } = require('sequelize/types');*/
 const { validationResult } = require('express-validator');
 const db = require ('../database/models/index');
 
 module.exports = {
+    index: function(req,res){
+        res.render('./admin/adminIndex')
+    },
+    users: function(req,res){
+        db.Usuario.findAll()
+        .then(function(usuarios){
+            //return res.json(usuarios)
+            return res.render('./admin/adminUsers',{
+            usuarios
+            })
+        })
+    },
+    usersDelete: function(req,res){
+        db.Usuario.destroy({
+            where: {
+                id: req.params.idUser
+            }
+        })
+        return res.send("Usuario " + req.params.idUser + " eliminado con éxito!");
+    },
     vistaProd: function (req, res){
         db.Producto.findByPk(req.params.idProduct)
         .then(function(resultado){

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head')%>
+</head>
+<body>
+    <%- include('../partials/headerAdmin')%>
+    <h1 class="tituloSec">Listado de Usuarios</h1>
+    <section class='admin'>
+            <% for( let i = 0; i < usuarios.length; i++ ) { %>
+                <div class='card'>
+                    <p>ID: <%= usuarios[i].id %> </p>
+                    <p>Nombre: <%= usuarios[i].last_name %> </p>
+                    <p>Apellido: <%= usuarios[i].first_name %> </p>
+                    <p>Email: <%= usuarios[i].email %> </p>
+                    <a href="/admin/users/delete/<%= usuarios[i].id %>" id="deleteUser" onclick="deleteUser(event)">ELIMINAR</a>
+                </div>
+            <% } %>
+    </section>
+<script src="/js/adminjs.js" type="text/javascript"> </script> 
+</body>
+</html>

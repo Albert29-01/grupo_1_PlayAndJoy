@@ -123,7 +123,6 @@ module.exports = {
         let errors = validationResult(req);
         provinciasRequest.getProvincias()
         .then(function(data){
-            console.log('NOE:', data.data.provincias)
             return res.render('./users/registro',{
                 errors,
                 data: data.data.provincias
@@ -136,8 +135,6 @@ module.exports = {
     },
     crearCuenta: function(req,res,next){
         let errors = validationResult(req);
-        console.log('ERROR: ',errors)
-        console.log('FILE: ',req.files)
         if(errors.isEmpty()){
             if (req.body.password == req.body.passwordConfirm){ 
                 db.Usuario.findOrCreate({

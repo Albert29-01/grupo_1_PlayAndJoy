@@ -2,7 +2,7 @@
 <html lang="en">
 <%- include('../partials/head')%>
 <body>
-    <%- include('../partials/header') %>
+    <%- include('../partials/headerAdmin')%>
     <section class="detalleSuscrip">
         <a href="/admin/editSuscription/<%= suscripcion.id %>"><button type=“button” class="carga">EDITAR</button></a> 
         <a href="/admin/deleteSuscription/<%= suscripcion.id %>"><button type=“button” class="carga">ELIMINAR</button></a>
@@ -81,6 +81,7 @@
     <hr>
     <h2 class="titulo">Productos Similares</h2>
     <%- include('../partials/sectionProducts') %>  
-    <%- include('../partials/footer') %>  
+    <%- include('../partials/footer') %>
+    <script src="/js/adminjs.js" type="text/javascript"> </script>  
 </body>
 </html>

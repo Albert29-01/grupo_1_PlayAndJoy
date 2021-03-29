@@ -22,6 +22,10 @@ var upload = multer({ storage: storage,
   }
 });
 
+router.get('/', adminController.index);
+router.get('/users', adminController.users);
+router.get('/users/delete/:idUser', adminController.usersDelete);
+
 router.get('/product/:idProduct', adminController.vistaProd);
 router.get('/suscription/:idSuscription', adminController.vistaSuscrip);
 

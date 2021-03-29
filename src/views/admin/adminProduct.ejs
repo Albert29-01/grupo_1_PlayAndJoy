@@ -2,7 +2,7 @@
 <html lang="en">
     <%- include('../partials/head')%>
 <body>
-    <%- include('../partials/header') %>
+    <%- include('../partials/headerAdmin')%>
     <section class="detalleProd">
         <a href="/admin/editProducto/<%= producto.id %>"><button type=“button” class="carga">EDITAR</button></a> 
         <a href="/admin/deleteProducto/<%= producto.id %>"><button type=“button” class="carga">ELIMINAR</button></a>
@@ -64,5 +64,6 @@
     <h2 class="prodSimi">Productos Similares</h2>
     <%- include('../partials/sectionProducts') %>  
     <%- include('../partials/footer') %>
+    <script src="/js/adminjs.js" type="text/javascript"> </script> 
 </body>
 </html>
