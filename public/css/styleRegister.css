@@ -80,11 +80,10 @@ div {
     margin: 10px 0;
 }
 
-form.register input.campo {
-    font: size 18px;
-    width: 100%;
+input.campo {
     border: none;
-    border-bottom: solid 2px var(--color-ladrillo);   
+    border-bottom: solid 2px var(--color-ladrillo);
+    margin: 0 10px;   
     margin-bottom: 15px;
     background: none;
     border-radius: 0;

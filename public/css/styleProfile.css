@@ -16,11 +16,19 @@ section.menuProfile ul li{
     padding: 5px 15px;
 }
 
+section.menuProfile ul li.last{
+    border-right: none
+}
+
+section.menuProfile ul li a:hover{
+    color: var(--color-gris)
+}
+
 /*=================================
     SECCION MENU INFO PERSONAL
 ===================================*/
 
-div.infoPersonal{
+.infoPersonal{
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -32,22 +40,27 @@ div.infoPersonal{
     flex-direction: column;
 }
 
-div.infoPersonal img{
+.infoPersonal img{
     border-radius: 10px;
     height: 300px;
     width: 300px;
     object-fit: cover;
 }
 
-div.infoPersonal input{
+.infoPersonal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoPersonal form input{
     margin: 10px;
 }
 
-div.infoPersonal p{
+.infoPersonal p{
    margin: 5px 0;
 }
 
-div.infoPersonal button.carga{
+.infoPersonal button.carga{
     margin: 15px 0;
  }
 

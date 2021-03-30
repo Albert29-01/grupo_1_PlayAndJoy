@@ -2,7 +2,7 @@
 <html lang="en">
     <%- include('../partials/head')%>
 <body onload="myFunction()">
-    <div id="loader"></div>
+    <div id="loader"><img src="/img/lpicon.png" alt=""></div>
     <div style="display:none;" id="myDiv" class="animate-bottom">
     <%- include('../partials/header') %>
     <%- include('../partials/menuProfile') %>
@@ -12,24 +12,22 @@
                     <li  style="color: red"><%= errors[i].msg %> </li>
                 <% } %>
             </ul>
-            <div class="infoPersonal">
             <img class="avatar" src="/img/uploads/avatars/<%= user != 'undefinded'? user.imagen: null %> " alt="imagen de perfil del usuario">
             <label for="avatar">Avatar</label>
-            <input type="file" id="avatar" name="avatar" accept="image/gif, image/jpeg, image/png, image/jpg">
+            <input type="file" id="avatar" name="avatar" class="campo" accept="image/gif, image/jpeg, image/png, image/jpg">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" value="<%=user.first_name %>" required>
+            <input type="text" id="nombre" name="nombre" class="campo" value="<%=user.first_name %>" required>
             <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" value="<%=user.last_name %>" required>
+            <input type="text" id="apellido" name="apellido" class="campo" value="<%=user.last_name %>" required>
             <label for="domicilio">Domicilio</label>
-            <input type="text" id="domicilio" name="domicilio" value="<%=user.domicilio %>"required>
+            <input type="text" id="domicilio" name="domicilio" class="campo" value="<%=user.domicilio %>"required>
             <label for="localidad">Localidad</label>
-            <input type="text" id="localidad" name="localidad" value="<%=user.localidad %>" required>
+            <input type="text" id="localidad" name="localidad" class="campo" value="<%=user.localidad %>" required>
             <label for="provincia">Provincia</label>
-            <input type="text" id="provincia" name="provincia" value="<%=user.provincia %>" required>
+            <input type="text" id="provincia" name="provincia" class="campo" value="<%=user.provincia %>" required>
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" value="<%=user.email %>" required>
-            <button type="submit" class="carga">GUARDAR</button> 
-            </div>
+            <input type="email" id="email" name="email" class="campo" value="<%=user.email %>" required>
+            <button type="submit" class="carga">GUARDAR</button>
         </form>
     <hr>
     <h1 class="titulo">Más Vendidos</h1>

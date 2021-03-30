@@ -55,7 +55,7 @@ module.exports = {
         }
     },
     profile: function (req, res) {
-        db.Usuario.findByPk(req.session.usuarioLogueado.id)
+        db.Usuario.findByPk(req.params.idUser)
         .then(function(user){
             return res.render('./users/profile',{
                 user
@@ -67,9 +67,22 @@ module.exports = {
     },
     editProfile: function (req, res) {
         let errors = validationResult(req);
-        db.Usuario.findByPk(req.session.usuarioLogueado.id)
+        db.Usuario.findByPk(req.params.idUser)
         .then(function(user){
             return res.render('./users/editProfile',{
+                user,
+                errors
+            });
+        })
+        .catch(function(e){
+            res.render("404_notFound")
+        })
+    },
+    editPassword: function (req, res) {
+        let errors = validationResult(req);
+        db.Usuario.findByPk(req.params.idUser)
+        .then(function(user){
+            return res.render('./users/editPassword',{
                 user,
                 errors
             });
@@ -88,8 +101,7 @@ module.exports = {
                     first_name: req.body.nombre,
                     last_name: req.body.apellido,
                     email: req.body.email,
-                    imagen: req.files.avatar.length > 0?req.files.avatar[0].filename: avatar,
-                    birth_date: req.body.date,
+                    imagen: req.files.avatar.length>0?req.files.avatar[0].filename: avatar,
                     domicilio: req.body.domicilio,
                     localidad: req.body.localidad,
                     provincia: req.body.provincia,
@@ -106,7 +118,7 @@ module.exports = {
                     console.log(e)
                 })
             } else {
-                db.Usuario.findByPk(req.session.usuarioLogueado.id)
+                db.Usuario.findByPk(req.params.idUser)
                 .then(function(user){
                     return res.render('./users/editProfile',{
                         user,
@@ -118,6 +130,54 @@ module.exports = {
                 })
             }
         })
+    },
+    updatePassword: function(req,res){
+        return res.json(req.body) //NO FUNCA!!!
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            if (req.body.password == req.body.passwordConfirm){ 
+                db.Usuario.update({
+                    password: bcrypt.hashSync(req.body.password, 12),
+                },{
+                    where: {
+                        id: req.params.idUser,
+                    }
+                })
+                .then (function(resultado){
+                    req.session.usuarioLogueado = undefined;
+                    res.cookie("remember",undefined,{maxAge:0});
+                    return res.redirect('/users/login')
+                })
+                .catch(function(e){
+                    console.log(e)
+                    res.render("404_notFound")
+                })
+            } else {
+                db.Usuario.findByPk(req.params.idUser)
+                .then(function(user){
+                errors.errors.push({msg: "Las contraseñas no coinciden"})
+                return res.render('./users/editPassword',{
+                    user,
+                    errors: errors.errors
+                });
+            })
+            .catch(function(e){
+                res.render("404_notFound")
+            })
+            }
+        } else {
+            db.Usuario.findByPk(req.params.idUser)
+            .then(function(user){
+                return res.render('./users/editPassword',{
+                    user,
+                    errors: errors.errors
+                });
+            })
+            .catch(function(e){
+                console.log(e)
+                res.render("404_notFound")
+            })
+        }
     },
     register: function (req, res) {
         let errors = validationResult(req);

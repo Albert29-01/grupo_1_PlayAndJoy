@@ -95,7 +95,7 @@ header section.ppal form button {
     border-radius: 20px;
 }
 
-.menu li a:hover {
+.menu li a:hover,.ingreso li a:hover {
     color: var(--color-gris);
     transition: all .3s;
 }

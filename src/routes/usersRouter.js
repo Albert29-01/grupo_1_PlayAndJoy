@@ -7,7 +7,7 @@ const usersController = require ('../controllers/usersController');
 const guestMiddlewares = require ('../middlewares/guestMiddlewares');
 const authMiddlewares = require ('../middlewares/authMiddlewares');
 
-var storage = multer.diskStorage({ //ver que no se cargue la imagen si hay errores en el formulario
+var storage = multer.diskStorage({ 
     destination: function (req, file, cb) {
       cb(null, path.join(__dirname,'../../public/img/uploads/avatars'));
     },
@@ -33,6 +33,14 @@ router.post('/login',[
 ],usersController.session);
 
 router.get('/profile/:idUser/logout',authMiddlewares,usersController.logout);
+
+router.get('/profile/:idUser/editPassword',authMiddlewares,usersController.editPassword);
+router.put('/profile/:idUser/editPassword',authMiddlewares,[
+  check('password')
+  .notEmpty().withMessage('No te olvides la contraseña')
+  .isLength({min:8}).withMessage('La contraseña debe contener al menos 8 caracteres'),
+],usersController.updatePassword);
+
 router.get('/profile/:idUser/editProfile',authMiddlewares,usersController.editProfile);
 router.put('/profile/:idUser/editProfile',authMiddlewares,[
   upload.fields([{name:'avatar'}]),
@@ -49,6 +57,7 @@ router.put('/profile/:idUser/editProfile',authMiddlewares,[
     }
 })
 ],usersController.updateProfile);
+
 router.get('/profile/:idUser',authMiddlewares,usersController.profile);
 
 router.get('/register',guestMiddlewares,usersController.register);
