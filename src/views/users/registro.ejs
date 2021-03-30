@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head')%>
-<body class="register">
-    <section class="register">
+<body class="register" onload="myFunction()">
+    <div id="loader"></div>
+    <section class="register" style="display:none;" id="myDiv" class="animate-bottom" >
         <header class="register">
             <a href="/"><img src="/img/logo-transparente.png" alt="Logo" width="240px" height="90px"></a>
             <h1>Crea tu cuenta</h1>
@@ -28,7 +29,7 @@
                 <section class="localidadProvincia">
                     <div>
                         <label for="provincia">Provincia</label>
-                        <select name="provincia" id="provincia" onchange="myFunction(event)">
+                        <select name="provincia" id="provincia" onchange="selectProvincia(event)">
                             <option value="none" selected disabled hidden> 
                                 Selecciona una provincia 
                             </option>
@@ -43,7 +44,7 @@
                                 <option value="none" selected disabled hidden> 
                                     Selecciona un municipio 
                                 </option>
-                                </select>
+                            </select>
                         </div>
                     </section>
                     <label for="email">E-mail</label>
@@ -59,6 +60,7 @@
                     <button class="boton_personalizado" type="submit">CREAR CUENTA</button>
                 </form>
             </section>
-            <script type='text/javascript' src="/js/register.js"></script>
+            <script type='text/javascript' src="/js/registerjs.js"></script>
+            <script src="/js/loadjs.js" type="text/javascript"> </script>
         </body>
         </html>

@@ -20,20 +20,36 @@ section.menuProfile ul li{
     SECCION MENU INFO PERSONAL
 ===================================*/
 
-section.infoPersonal{
+div.infoPersonal{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    height: max-content;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
-section.infoPersonal img{
-    height: 200px;
-    width: 200px;
+div.infoPersonal img{
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
     object-fit: cover;
 }
 
-section.formEditInfoPersonal img{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
+div.infoPersonal input{
+    margin: 10px;
 }
+
+div.infoPersonal p{
+   margin: 5px 0;
+}
+
+div.infoPersonal button.carga{
+    margin: 15px 0;
+ }
+
+
+

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head')%>
-<body>
+<body onload="myFunction()">
+    <div id="loader"></div>
+    <div style="display:none;" id="myDiv" class="animate-bottom">
     <%- include('../partials/headerAdmin')%>
     <form action="/admin/cargaProducto/<%=typeof producto != "undefined"? producto.id + "?_method=" + metodo : null %> " method="POST" class="carga" enctype="multipart/form-data">
         <h1 class="carga">Carga de Producto</h1>
@@ -42,7 +44,9 @@
         </div>
     </form>
     <%- include('../partials/footer')%>
-    <script src="/js/archivojs.js" type="text/javascript"> </script>
-    <script src="/js/adminjs.js" type="text/javascript"> </script>             
+</div>
+<script src="/js/archivojs.js" type="text/javascript"> </script>
+<script src="/js/adminjs.js" type="text/javascript"> </script>             
+<script src="/js/loadjs.js" type="text/javascript"> </script>
 </body>
 </html>
