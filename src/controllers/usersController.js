@@ -183,6 +183,7 @@ module.exports = {
         let errors = validationResult(req);
         provinciasRequest.getProvincias()
         .then(function(data){
+            console.log('Listado de provincias: ',data.data.provincias)
             return res.render('./users/registro',{
                 errors,
                 data: data.data.provincias

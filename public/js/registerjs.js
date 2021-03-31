@@ -1,8 +1,9 @@
 function selectProvincia(event){
-    let provinciaID = document.querySelector('option.provincia').value
+    let provinciaID = document.getElementById('pepe').value.toString()
     console.log('ID Provincia',provinciaID)
     fetch('https://apis.datos.gob.ar/georef/api/municipios?provincia='+provinciaID+'&campos=id,nombre&max=100')
     .then(function(response){
+        console.log(response)
         return response.json()
     })
     .then(function(data){
