@@ -2,7 +2,7 @@ const bcrypt = require ('bcryptjs');
 const db = require ('../database/models/index');
 const { validationResult } = require('express-validator');
 const provinciasRequest = require('../request/provinciasRequest');
-const municipiosRequest = require('../request/municipiosRequest');
+const localidadesRequest = require('../request/localidadesRequest');
 
 module.exports = {
     login: function (req, res) {
@@ -155,15 +155,15 @@ module.exports = {
             } else {
                 db.Usuario.findByPk(req.params.idUser)
                 .then(function(user){
-                errors.errors.push({msg: "Las contraseñas no coinciden"})
-                return res.render('./users/editPassword',{
-                    user,
-                    errors: errors.errors
-                });
-            })
-            .catch(function(e){
-                res.render("404_notFound")
-            })
+                    errors.errors.push({msg: "Las contraseñas no coinciden"})
+                    return res.render('./users/editPassword',{
+                        user,
+                        errors: errors.errors
+                    });
+                })
+                .catch(function(e){
+                    res.render("404_notFound")
+                })
             }
         } else {
             db.Usuario.findByPk(req.params.idUser)
@@ -181,20 +181,12 @@ module.exports = {
     },
     register: function (req, res) {
         let errors = validationResult(req);
-        provinciasRequest.getProvincias()
-        .then(function(data){
-            console.log('Listado de provincias: ',data.data.provincias)
-            return res.render('./users/registro',{
-                errors,
-                data: data.data.provincias
-            });
-        })
-        .catch(function(e){
-            console.log(e)
-            res.render("404_notFound")
-        })
+        return res.render('./users/registro',{
+            errors,
+        });
     },
     crearCuenta: function(req,res,next){
+        return res.json(req.body)
         let errors = validationResult(req);
         if(errors.isEmpty()){
             if (req.body.password == req.body.passwordConfirm){ 

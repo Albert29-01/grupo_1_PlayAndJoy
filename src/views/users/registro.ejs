@@ -29,22 +29,17 @@
                 <section class="localidadProvincia">
                     <div>
                         <label for="provincia">Provincia</label>
-                        <select name="provincia" id="provincia" onchange=selectProvincia(event)>
-                            <% if (typeof categorias != "undefined") {%> 
+                        <select class="provincia" name="provincia" id="provincia" onchange=selectProvincia(event)>
                             <option value="none" selected disabled hidden>
                                 Selecciona una provincia 
                             </option>
-                            <% for(let i = 0; i< data.length; i++){ %>
-                                <option class="provincia" id="pepe" value=<%=data[i].id%>><%=data[i].nombre%></option>
-                            <% } %>
-                            <% } %>
                         </select>
                         </div>
                         <div class="localidad">
-                            <label for="municipios">Localidad</label>
-                            <select class="municipio" name="municipios" id="municipios">
+                            <label for="localidad">Localidad</label>
+                            <select class="localidad" name="localidad" id="localidad" disabled>
                                 <option value="none" selected disabled hidden> 
-                                    Selecciona un municipio 
+                                    Selecciona un localidad 
                                 </option>
                             </select>
                         </div>
