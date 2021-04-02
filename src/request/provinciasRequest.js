@@ -3,14 +3,15 @@ const defaults = require('./default')
 const url = 'provincias'
 
 const provinciasRequest = {
-    getProvincias: function(){
+    getProvincias: function(id){
         return axios({
             ...defaults,
             method:'get',
             url:`${url}`,
             params: {
-                campos:'id,nombre'
-            }
+                id: id,
+                campos:'id,nombre',
+            },
         })
     }
 }

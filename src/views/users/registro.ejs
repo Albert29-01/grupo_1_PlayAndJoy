@@ -27,20 +27,16 @@
                 <label for="domicilio">Domicilio</label>
                 <input class="campo" type="text" id="domicilio" name="domicilio" required>
                 <section class="localidadProvincia">
-                    <div>
-                        <label for="provincia">Provincia</label>
-                        <select class="provincia" name="provincia" id="provincia" onchange=selectProvincia(event)>
-                            <option value="none" selected disabled hidden>
-                                Selecciona una provincia 
-                            </option>
-                        </select>
+                        <div>
+                            <label for="provincia">Provincia</label>
+                            <select class="provincia" name="provincia" id="provincia" onchange=selectProvincia(event)>
+                                <option value="none" selected disabled hidden>Selecciona una provincia</option>
+                            </select>
                         </div>
                         <div class="localidad">
                             <label for="localidad">Localidad</label>
                             <select class="localidad" name="localidad" id="localidad" disabled>
-                                <option value="none" selected disabled hidden> 
-                                    Selecciona un localidad 
-                                </option>
+                                <option value="none" selected disabled hidden> Selecciona un localidad </option>
                             </select>
                         </div>
                     </section>

@@ -12,9 +12,9 @@
             <label>Domicilio</label>
             <p><%=user.domicilio %></p>
             <label>Localidad</label>
-            <p><%=user.localidad %></p>  
+            <p id="localidad"><%= localidad %></p>  
             <label>Provincia</label>
-            <p><%=user.provincia %></p>
+            <p id="provincia"><%= provincia %></p>
             <label>E-mail</label>
             <p><%=user.email %></p>
             <button type=“button” class="carga"><a href="/users/profile/<%= user.id %>/editProfile">EDITAR</a></button> 

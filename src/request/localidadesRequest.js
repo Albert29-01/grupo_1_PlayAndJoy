@@ -9,6 +9,7 @@ const localidadesRequest = {
             method:'get',
             url:`${url}`,
             params: {
+                id: id,
                 campos:'id,nombre',
                 max:4142
             }

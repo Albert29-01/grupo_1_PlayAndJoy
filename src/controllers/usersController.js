@@ -57,9 +57,17 @@ module.exports = {
     profile: function (req, res) {
         db.Usuario.findByPk(req.params.idUser)
         .then(function(user){
-            return res.render('./users/profile',{
-                user
-            });
+            provinciasRequest.getProvincias(user.provincia)
+            .then((prov)=>{
+                localidadesRequest.getLocalidades(user.localidad)
+                .then((local)=>{
+                    return res.render('./users/profile',{
+                        user,
+                        provincia: prov.data.provincias[0].nombre,
+                        localidad: local.data.localidades[0].nombre
+                    });
+                })
+            })
         })
         .catch(function(e){
             res.render("404_notFound")
@@ -186,7 +194,6 @@ module.exports = {
         });
     },
     crearCuenta: function(req,res,next){
-        return res.json(req.body)
         let errors = validationResult(req);
         if(errors.isEmpty()){
             if (req.body.password == req.body.passwordConfirm){ 

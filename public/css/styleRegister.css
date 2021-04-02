@@ -104,11 +104,15 @@ section.localidadProvincia div {
     margin-right: 15px;
 }
 
-section.localidadProvincia div input {
-    width: 100%;
+section.localidadProvincia div select {
+    width: 90%;
     border: hidden;
     border-bottom: solid 2px var(--color-ladrillo);   
     padding: 5px 10px;
+}
+
+section.localidadProvincia div select option {
+    text-transform: capitalize;
 }
 /*=======================
 CONDICIONES GRALES.
