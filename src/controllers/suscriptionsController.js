@@ -1,4 +1,3 @@
-const { decodeBase64 } = require("bcryptjs");
 const db = require ('../database/models/index')
 
 module.exports = {

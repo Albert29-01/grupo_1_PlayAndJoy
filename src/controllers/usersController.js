@@ -57,17 +57,9 @@ module.exports = {
     profile: function (req, res) {
         db.Usuario.findByPk(req.params.idUser)
         .then(function(user){
-            provinciasRequest.getProvincias(user.provincia)
-            .then((prov)=>{
-                localidadesRequest.getLocalidades(user.localidad)
-                .then((local)=>{
-                    return res.render('./users/profile',{
-                        user,
-                        provincia: prov.data.provincias[0].nombre,
-                        localidad: local.data.localidades[0].nombre
-                    });
-                })
-            })
+            return res.render('./users/profile',{
+                user,
+            });
         })
         .catch(function(e){
             res.render("404_notFound")
@@ -196,36 +188,42 @@ module.exports = {
     crearCuenta: function(req,res,next){
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            if (req.body.password == req.body.passwordConfirm){ 
-                db.Usuario.findOrCreate({
-                    where: {
-                        email: req.body.email,
-                    },
-                    defaults: {
-                        first_name: req.body.nombre,
-                        last_name: req.body.apellido,
-                        email: req.body.email,
-                        password: bcrypt.hashSync(req.body.password, 12),
-                        imagen: req.files.avatar.length != 0? req.files.avatar[0].filename: 'avatarDefault.jpg',
-                        birth_date: req.body.date,
-                        domicilio: req.body.domicilio,
-                        localidad: req.body.localidad,
-                        provincia: req.body.provincia,
-                    }
+            if (req.body.password == req.body.passwordConfirm){
+                provinciasRequest.getProvincias(req.body.provincia)
+                .then((prov)=>{
+                localidadesRequest.getLocalidades(req.body.localidad)
+                .then((local)=>{
+                    db.Usuario.findOrCreate({
+                        where: {
+                            email: req.body.email,
+                        },
+                        defaults: {
+                            first_name: req.body.nombre,
+                            last_name: req.body.apellido,
+                            email: req.body.email,
+                            password: bcrypt.hashSync(req.body.password, 12),
+                            imagen: req.files.avatar.length != 0? req.files.avatar[0].filename: 'avatarDefault.jpg',
+                            birth_date: req.body.date,
+                            domicilio: req.body.domicilio,
+                            localidad: local.data.localidades[0].nombre,
+                            provincia: prov.data.provincias[0].nombre,
+                        }
+                    })
+                    .then (function(resultado){
+                        if(!resultado[1]){ // si devuelve FALSE es que no se creó el usuario
+                            errors.errors.push({msg: "Usuario ya registrado"})
+                            return res.render('./users/registro', {
+                                errors: errors.errors
+                            })
+                        } else {
+                            return res.redirect('/users/login')
+                        }
+                    })
+                    .catch(function(e){
+                        res.render("404_notFound")
+                    })
                 })
-                .then (function(resultado){
-                    if(!resultado[1]){ // si devuelve FALSE es que no se creó el usuario
-                        errors.errors.push({msg: "Usuario ya registrado"})
-                        return res.render('./users/registro', {
-                            errors: errors.errors
-                        })
-                    } else {
-                        return res.redirect('/users/login')
-                    }
-                })
-                .catch(function(e){
-                    res.render("404_notFound")
-                })
+            }) 
             } else {
                 errors.errors.push({msg: "Las contraseñas no coinciden"})
                 return res.render('./users/registro', {

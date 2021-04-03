@@ -3,13 +3,17 @@ const app = express();
 const path = require('path');
 const mainRouter = require ('./routes/mainRouter');
 const usersRouter = require ('./routes/usersRouter');
+const apiUsersRouter = require ('./routes/api/apiUsersRouter');
 const adminRouter = require ('./routes/adminRouter');
 const productsRouter = require ('./routes/productsRouter');
+const apiProductsRouter = require ('./routes/api/apiProductsRouter');
 const suscriptionsRouter = require ('./routes/suscriptionsRouter');
+const apiSuscriptionsRouter = require ('./routes/api/apiSuscriptionsRouter');
 const methodOverride = require ('method-override');
 const cookieParser = require ('cookie-parser');
 const session = require('express-session');
 const userMiddleware = require("./middlewares/userMiddlewares");
+
 
 let port = process.env.PORT || 3000;
 
@@ -28,12 +32,15 @@ app.use(userMiddleware);
 app.use('/', mainRouter);
 
 app.use('/users', usersRouter);
+app.use('/api/users', apiUsersRouter);
 
 app.use('/admin', adminRouter);
 
 app.use('/product', productsRouter);
+app.use('/api/product', apiProductsRouter);
 
 app.use('/suscriptions', suscriptionsRouter);
+app.use('/api/suscriptions',apiSuscriptionsRouter);
 
 app.use((req,res)=>{
     res.status(404).render('404_notFound');
