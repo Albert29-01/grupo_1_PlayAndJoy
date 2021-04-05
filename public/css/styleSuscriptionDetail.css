@@ -98,8 +98,9 @@ form.opcionesSuscrip div input {
     background-color: rgba(192, 188, 180, 0.5);
     border: none;
     border-radius: 20px ;
-    width: 2rem;
-    height: 1.5rem;
+    padding: 1rem;
+    width: 4rem;
+    height: 2rem;
     position: relative;
     top: -5px;
 }

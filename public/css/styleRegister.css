@@ -100,20 +100,14 @@ section.localidadProvincia div {
     flex-direction: column;
 }
 
-.localidad {
-    margin-right: 15px;
-}
-
-section.localidadProvincia div select {
-    width: 90%;
+select.localidad,select.provincia {
+    margin: 10px;
     border: hidden;
     border-bottom: solid 2px var(--color-ladrillo);   
-    padding: 5px 10px;
+    padding: 5px;
 }
 
-section.localidadProvincia div select option {
-    text-transform: capitalize;
-}
+
 /*=======================
 CONDICIONES GRALES.
 ========================*/

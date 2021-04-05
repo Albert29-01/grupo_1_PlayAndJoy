@@ -47,17 +47,21 @@ section.menuProfile ul li a:hover{
     object-fit: cover;
 }
 
-.infoPersonal form {
+form.infoPersonal  {
     display: flex;
     flex-direction: column;
 }
 
-.infoPersonal form input{
+form.infoPersonal input{
     margin: 10px;
 }
 
 .infoPersonal p{
    margin: 5px 0;
+}
+
+form.infoPersonal select.localidad, form.infoPersonal select.provincia {
+    margin: 10px;
 }
 
 .infoPersonal button.carga{

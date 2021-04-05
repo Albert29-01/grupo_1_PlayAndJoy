@@ -9,13 +9,17 @@
         <a href="/admin/editProducto/<%= producto.id %>"><button type=“button” class="carga">EDITAR</button></a> 
         <a href="/admin/deleteProducto/<%= producto.id %>"><button type=“button” class="carga">ELIMINAR</button></a>
         <div class="images">
-            <div class="principal">
-                <img src="/img/product.png" alt="producto">
+            <div class="container">
+                <img id="expandedImg" style="width:500px" src="/img/uploads/products/<%= typeof producto.images !='undefined'? producto.images[0].nombre: 'imagenDefault.png'%>" alt="producto">
             </div>
-            <div class="miniatura">
-                <img src="/img/product1.png" alt="producto">
-                <img src="/img/product1.png" alt="producto">
-                <img src="/img/product1.png" alt="producto">
+            <div class="row">
+                <% if ( producto.images.length > 0 ) { %> 
+                    <% for (let i = 0; i < producto.images.length ; i++ ) {%> 
+                <div class="column">
+                  <img style="width:200px" src="/img/uploads/products/<%= typeof producto.images !='undefined'? producto.images[i].nombre: 'imagenDefault.png'%>" alt="producto" onclick="openImg(this);">
+                </div>
+                <% } %> 
+                <% } %> 
             </div>
         </div>
         <article>
@@ -63,11 +67,9 @@
         </div>
     </section>
     <hr>
-    <h2 class="prodSimi">Productos Similares</h2>
-    <%- include('../partials/sectionProducts') %>  
-    <%- include('../partials/footer') %>
 </div>
 <script src="/js/loadjs.js" type="text/javascript"> </script>
-<script src="/js/adminjs.js" type="text/javascript"> </script> 
+<script src="/js/adminjs.js" type="text/javascript"> </script>
+<script src="/js/productjs.js" type="text/javascript"> </script> 
 </body>
 </html>

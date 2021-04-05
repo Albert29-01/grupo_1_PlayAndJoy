@@ -27,23 +27,27 @@ section.detalleProd {
     background-color: rgba(250, 250, 250, 0.7);
 }
 
-section.detalleProd .images {
-    margin-left: 3vw;
-    margin-right: 2vw;
+.column img {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+  
+.column img:hover {
+    opacity: 1;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-section.detalleProd .images .principal img{
-    margin-right: 2vw;
-    height: 400px;
-    width: 400px;
-    object-fit: cover;
-}
-
-section.detalleProd .images .miniatura img {
-    margin-left: 1vw;
-}
-section.detalleProd .images .miniatura img:first-child {
-    margin-left: 0;
+.container {
+    position: relative;
+    margin: 20px;
 }
 
 section.detalleProd article {
@@ -69,25 +73,21 @@ section.detalleProd article h3 {
 section.detalleProd article p {
     font-family: open Sans;
 }
-section.detalleProd article form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10vw;
-}
 
-section.detalleProd article form div input {
-    background: var(--color-gris);
-    opacity: 50%;
+form.addCart div input {
+    background-color: rgba(192, 188, 180, 0.5);
     border: none;
     border-radius: 20px ;
-    width: 2.5vw;
-    height: 2vw;
+    padding: 1rem;
+    width: 4rem;
+    height: 2rem;
     position: relative;
-    top: -0.3vw;
+    top: -5px;
 }
-section.detalleProd article form button.addcart {
+
+form.addCart button.addCart {
     font-family: Quicksand;
+    font-size: 1rem;
     display: inline-flex;
     justify-content: space-around;
     align-items: center;
@@ -95,10 +95,9 @@ section.detalleProd article form button.addcart {
     background: var(--color-azul);
     color: var(--color-beige);
     border-radius: 20px;
-    padding: 1vw;
-    width: 15vw;
-    height: 3vw;
-    font-size: 1.1em;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
 }
 
 /*=======================
