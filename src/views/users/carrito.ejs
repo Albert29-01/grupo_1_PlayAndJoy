@@ -12,42 +12,23 @@
         <div>
              <section class="listado">
                      <div class="delete">
-                        <ul>
-                            <li><a href=""><img src="/img/basura.png" alt=""></a></li>
-                            <li><a href=""><img src="/img/basura.png" alt=""></a></li>
-                            <li><a href=""><img src="/img/basura.png" alt=""></a></li>
-                            <li><a href=""><img src="/img/basura.png" alt=""></a></li>
-                            <li><a href=""><img src="/img/basura.png" alt=""></a></li>
+                        <ul id="delete">
+                            
                         </ul>
                     </div>
                     <div class="product">
-                        <ul>
+                        <ul id="productList">
                             <h2>Productos</h2>
-                            <li>Lorem ipsum dolor sit</li>
-                            <li>Lorem ipsum dolor sit</li>
-                            <li>Lorem ipsum dolor sit</li>
-                            <li>Lorem ipsum dolor sit</li>
-                            <li>Lorem ipsum dolor sit</li>
                         </ul>
                     </div>
                     <div class="cantidad">
-                        <ul>
+                        <ul id="cantidad">
                             <h2>Cantidad</h2>
-                            <input type="number" name="cantidad">
-                            <input type="number" name="cantidad">
-                            <input type="number" name="cantidad">
-                            <input type="number" name="cantidad">
-                            <input type="number" name="cantidad">
                         </ul>
                     </div>
                     <div class="precio">
-                        <ul>
+                        <ul id="precio">
                             <h2>Precio</h2>
-                            <li>$precio</li>
-                            <li>$precio</li>
-                            <li>$precio</li>
-                            <li>$precio</li>
-                            <li>$precio</li>
                         </ul>
                     </div>
             </section>
@@ -87,7 +68,7 @@
         </div>
         <div class="finish">
             <nav class="delete">
-                <button class="trash"><img src="/img/basura2.png" alt=""></button>
+                <button class="trash" onclick="deleteAll()"><img src="/img/basura2.png" alt="vaciar carrito"></button>
             </nav>
             <nav class="finCompra">
                 <button class="fin">Finalizar compra</button>
@@ -102,5 +83,6 @@
     <%- include('../partials/footer') %>
 </div>
 <script src="/js/loadjs.js" type="text/javascript"> </script>
+<script src="/js/cartjs.js" type="text/javascript"> </script>
 </body>
 </html>
