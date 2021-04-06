@@ -1,5 +1,4 @@
 let cart = document.querySelector('button.addCart')
-console.log(localStorage)
 cart.addEventListener('click',function(){
     let nombreProducto = document.querySelector('#nombre').innerText
     let precioProducto = document.querySelector('#precio').innerText
@@ -10,9 +9,19 @@ cart.addEventListener('click',function(){
         precioProducto,
         cantProducto
     }
-    
-    localStorage.setItem((localStorage.length),JSON.stringify(producto)) //cambiar por sessionStorage?
-    console.log(localStorage)
+
+    if( localStorage.length == 0){
+        let carrito = []
+        carrito.push(producto)  
+        localStorage.setItem('carrito',JSON.stringify(carrito)) //cambiar por sessionStorage?
+        console.log(carrito)
+    } else {
+        let carrito = JSON.parse(localStorage.carrito)
+        carrito.push(producto)  
+        localStorage.setItem('carrito',JSON.stringify(carrito)) //cambiar por sessionStorage?
+        console.log(carrito)
+    }    
+ alert(nombreProducto+' agregado al carrito')
 })
 
 

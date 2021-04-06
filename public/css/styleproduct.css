@@ -74,7 +74,7 @@ section.detalleProd article p {
     font-family: open Sans;
 }
 
-form.addCart div input {
+input#cantidad{
     background-color: rgba(192, 188, 180, 0.5);
     border: none;
     border-radius: 20px ;
@@ -85,7 +85,7 @@ form.addCart div input {
     top: -5px;
 }
 
-form.addCart button.addCart {
+button.addCart {
     font-family: Quicksand;
     font-size: 1rem;
     display: inline-flex;
