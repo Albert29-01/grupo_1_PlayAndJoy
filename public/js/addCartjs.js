@@ -1,5 +1,6 @@
 let cart = document.querySelector('button.addCart')
 cart.addEventListener('click',function(){
+    /*-------Capturar los datos del producto--------*/
     let nombreProducto = document.querySelector('#nombre').innerText
     let precioProducto = document.querySelector('#precio').innerText
     let cantProducto = document.querySelector('#cantidad').value
