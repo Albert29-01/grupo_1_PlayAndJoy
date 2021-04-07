@@ -30,75 +30,32 @@ div.carrito img {
     width: 4%;
 }
 
-section div section.listado{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2vw;
+table.listado{
+    width: 100%;
+    padding: 20px 40px;
     background-color: rgba(250, 250, 250, 0.7);
 }
 
-section div section.listado  div.delete {
-    margin: 0vw 3vw -3vw 0vw;
-}
-section div section.listado div.delete ul {
-    margin-top: 1vw;
-}
-section div section.listado div.delete ul li {
-    list-style-type: none;
-    margin-bottom: 0.5vw;
-}
-section div section.listado div.delete ul li a img {
-    width: 120%;
-    padding: 0.25rem;
+table.listado thead tr th{
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-section div section.listado div.product ul h2 {
-    margin-bottom: 2vw;
-    font-size: 1.5rem;
-}
-section div section.listado div ul li {
-    list-style-type: none;
-    margin-bottom: 1rem;
-    font-family: open sans;
-    font-size: 1rem;
-    color: var(--color-azul);
+table.listado tbody tr td{
+    text-align: center;
+    font-family: 'Open Sans';
 }
 
-section div section.listado div.cantidad {
-    margin: 0 6vw;
-}
-section div section.listado div.cantidad ul h2 {
-    margin-bottom: 1.2vw;
-    font-size: 1.5rem;
-}
-section div section.listado div.cantidad ul input {
+table.listado tbody tr td input {
     background-color: rgba(192, 188, 180, 0.5);
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.4vw;
-    opacity: 50%;
     border: none;
     border-radius: 20px ;
     width: 50px;
     height: 4vh;
-    position: relative;
-    right: -3vw;
     text-align: center;
     padding: 0 10px;
 }
 
-section div section.listado div.precio ul h2 {
-    margin-bottom: 2vw;
-    font-size: 1.5rem;
-}
-section div section.listado div.precio ul li {
-    list-style-type: none;
-    margin-bottom: 1rem;
-    font-family: open sans;
-    font-size: 1rem;
-    color: var(--color-azul);
-} 
 /*=======================
 IMPORTE
 ========================*/
@@ -246,7 +203,7 @@ section.opciones a {
 }
 
 @media (max-width:768px) {
-
+    
     section div section.listado div.delete ul {
         margin-top: 0.8rem;
     }
@@ -283,15 +240,15 @@ section.opciones a {
         margin-bottom: 1rem;
         font-size: 1em;
     }
-
+    
     section.importe div.title {
         font-size: 1em;
     }
-
+    
     section.importe div.sub p {
         font-size: 1em;
     }
-
+    
     section.importe div.envio p {
         font-size: 1em;
     }
@@ -300,15 +257,15 @@ section.opciones a {
         font-size: 1em;
         width: 34vw;
     }
-
+    
     section.opciones div.opc h2 {
         font-size: 1.3em;
     }
-
+    
     section.opciones div.efect button.cash {
         font-size: 1em;
     }
-
+    
     section.opciones div.efect button.tc {
         padding: 1vw 15vw; 
         font-size: 1em;
@@ -344,7 +301,7 @@ section.opciones a {
 }
 
 @media (max-width:425px){
-
+    
     section div section.listado div.delete {
         margin: 0 2vw -2vw 0;
     }
@@ -385,15 +342,15 @@ section.opciones a {
         margin-bottom: 0.6rem;
         font-size: 0.8em;
     }
-
+    
     section.importe div.title {
         font-size: 0.8em;
     }
-
+    
     section.importe div.sub p {
         font-size: 0.5em;
     }
-
+    
     section.importe div.envio p {
         font-size: 0.5em;
     }
@@ -402,15 +359,15 @@ section.opciones a {
         font-size: 0.8em;
         width: 52vw;
     }
-
+    
     section.opciones div.opc h2 {
         font-size: 1em;
     }
-
+    
     section.opciones div.efect button.cash {
         font-size: 0.8em;
     }
-
+    
     section.opciones div.efect button.tc {
         padding: 1vw 18vw; 
         font-size: 0.8em;
@@ -434,14 +391,14 @@ section.opciones a {
     }
 }
 @media (max-width:375px) {
-
+    
     section div section.listado div.cantidad ul input {
         margin-bottom: 3.4vw;
         width: 4.5vw;
         height: 4vw;
         right: -6vw;
     }
-
+    
     section.opciones div.efect button.tc {
         padding: 1vw 20vw; 
         font-size: 0.8em;
@@ -489,18 +446,18 @@ section.opciones a {
         margin-bottom: 0.6rem;
         font-size: 0.5em;
     }
-
+    
     section.importe div.title {
         font-size: 0.6em;
     }
-
+    
     section.opciones div.opc h2 {
         font-size: 0.8em;
     }
     section.opciones div.efect button.cash {
         font-size: 0.6em;
     }
-
+    
     section.opciones div.efect button.tc {
         padding: 1vw 18vw; 
         font-size: 0.6em;
@@ -516,5 +473,5 @@ section.opciones a {
         left: 2vw;
         font-size: 0.5em;
     }
-
+    
 }

@@ -208,7 +208,7 @@ module.exports = {
                                 last_name: req.body.apellido,
                                 email: req.body.email,
                                 password: bcrypt.hashSync(req.body.password, 12),
-                                imagen: req.files.avatar.length != 0? req.files.avatar[0].filename: 'avatarDefault.jpg',
+                                imagen: typeof req.files.avatar != 'undefined'? req.files.avatar[0].filename: 'avatarDefault.jpg',
                                 birth_date: req.body.date,
                                 domicilio: req.body.domicilio,
                                 localidad: local.data.localidades[0].nombre,
