@@ -1,7 +1,7 @@
 import React from 'react'
-import '../sidebarStyle.css'
+import './styles.css'
 
-function ProductsBox() {
+function Box() {
     return (
         <div className="col-md-4 mb-4">
         <div className="card border-left-primary shadow h-100 py-2">
@@ -21,4 +21,4 @@ function ProductsBox() {
         )
     }
     
-    export default ProductsBox;
+    export default Box;

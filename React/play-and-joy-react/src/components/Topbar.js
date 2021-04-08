@@ -1,7 +1,8 @@
 import React from 'react'
-import '../sidebarStyle.css'
+import './styles.css'
 
-function Topbar() {
+
+function Topbar(props) {
     return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
         
@@ -32,7 +33,7 @@ function Topbar() {
         <li className="nav-item dropdown no-arrow">
         <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
         <span className="mr-2 d-none d-lg-inline text-gray-600 small">Walter White</span>
-        <img className="img-profile rounded-circle" src="assets/images/dummy-avatar.jpg" width="60"/>
+        <img className="img-profile rounded-circle" src={props.imgUrl} alt="" width="60"/>
         </a>
         </li>
         
