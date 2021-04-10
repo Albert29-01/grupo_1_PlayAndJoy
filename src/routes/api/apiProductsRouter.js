@@ -11,4 +11,6 @@ router.get('/musica', apiProductsController.musica);
 
 router.get('/:idProduct', apiProductsController.product);
 
+//CREAR API PARA EL ÚLTIMO PRODUCTO
+
 module.exports = router;

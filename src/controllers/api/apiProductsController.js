@@ -129,7 +129,8 @@ module.exports = {
     },
     product: function (req, res){
         db.Producto.findByPk(req.params.idProduct,{
-            include: ['images']
+            include: ['images'],
+            include: ['categorias'],
         })
         .then(function(producto){
             for (let i = 0; i < producto.length; i++) {
