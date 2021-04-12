@@ -4,6 +4,8 @@ const apiProductsController = require('../../controllers/api/apiProductsControll
 
 router.get('/', apiProductsController.list);
 
+router.get('/category', apiProductsController.categorias);
+
 router.get('/cafe', apiProductsController.cafe);
 router.get('/vino', apiProductsController.vino);
 router.get('/libros', apiProductsController.libros);

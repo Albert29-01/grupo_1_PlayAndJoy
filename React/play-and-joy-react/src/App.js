@@ -14,8 +14,31 @@ import Footer from './components/Footer'
 function App() {
   const [totalProductos, setTotalProductos] = useState('');
   const [products, setProducts] = useState([]);
+
+  const [totalUsers, setTotalUsers] = useState('');
+  const [users, setUsers] = useState([]);
   
   useEffect(() => {
+    fetch('https://playandjoy.herokuapp.com/api/product')
+    .then((response)=>{return response.json()})
+    .then((result)=>{
+      setTotalProductos(result.meta.total)
+      setProducts(result.data)
+    })
+    .catch((e)=>{console.log(e)})
+  }, []);
+
+  useEffect(() => { //Usuarios
+    fetch('https://playandjoy.herokuapp.com/api/users')
+    .then((response)=>{return response.json()})
+    .then((result)=>{
+      setTotalUsers(result.meta.total)
+      setUsers(result.data)
+    })
+    .catch((e)=>{console.log(e)})
+  }, []);
+
+  useEffect(() => { //Categorias- HACERLA
     fetch('https://playandjoy.herokuapp.com/api/product')
     .then((response)=>{return response.json()})
     .then((result)=>{
@@ -45,25 +68,14 @@ function App() {
 
 const itemTemplate = (item) => {
     return (
-      /*<div className="product-item">
-        <div className="product-list-detail">
+      <div className="product-item">
+            <div className="product-list-detail">
                 <h5 className="p-mb-2">{item.nombre}</h5>
                 <i className="pi pi-tag product-category-icon"></i>
                 <span className="product-category"> {item.categorias.nombre} </span>
             </div>
-      </div>*/
-      <div className="product-item">
-            <div className="image-container">
-                <img src={`showcase/demo/images/product/${item.}`} onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} alt={item.name} />
-            </div>
-            <div className="product-list-detail">
-                <h5 className="p-mb-2">{item.nombre}</h5>
-                <i className="pi pi-tag product-category-icon"></i>
-                <span className="product-category">{item.categorias.nombre}</span>
-            </div>
             <div className="product-list-action">
-                <h6 className="p-mb-2">{item.precio}</h6>
-                <span className={`product-badge status-${item.inventoryStatus.toLowerCase()}`}>{item.inventoryStatus}</span>
+                <h6 className="p-mb-2">${item.precio}</h6>
             </div>
       </div>
     );

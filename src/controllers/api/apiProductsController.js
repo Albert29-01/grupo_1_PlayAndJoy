@@ -129,8 +129,7 @@ module.exports = {
     },
     product: function (req, res){
         db.Producto.findByPk(req.params.idProduct,{
-            include: ['images'],
-            include: ['categorias'],
+            include: ['images','categorias']
         })
         .then(function(producto){
             for (let i = 0; i < producto.length; i++) {
@@ -143,6 +142,26 @@ module.exports = {
                     url: '/api/product/:idProduct',
                 },
                 data: producto
+            }
+            res.json(respuesta)
+        })
+        .catch(function(e){
+            res.render("404_notFound")
+        })
+    },
+    categorias: function (req, res){
+        db.Categoria.findAll()
+        .then(function(categorias){
+            for (let i = 0; i < categorias.length; i++) {
+                categorias[i].setDataValue('endopoint','api/product/category/'+categorias[i].id)
+            }
+            let respuesta = {
+                meta:{
+                    status: 200,
+                    total: categorias.length,
+                    url: '/api/product/category',
+                },
+                data: categorias
             }
             res.json(respuesta)
         })
