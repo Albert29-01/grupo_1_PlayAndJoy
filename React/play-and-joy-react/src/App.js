@@ -16,7 +16,7 @@ function App() {
   const [products, setProducts] = useState([]);
   
   useEffect(() => {
-    fetch('http://localhost:3000/api/product/')
+    fetch('https://playandjoy.herokuapp.com/api/product')
     .then((response)=>{return response.json()})
     .then((result)=>{
       setTotalProductos(result.meta.total)

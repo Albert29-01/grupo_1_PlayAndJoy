@@ -3,7 +3,8 @@ const db = require ('../../database/models/index');
 module.exports = {
     list: function (req, res){
         db.Producto.findAll({
-            include: ['images']
+            include: ['images'],
+            include: ['categorias']
         })
         .then(function(productos){
             for (let i = 0; i < productos.length; i++) {
