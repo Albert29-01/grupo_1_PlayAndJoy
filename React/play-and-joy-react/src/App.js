@@ -45,27 +45,27 @@ function App() {
 
 const itemTemplate = (item) => {
     return (
-      <div className="product-item">
+      /*<div className="product-item">
         <div className="product-list-detail">
                 <h5 className="p-mb-2">{item.nombre}</h5>
                 <i className="pi pi-tag product-category-icon"></i>
-                <span className="product-category"> Café </span>
+                <span className="product-category"> {item.categorias.nombre} </span>
             </div>
-      </div>
-        /*<div className="product-item">
+      </div>*/
+      <div className="product-item">
             <div className="image-container">
-                <img src={`showcase/demo/images/product/${item.image}`} onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} alt={item.name} />
+                <img src={`showcase/demo/images/product/${item.}`} onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} alt={item.name} />
             </div>
             <div className="product-list-detail">
-                <h5 className="p-mb-2">{item.name}</h5>
+                <h5 className="p-mb-2">{item.nombre}</h5>
                 <i className="pi pi-tag product-category-icon"></i>
-                <span className="product-category">{item.category}</span>
+                <span className="product-category">{item.categorias.nombre}</span>
             </div>
             <div className="product-list-action">
-                <h6 className="p-mb-2">${item.price}</h6>
+                <h6 className="p-mb-2">{item.precio}</h6>
                 <span className={`product-badge status-${item.inventoryStatus.toLowerCase()}`}>{item.inventoryStatus}</span>
             </div>
-        </div>*/
+      </div>
     );
 }
 
@@ -85,7 +85,7 @@ return (
   <div className="col-lg-6 mb-4">						
   <div className="card shadow mb-4">
   <div className="card-header py-3">
-  <h6 className="m-0 font-weight-bold text-primary">Categories in Data Base</h6>
+  <h6 className="m-0 font-weight-bold text-primary">Productos por categoria</h6>
   </div>
   <div className="card-body">
   <div className="row">
