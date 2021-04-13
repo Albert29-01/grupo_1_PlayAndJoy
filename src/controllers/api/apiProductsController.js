@@ -20,111 +20,8 @@ module.exports = {
             res.json(respuesta)
         })
         .catch(function(e){
-            res.render("404_notFound")
-        })
-    },
-    cafe: function (req, res){
-        db.Producto.findAll({
-            where: {
-                id_categoria: 2
-            },
-            include: ['images']
-        })
-        .then(function(productos){
-            for (let i = 0; i < productos.length; i++) {
-                productos[i].setDataValue('endopoint','api/product/cafe/'+productos[i].id)
-            }
-            let respuesta = {
-                meta:{
-                    status: 200,
-                    total: productos.length,
-                    url: '/api/product/cafe',
-                    categoria: 'cafe'
-                },
-                data: productos
-            }
-            res.json(respuesta)
-        })
-        .catch(function(e){
-            res.render("404_notFound")
-        })
-    },
-    vino: function (req, res){
-        db.Producto.findAll({
-            where: {
-                id_categoria: 1
-            },
-            include: ['images']
-        })
-        .then(function(productos){
-            for (let i = 0; i < productos.length; i++) {
-                productos[i].setDataValue('endopoint','api/product/vino/'+productos[i].id)
-            }
-            let respuesta = {
-                meta:{
-                    status: 200,
-                    total: productos.length,
-                    url: '/api/product/vino',
-                    categoria: 'vino'
-                },
-                data: productos
-            }
-            res.json(respuesta)
-        })
-        .catch(function(e){
-            res.render("404_notFound")
-        })
-    },
-    libros: function (req, res){
-        db.Producto.findAll({
-            where: {
-                id_categoria: 4
-            },
-            include: ['images']
-        })
-        .then(function(productos){
-            for (let i = 0; i < productos.length; i++) {
-                productos[i].setDataValue('endopoint','api/product/libros/'+productos[i].id)
-            }
-            let respuesta = {
-                meta:{
-                    status: 200,
-                    total: productos.length,
-                    url: '/api/product/libros',
-                    categoria: 'libros'
-                },
-                data: productos
-            }
-            res.json(respuesta)
-        })
-        .catch(function(e){
-            res.render("404_notFound")
-        })
-    },
-    musica: function (req, res){
-        db.Producto.findAll({
-            where: {
-                id_categoria: 3
-            },
-            include: ['images']
-        })
-        .then(function(productos){
-            for (let i = 0; i < productos.length; i++) {
-                productos[i].setDataValue('endopoint','api/product/musica/'+productos[i].id)
-            }
-            let respuesta = {
-                meta:{
-                    status: 200,
-                    total: productos.length,
-                    url: '/api/product/musica',
-                    categoria: 'musica'
-                },
-                data: productos
-            }
-            res.json(respuesta)
-        })
-        .catch(function(e){
-            res.render("404_notFound")
+            res.json({status:500})
+            console.log(e)
         })
     },
     product: function (req, res){
@@ -132,13 +29,10 @@ module.exports = {
             include: ['images','categorias']
         })
         .then(function(producto){
-            for (let i = 0; i < producto.length; i++) {
-                producto[i].setDataValue('endopoint','api/product/'+producto[i].id)
-            }
+            producto.setDataValue('endopoint','api/product/'+producto.id)
             let respuesta = {
                 meta:{
                     status: 200,
-                    total: producto.length,
                     url: '/api/product/:idProduct',
                 },
                 data: producto
@@ -146,11 +40,53 @@ module.exports = {
             res.json(respuesta)
         })
         .catch(function(e){
-            res.render("404_notFound")
+            res.json({status:500})
+            console.log(e)
         })
     },
-    categorias: function (req, res){
-        db.Categoria.findAll()
+    lastProduct: function (req, res){
+        db.Producto.findAll({include: ['images','categorias'],order:[["created_at","DESC"]],limit: 1})
+        .then(function(producto){
+            producto[0].setDataValue('endopoint','api/product/last/'+producto[0].id)
+            let respuesta = {
+                meta:{
+                    status: 200,
+                    url: '/api/product/last',
+                },
+                data: producto
+            }
+            res.json(respuesta)
+        })
+        .catch(function(e){
+            res.json({status:500})
+            console.log(e)
+        })
+    },
+    category: function (req, res){
+        db.Categoria.findByPk(req.params.idCategory,{
+            include: ['productos']
+        })
+        .then(function(categoria){
+            categoria.setDataValue('endopoint','api/product/category/'+categoria.id)
+            let respuesta = {
+                meta:{
+                    status: 200,
+                    url: '/api/product/category/:idCategory',
+                    categoria: categoria.nombre
+                },
+                data: categoria
+            }
+            res.json(respuesta)
+        })
+        .catch(function(e){
+            res.json({status:500})
+            console.log(e)
+        })
+    },
+    categories: function (req, res){
+        db.Categoria.findAll({
+            include: ['productos']
+        })
         .then(function(categorias){
             for (let i = 0; i < categorias.length; i++) {
                 categorias[i].setDataValue('endopoint','api/product/category/'+categorias[i].id)
@@ -166,7 +102,9 @@ module.exports = {
             res.json(respuesta)
         })
         .catch(function(e){
-            res.render("404_notFound")
+            res.json({status:500})
+            console.log(e)
         })
     },
+    
 }

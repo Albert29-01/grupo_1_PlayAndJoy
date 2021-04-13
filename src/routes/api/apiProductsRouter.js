@@ -4,15 +4,17 @@ const apiProductsController = require('../../controllers/api/apiProductsControll
 
 router.get('/', apiProductsController.list);
 
-router.get('/category', apiProductsController.categorias);
+router.get('/last', apiProductsController.lastProduct);
 
-router.get('/cafe', apiProductsController.cafe);
+router.get('/category', apiProductsController.categories);
+
+router.get('/category/:idCategory', apiProductsController.category);
+
+/*router.get('/cafe', apiProductsController.cafe);
 router.get('/vino', apiProductsController.vino);
 router.get('/libros', apiProductsController.libros);
-router.get('/musica', apiProductsController.musica);
+router.get('/musica', apiProductsController.musica);*/
 
 router.get('/:idProduct', apiProductsController.product);
-
-//CREAR API PARA EL ÚLTIMO PRODUCTO
 
 module.exports = router;

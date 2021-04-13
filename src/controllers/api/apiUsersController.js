@@ -18,7 +18,26 @@ module.exports = {
             res.json(respuesta)
         })
         .catch(function(e){
-            res.render("404_notFound")
+            res.json({status:500})
+            console.log(e)
+        })
+    },
+    lastUser: function (req, res){
+        db.Usuario.findAll({order:[["created_at","DESC"]],limit: 1})
+        .then(function(user){
+            user[0].setDataValue('endopoint','api/User/last/'+user[0].id)
+            let respuesta = {
+                meta:{
+                    status: 200,
+                    url: '/api/User/last',
+                },
+                data: user
+            }
+            res.json(respuesta)
+        })
+        .catch(function(e){
+            res.json({status:500})
+            console.log(e)
         })
     },
     list: function (req, res) {
@@ -38,7 +57,8 @@ module.exports = {
             res.json(respuesta)
         })
         .catch(function(e){
-            res.render("404_notFound")
+            res.json({status:500})
+            console.log(e)
         })
     },
 }

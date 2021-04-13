@@ -1,4 +1,5 @@
 import './App.css';
+import './components/styleList.css'
 import React, { useState, useEffect } from 'react';
 import { OrderList } from 'primereact/orderlist';
 import 'primereact/resources/themes/saga-blue/theme.css';
@@ -70,15 +71,11 @@ function App() {
   }]
 
 const itemTemplate = (item) => {
-    const imgStyle = {
-      width: '200 px',
-      height: '200 px',
-      objectFit: 'cover'
-    }
+    
     return (
       <div className="product-item">
             <div className="image-container">
-                <img src={`https://playandjoy.herokuapp.com/img/uploads/products/${item.images[0].nombre}`} style={imgStyle} onError={(e) => e.target.src='https://playandjoy.herokuapp.com/img/uploads/products/imagenDefault.png'} alt={item.name} />
+                <img src={`https://playandjoy.herokuapp.com/img/uploads/products/${item.images[0].nombre}`} onError={(e) => e.target.src='https://playandjoy.herokuapp.com/img/uploads/products/imagenDefault.png'} alt={item.name} />
             </div>
             <div className="product-list-detail">
                 <h5 className="p-mb-2">{item.nombre}</h5>

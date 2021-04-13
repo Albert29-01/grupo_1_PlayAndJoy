@@ -4,9 +4,7 @@ module.exports = {
     suscription: function (req, res){
         db.Suscripcion.findByPk(req.params.idSuscription)
         .then(function(suscription){
-            for (let i = 0; i < suscription.length; i++) {
-                suscription[i].setDataValue('endopoint','api/suscriptions/'+suscription[i].id)
-            }
+            suscription.setDataValue('endopoint','api/suscriptions/'+suscription.id)
             let respuesta = {
                 meta:{
                     status: 200,
@@ -19,7 +17,8 @@ module.exports = {
         
         })
         .catch(function(e){
-            res.render("404_notFound")
+            res.json({status:500})
+            console.log(e)
         })        
     },
     general: function (req, res){
@@ -39,7 +38,8 @@ module.exports = {
             res.json(respuesta)
         }) 
         .catch(function(e){
-            res.render("404_notFound")
+            res.json({status:500})
+            console.log(e)
         })
     },  
 }
