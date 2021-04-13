@@ -17,6 +17,9 @@ function App() {
 
   const [totalUsers, setTotalUsers] = useState('');
   const [users, setUsers] = useState([]);
+
+  const [totalCategories, setTotalCategories] = useState('');
+  const [categories, setCategories] = useState([]);
   
   useEffect(() => {
     fetch('https://playandjoy.herokuapp.com/api/product')
@@ -38,12 +41,12 @@ function App() {
     .catch((e)=>{console.log(e)})
   }, []);
 
-  useEffect(() => { //Categorias- HACERLA
-    fetch('https://playandjoy.herokuapp.com/api/product')
+  useEffect(() => { //Categorias
+    fetch('https://playandjoy.herokuapp.com/api/product/category')
     .then((response)=>{return response.json()})
     .then((result)=>{
-      setTotalProductos(result.meta.total)
-      setProducts(result.data)
+      setTotalCategories(result.meta.total)
+      setCategories(result.data)
     })
     .catch((e)=>{console.log(e)})
   }, []);
@@ -56,19 +59,27 @@ function App() {
       color:'card border-left-primary shadow h-100 py-2'
     },{ 
       title: 'Usuarios', 
-      dato: '250', 
+      dato: totalUsers, 
       icono: 'fas fa-user-check fa-2x text-gray-300',
       color:'card border-left-success shadow h-100 py-2' 
     },{ 
       title: 'Categorias', 
-      dato: '90',
+      dato: totalCategories,
       icono: 'fas fa-clipboard-list fa-2x text-gray-300',
       color:'card border-left-warning shadow h-100 py-2'
   }]
 
 const itemTemplate = (item) => {
+    const imgStyle = {
+      width: '200 px',
+      height: '200 px',
+      objectFit: 'cover'
+    }
     return (
       <div className="product-item">
+            <div className="image-container">
+                <img src={`https://playandjoy.herokuapp.com/img/uploads/products/${item.images[0].nombre}`} style={imgStyle} onError={(e) => e.target.src='https://playandjoy.herokuapp.com/img/uploads/products/imagenDefault.png'} alt={item.name} />
+            </div>
             <div className="product-list-detail">
                 <h5 className="p-mb-2">{item.nombre}</h5>
                 <i className="pi pi-tag product-category-icon"></i>
@@ -93,7 +104,7 @@ return (
   </div>
   <ContentBox boxes={boxes}/>
   <div className="row">
-  <LastProductBox imgUrl={'/images/product_dummy.svg'}/>
+  <LastProductBox imgUrl={'https://playandjoy.herokuapp.com/img/uploads/products/'}/> 
   <div className="col-lg-6 mb-4">						
   <div className="card shadow mb-4">
   <div className="card-header py-3">
