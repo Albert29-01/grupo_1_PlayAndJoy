@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 function App() {
   const [totalProductos, setTotalProductos] = useState('');
   const [products, setProducts] = useState([]);
+  const [lastProduct, setLastProduct] = useState([]);
 
   const [totalUsers, setTotalUsers] = useState('');
   const [users, setUsers] = useState([]);
@@ -22,12 +23,21 @@ function App() {
   const [totalCategories, setTotalCategories] = useState('');
   const [categories, setCategories] = useState([]);
   
-  useEffect(() => {
+  useEffect(() => { //Productos
     fetch('https://playandjoy.herokuapp.com/api/product')
     .then((response)=>{return response.json()})
     .then((result)=>{
       setTotalProductos(result.meta.total)
       setProducts(result.data)
+    })
+    .catch((e)=>{console.log(e)})
+  }, []);
+
+  useEffect(() => { //Último Producto
+    fetch('https://playandjoy.herokuapp.com/api/product/last')
+    .then((response)=>{return response.json()})
+    .then((result)=>{
+      setLastProduct(result.data[0])
     })
     .catch((e)=>{console.log(e)})
   }, []);
@@ -101,7 +111,7 @@ return (
   </div>
   <ContentBox boxes={boxes}/>
   <div className="row">
-  <LastProductBox imgUrl={'https://playandjoy.herokuapp.com/img/uploads/products/'}/> 
+  <LastProductBox lastProduct={lastProduct} imgUrl={`https://playandjoy.herokuapp.com/img/uploads/products/${lastProduct.images[0].nombre}`}/> 
   <div className="col-lg-6 mb-4">						
   <div className="card shadow mb-4">
   <div className="card-header py-3">
