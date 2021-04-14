@@ -1,6 +1,6 @@
 //const Swal = require('sweetalert2')
 
-function myFunction() {
+function validateForm() {
     let nombreProducto = document.getElementById("nombreProducto").value;
     let detalle = document.getElementById("detalle").value;
     let cantidad = document.getElementById("cantidad").value;

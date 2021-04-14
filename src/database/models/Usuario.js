@@ -8,6 +8,11 @@ module.exports = function(sequelize, dataTypes){
             autoIncrement: true,
             notNull: true
         },
+        admin: {
+            type: dataTypes.INTEGER,
+            default: 0,
+            notNull: true
+        },
         first_name: {
             type: dataTypes.STRING(45),
             notNull: true
