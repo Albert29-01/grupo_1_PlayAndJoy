@@ -53,7 +53,7 @@ module.exports = {
                     status: 200,
                     url: '/api/product/last',
                 },
-                data: producto[0]
+                data: producto
             }
             res.json(respuesta)
         })

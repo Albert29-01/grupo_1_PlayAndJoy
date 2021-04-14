@@ -34,10 +34,10 @@ function App() {
   }, []);
 
   useEffect(() => { //Último Producto
-    fetch('https://playandjoy.herokuapp.com/api/product/last')
+    fetch('http://localhost:3000/api/product/last')
     .then((response)=>{return response.json()})
     .then((result)=>{
-      setLastProduct(result.data[0])
+      setLastProduct(result.data)
     })
     .catch((e)=>{console.log(e)})
   }, []);
@@ -111,7 +111,9 @@ return (
   </div>
   <ContentBox boxes={boxes}/>
   <div className="row">
-  <LastProductBox lastProduct={lastProduct} imgUrl={`https://playandjoy.herokuapp.com/img/uploads/products/${lastProduct.images[0].nombre}`}/> 
+  {lastProduct.map((product)=>{
+             return <LastProductBox lastProduct={product.nombre} imgUrl={`http://localhost:3000/img/uploads/products/${product.images[0].nombre}`} />
+            })}
   <div className="col-lg-6 mb-4">						
   <div className="card shadow mb-4">
   <div className="card-header py-3">
