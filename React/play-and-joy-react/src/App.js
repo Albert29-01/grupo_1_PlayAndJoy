@@ -17,6 +17,8 @@ function App() {
   const [products, setProducts] = useState([]);
   const [lastProduct, setLastProduct] = useState([]);
 
+  const [totalSuscripciones, setTotalSuscripciones] = useState('');
+
   const [totalUsers, setTotalUsers] = useState('');
   const [users, setUsers] = useState([]);
 
@@ -34,13 +36,23 @@ function App() {
   }, []);
 
   useEffect(() => { //Último Producto
-    fetch('http://localhost:3000/api/product/last')
+    fetch('https://playandjoy.herokuapp.com/api/product/last')
     .then((response)=>{return response.json()})
     .then((result)=>{
       setLastProduct(result.data)
     })
     .catch((e)=>{console.log(e)})
   }, []);
+
+  useEffect(() => { //Suscripciones
+    fetch('https://playandjoy.herokuapp.com/api/suscriptions')
+    .then((response)=>{return response.json()})
+    .then((result)=>{
+      setTotalSuscripciones(result.meta.total)
+    })
+    .catch((e)=>{console.log(e)})
+  }, []);
+
 
   useEffect(() => { //Usuarios
     fetch('https://playandjoy.herokuapp.com/api/users')
@@ -66,6 +78,12 @@ function App() {
     { 
       title: 'Productos', 
       dato: totalProductos,
+      icono: 'fas fa-clipboard-list fa-2x text-gray-300',
+      color:'card border-left-primary shadow h-100 py-2'
+    },
+    { 
+      title: 'Suscripciones', 
+      dato: totalSuscripciones,
       icono: 'fas fa-clipboard-list fa-2x text-gray-300',
       color:'card border-left-primary shadow h-100 py-2'
     },{ 
@@ -112,8 +130,8 @@ return (
   <ContentBox boxes={boxes}/>
   <div className="row">
   {lastProduct.map((product)=>{
-             return <LastProductBox lastProduct={product.nombre} imgUrl={`http://localhost:3000/img/uploads/products/${product.images[0].nombre}`} />
-            })}
+             return <LastProductBox lastProduct={product.nombre} imgUrl={`https://playandjoy.herokuapp.com/img/uploads/products/${product.images[0].nombre}`} />
+  })}
   <div className="col-lg-6 mb-4">						
   <div className="card shadow mb-4">
   <div className="card-header py-3">
