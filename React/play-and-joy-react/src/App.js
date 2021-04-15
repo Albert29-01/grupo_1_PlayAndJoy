@@ -9,6 +9,7 @@ import Sidebar from './components/Sidebar'
 import Topbar from './components/Topbar'
 import ContentBox from './components/ContentBox'
 import LastProductBox from './components/LastProductBox'
+import LastUserBox from './components/LastUserBox'
 import CategoryBox from './components/CategoryBox'
 import Footer from './components/Footer'
 
@@ -20,7 +21,8 @@ function App() {
   const [totalSuscripciones, setTotalSuscripciones] = useState('');
 
   const [totalUsers, setTotalUsers] = useState('');
-  const [users, setUsers] = useState([]);
+  //const [users, setUsers] = useState([]);
+  const [lastUser, setLastUser] = useState([]);
 
   const [totalCategories, setTotalCategories] = useState('');
   const [categories, setCategories] = useState([]);
@@ -59,7 +61,16 @@ function App() {
     .then((response)=>{return response.json()})
     .then((result)=>{
       setTotalUsers(result.meta.total)
-      setUsers(result.data)
+      //setUsers(result.data) PREGUNTAR SI HAY QUE MOSTRAR UN LISTADO DE USUARIOS
+    })
+    .catch((e)=>{console.log(e)})
+  }, []);
+
+  useEffect(() => { //Último Usuario
+    fetch('https://playandjoy.herokuapp.com/api/users/last')
+    .then((response)=>{return response.json()})
+    .then((result)=>{
+      setLastUser(result.data)
     })
     .catch((e)=>{console.log(e)})
   }, []);
@@ -78,14 +89,14 @@ function App() {
     { 
       title: 'Productos', 
       dato: totalProductos,
-      icono: 'fas fa-clipboard-list fa-2x text-gray-300',
+      icono: 'fas fa-box fa-2x text-gray-300',
       color:'card border-left-primary shadow h-100 py-2'
     },
     { 
       title: 'Suscripciones', 
       dato: totalSuscripciones,
       icono: 'fas fa-clipboard-list fa-2x text-gray-300',
-      color:'card border-left-primary shadow h-100 py-2'
+      color:'card border-left-danger shadow h-100 py-2'
     },{ 
       title: 'Usuarios', 
       dato: totalUsers, 
@@ -94,7 +105,7 @@ function App() {
     },{ 
       title: 'Categorias', 
       dato: totalCategories,
-      icono: 'fas fa-clipboard-list fa-2x text-gray-300',
+      icono: 'fas fa-shopping-cart fa-2x text-gray-300',
       color:'card border-left-warning shadow h-100 py-2'
   }]
 
@@ -112,6 +123,7 @@ const itemTemplate = (item) => {
             </div>
             <div className="product-list-action">
                 <h6 className="p-mb-2">${item.precio}</h6>
+                <span className={`product-badge`}>STOCK: {item.stock}</span>
             </div>
       </div>
     );
@@ -130,7 +142,10 @@ return (
   <ContentBox boxes={boxes}/>
   <div className="row">
   {lastProduct.map((product)=>{
-             return <LastProductBox lastProduct={product.nombre} imgUrl={`https://playandjoy.herokuapp.com/img/uploads/products/${product.images[0].nombre}`} />
+             return <LastProductBox lastProduct={product.nombre} precio={product.precio} productDetail={product.detalle} imgUrl={`https://playandjoy.herokuapp.com/img/uploads/products/${product.images[0].nombre}`} />
+  })}
+  {lastUser.map((user)=>{
+             return <LastUserBox lastUser={user.first_name+', '+user.last_name} userMail={user.email} imgUrl={`https://playandjoy.herokuapp.com/img/uploads/avatars/${user.imagen}`} />
   })}
   <div className="col-lg-6 mb-4">						
   <div className="card shadow mb-4">
@@ -139,14 +154,16 @@ return (
   </div>
   <div className="card-body">
   <div className="row">
-  <CategoryBox/>
+  {categories.map((category)=>{
+             return <CategoryBox nombre={category.nombre} dato={category.productos.length}/>
+  })}
   </div>
   </div>
   </div>
   </div>
   </div>
   </div>
-  <OrderList value={products} header="Listado de Productos" dragdrop listStyle={{height:'auto'}} dataKey="id" itemTemplate={itemTemplate} onChange={(e) => setProducts(e.value)}></OrderList>
+  <OrderList value={products} header="Listado de Productos" listStyle={{height:'auto'}} dataKey="id" itemTemplate={itemTemplate} onChange={(e) => setProducts(e.value)}></OrderList>
   </div>
   <Footer/>
   </div>
