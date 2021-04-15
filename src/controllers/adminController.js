@@ -230,7 +230,7 @@ module.exports = {
                         precio: req.body.precio,
                     })
                     .then(function(resultado){
-                        res.redirect('/admin/suscription/'+resultado.id)
+                        res.redirect('/suscription/'+resultado.id)
                     })
                     .catch(function(e){
                         res.render("404_notFound")

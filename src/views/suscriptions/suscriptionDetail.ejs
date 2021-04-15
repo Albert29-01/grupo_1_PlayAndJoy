@@ -2,10 +2,14 @@
 <html lang="en">
 <%- include('../partials/head')%>
 <body onload="myFunction()">
-    <<div id="loader"><img src="/img/lpicon.png" alt=""></div>
+    <div id="loader"><img src="/img/lpicon.png" alt=""></div>
     <div style="display:none;" id="myDiv" class="animate-bottom">
     <%- include('../partials/header') %>
     <section class="detalleSuscrip">
+        <% if(usuarioLogueado.admin == 1) {%> 
+            <a href="/admin/editSuscription/<%= suscription.id %>"><button type=“button” class="carga">EDITAR</button></a> 
+            <a href="/admin/deleteSuscription/<%= suscription.id %>"><button type=“button” class="carga">ELIMINAR</button></a>
+        <% } %>
         <img class="suscripcion" src="/img/imagenSuscripcion.png" alt="Gatito dentro de una caja">
         <article>
             <h1><%= suscription.nombre   %></h1>
