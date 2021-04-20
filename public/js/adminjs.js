@@ -1,5 +1,3 @@
-const Swal = require('sweetalert2')
-
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
   }
@@ -10,10 +8,31 @@ function openNav() {
   }
 
 function deleteUser(event){
-  var r = confirm("¿Estás seguro que querés eliminar este usuario?");
-  if (r == false) {
-    event.preventDefault();
-  }
+  Swal.fire({
+    title: '¿Estás seguro que querés eliminar este usuario?',
+    text: "No podrás revertirlo!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, que parezca un accidente!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        {
+          position: 'top-end',
+          icon: 'success',
+          title: 'Eliminado!',
+          text: 'Fue un trabajo limpio',
+          showConfirmButton: false,
+          timer: 2000
+      }).then(()=>{
+          location.reload()
+      })
+    } else {
+      event.preventDefault();
+    }
+  })
 }
 
 /*document.getElementById('deleteUser').addEventListener('click', function(){

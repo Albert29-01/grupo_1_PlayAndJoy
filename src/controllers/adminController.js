@@ -20,7 +20,6 @@ module.exports = {
                 id: req.params.idUser
             }
         })
-        return res.send("Usuario " + req.params.idUser + " eliminado con éxito!");
     },
     vistaProd: function (req, res){
         db.Producto.findByPk(req.params.idProduct)

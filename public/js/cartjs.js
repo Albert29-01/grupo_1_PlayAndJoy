@@ -9,9 +9,28 @@
     }
 
     function deleteAll(){
-        localStorage.clear()
-        location.reload()
-        alert('Carrito vaciado')
+        Swal.fire({
+            title: 'Estás seguro que querés vaciar el carrito?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, no tengo un mango!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Borrado!',
+                    text: 'Carrito vaciado.',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(()=>{
+                    localStorage.clear()
+                    location.reload()
+                })
+            }
+          })
     }
     
     function deleteItem(id){

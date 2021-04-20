@@ -6,14 +6,14 @@
     <div style="display:none;" id="myDiv" class="animate-bottom">
     <%- include('../partials/header') %>
     <section class="detalleSuscrip">
-        <% if(usuarioLogueado.admin == 1) {%> 
+        <% if(typeof usuarioLogueado != "undefined" && usuarioLogueado.admin == 1) {%> 
             <a href="/admin/editSuscription/<%= suscription.id %>"><button type=“button” class="carga">EDITAR</button></a> 
             <a href="/admin/deleteSuscription/<%= suscription.id %>"><button type=“button” class="carga">ELIMINAR</button></a>
         <% } %>
         <img class="suscripcion" src="/img/imagenSuscripcion.png" alt="Gatito dentro de una caja">
         <article>
-            <h1><%= suscription.nombre   %></h1>
-            <h2>$ <%= suscription.precio   %></h2>
+            <h1 id="nombre"><%= suscription.nombre   %></h1>
+            <h2 id="precio">$ <%= suscription.precio   %></h2>
             <div class="mediosDePago">
                 <img src="/img/Amex.png" alt="American Express">
                 <img src="/img/Visa.png" alt="Visa">
@@ -23,70 +23,20 @@
             </div>
             <h3>Detalle</h3>
             <p><%= suscription.detalle   %></p>
+            <div class="cant">
+                <label>Cantidad</label>
+                <input type=“number” name=“cantidad” id="cantidad">
+            </div>
+            <button class="addCart"><img src="/img/carrito2.png">Añadir al carrito</button>
         </article>
     </section>
-    <form class="opcionesSuscrip" action="validar.php" method="POST">
-        <div>
-            <label>Tipo de café</label>
-            <select name=“Cafe” required>
-                <option value="none" selected disabled hidden> 
-                    Selecciona una opción 
-                </option>
-                <option value=”Fuerte”>Fuerte</option>
-                <option value=“Suave”>Suave</option>
-                <option value=“Descaf”>Descafeinado</option>
-            </select>
-        </div>
-        <div>
-            <label>Cepa de vino</label>
-            <select name="Vino" required>
-                <option value="none" selected disabled hidden> 
-                    Selecciona una opción 
-                </option>
-                <option value=”Tinto”>Tinto</option>
-                <option value=“Blanco”>Blanco</option>
-                <option value=“Rosado”>Rosado</option>
-                <option value="Blend">Blend</option>
-            </select>
-        </div>
-        <div>
-            <label>Género literario</label>
-            <select name=“Libro” required>
-                <option value="none" selected disabled hidden> 
-                    Selecciona una opción 
-                </option>
-                <option value=”CFx”>Ciencia Ficción</option>
-                <option value=“Ro”>Romántico</option>
-                <option value=“Sus”>Suspenso</option>
-                <option value=“Bio”>Biografía</option>
-                <option value=“Dr”>Drama</option>
-                <option value=“Tr”>Terror</option>
-            </select>
-        </div>
-        <div>
-            <label>Estilo musical</label>
-            <select name=“Musica” required>
-                <option value="none" selected disabled hidden> 
-                    Selecciona una opción 
-                </option>
-                <option value=”Rock”>Rock</option>
-                <option value=“Cl”>Clásica</option>
-                <option value=“Pop”>Pop</option>
-                <option value="Jazz">Jazz</option>
-                <option value=“Blues”>Blues</option>
-            </select>
-        </div>
-        <div class="cant">
-            <label>Cantidad</label>
-            <input type=“number” name=“cantidad”>
-        </div>
-        <button class="addCart" type=“submit”><img src="/img/carrito2.png">Añadir al carrito</button>
-    </form>
     <hr>
     <h2 class="titulo">Productos Similares</h2>
     <%- include('../partials/sectionProducts') %>  
     <%- include('../partials/footer') %>
 </div>
-<script src="/js/loadjs.js" type="text/javascript"> </script>  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="/js/loadjs.js" type="text/javascript"> </script>
+<script src="/js/addCartjs.js" type="text/javascript"> </script>  
 </body>
 </html>

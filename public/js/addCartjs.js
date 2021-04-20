@@ -6,6 +6,10 @@ cart.addEventListener('click',function(){
     let precioProducto = document.querySelector('#precio').innerText
     let cantProducto = document.querySelector('#cantidad').value
 
+    if (cantProducto == 0) {
+        cantProducto = 1
+    }
+
     let producto = {
         nombreProducto,
         precioProducto,
@@ -15,15 +19,21 @@ cart.addEventListener('click',function(){
     if( localStorage.length == 0){
         let carrito = []
         carrito.push(producto)  
-        localStorage.setItem('carrito',JSON.stringify(carrito)) //cambiar por sessionStorage?
+        localStorage.setItem('carrito',JSON.stringify(carrito)) 
         console.log(carrito)
     } else {
         let carrito = JSON.parse(localStorage.carrito)
         carrito.push(producto)  
-        localStorage.setItem('carrito',JSON.stringify(carrito)) //cambiar por sessionStorage?
+        localStorage.setItem('carrito',JSON.stringify(carrito)) 
         console.log(carrito)
-    }    
- alert(nombreProducto+' agregado al carrito')
+    }
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: nombreProducto+' agregado al carrito',
+        showConfirmButton: false,
+        timer: 3000
+      })
 })
 
 
