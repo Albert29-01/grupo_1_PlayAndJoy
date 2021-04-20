@@ -133,7 +133,7 @@ module.exports = {
                         }
                     })
                     db.Image.update({
-                        nombre: req.files.length !=0?req.files[0].filename:imagen.nombre,
+                        nombre: typeof req.files.imagen != 'undefined'?req.files.imagen[0].filename:imagen.nombre,
                     },{
                         where: {
                             id_product: req.params.idProduct
