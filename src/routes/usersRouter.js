@@ -35,7 +35,7 @@ router.post('/login',[
 router.get('/profile/:idUser/logout',authMiddlewares,usersController.logout);
 
 router.get('/profile/:idUser/editPassword',authMiddlewares,usersController.editPassword);
-router.put('/profile/:idUser/editPassword',authMiddlewares,[
+router.post('/profile/:idUser/editPassword',authMiddlewares,[
   check('password')
   .notEmpty().withMessage('No te olvides la contraseña')
   .isLength({min:8}).withMessage('La contraseña debe contener al menos 8 caracteres'),
