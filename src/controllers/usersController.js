@@ -105,7 +105,7 @@ module.exports = {
                             first_name: req.body.nombre,
                             last_name: req.body.apellido,
                             email: req.body.email,
-                            imagen: req.files.avatar.length>0?req.files.avatar[0].filename: avatar,
+                            imagen: typeof req.files.avatar != 'undefined'? req.files.avatar[0].filename: avatar, 
                             domicilio: req.body.domicilio,
                             localidad: local.data.localidades[0].nombre,
                             provincia: prov.data.provincias[0].nombre,

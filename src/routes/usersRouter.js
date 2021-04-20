@@ -48,14 +48,7 @@ router.put('/profile/:idUser/editProfile',authMiddlewares,[
   check('nombre')
   .notEmpty().withMessage('Campo nombre requerido'),
   check('apellido')
-  .notEmpty().withMessage('Campo apellido requerido'),
-  body("avatar").custom(function(value, {req}){
-    if(typeof req.files.avatar != "undefined"){ 
-        return true;
-    } else {
-        throw new Error('Al menos una image es obligatoria (PNG, JPG, JPEG o GIF)');
-    }
-})
+  .notEmpty().withMessage('Campo apellido requerido')
 ],usersController.updateProfile);
 
 router.get('/profile/:idUser',authMiddlewares,usersController.profile);
