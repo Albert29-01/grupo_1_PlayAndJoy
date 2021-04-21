@@ -101,7 +101,7 @@ module.exports = {
                     id:req.params.idProduct,
                 }
             })
-            return res.send("Producto " + req.params.idProduct + " eliminado con éxito!");
+            res.redirect('/product')
         },
         deleteSuscrip:function (req, res){
             db.Suscripcion.destroy({            
@@ -109,7 +109,7 @@ module.exports = {
                     id:req.params.idSuscription,
                 }
             })
-            return res.send("Suscripción " + req.params.idSuscription + " eliminada con éxito!");
+            res.redirect('/suscriptions')
         },
         editProd: function (req, res){
             let errors = validationResult(req);
@@ -139,7 +139,7 @@ module.exports = {
                             id_product: req.params.idProduct
                         }
                     })
-                    return res.send("Producto " + req.params.idProduct + " actualizado con éxito!");
+                    //res.redirect('/product/'+ req.params.idProduct);
                 })
             } else {
                 db.Categoria.findAll()
@@ -172,7 +172,7 @@ module.exports = {
                             id:req.params.idSuscription,
                         }
                     })
-                    return res.send("Suscripción " + req.params.idSuscription + " actualizada con éxito!");
+                    res.redirect('/suscriptions/'+req.params.idSuscription)
                 } else {
                     db.Suscripcion.findByPk(req.params.idSuscription)
                     .then(function(resultado){

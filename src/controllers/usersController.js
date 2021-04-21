@@ -138,7 +138,8 @@ module.exports = {
         })
     },
     updatePassword: function(req,res){
-        return res.json(req.body) //NO FUNCA!!!
+        console.log('ACÁ VA LA INFO: ',req.body)
+        return res.send(req.body) //NO FUNCA!!!
         let errors = validationResult(req);
         if(errors.isEmpty()){
             if (req.body.password == req.body.passwordConfirm){ 
