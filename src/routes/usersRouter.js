@@ -25,7 +25,7 @@ var upload = multer({ storage: storage,
 
 
 router.get('/login',guestMiddlewares,usersController.login);
-router.post('/login',[
+router.post('/login',authMiddlewares,[
   check('email')
   .isEmail().withMessage('No te olvides el @'),
   check('password')

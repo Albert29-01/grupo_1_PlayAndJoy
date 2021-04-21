@@ -8,7 +8,6 @@ module.exports = {
     users: function(req,res){
         db.Usuario.findAll()
         .then(function(usuarios){
-            //return res.json(usuarios)
             return res.render('./admin/adminUsers',{
             usuarios
             })
@@ -19,28 +18,6 @@ module.exports = {
             where: {
                 id: req.params.idUser
             }
-        })
-    },
-    vistaProd: function (req, res){
-        db.Producto.findByPk(req.params.idProduct)
-        .then(function(resultado){
-            res.render ('./admin/adminProduct', {
-                producto: resultado,
-            });
-        })
-        .catch(function(e){
-            res.render("404_notFound")
-        })
-    },
-    vistaSuscrip: function (req, res){
-        db.Suscripcion.findByPk(req.params.idSuscription)
-        .then(function(resultado){
-            res.render ('./admin/adminSuscription', {
-                suscripcion: resultado,
-            });
-        })
-        .catch(function(e){
-            res.render("404_notFound")
         })
     },
     formCargaP: function (req, res){
@@ -101,7 +78,9 @@ module.exports = {
                     id:req.params.idProduct,
                 }
             })
-            res.redirect('/product')
+            .then(()=>{
+                res.redirect('/product')
+            })
         },
         deleteSuscrip:function (req, res){
             db.Suscripcion.destroy({            
@@ -109,7 +88,9 @@ module.exports = {
                     id:req.params.idSuscription,
                 }
             })
-            res.redirect('/suscriptions')
+            .then(()=>{
+                res.redirect('/suscriptions')
+            })
         },
         editProd: function (req, res){
             let errors = validationResult(req);
@@ -139,7 +120,9 @@ module.exports = {
                             id_product: req.params.idProduct
                         }
                     })
-                    //res.redirect('/product/'+ req.params.idProduct);
+                    .then(()=>{
+                        res.redirect('/product/'+ req.params.idProduct);
+                    })
                 })
             } else {
                 db.Categoria.findAll()
@@ -172,7 +155,9 @@ module.exports = {
                             id:req.params.idSuscription,
                         }
                     })
-                    res.redirect('/suscriptions/'+req.params.idSuscription)
+                    .then(()=>{
+                        res.redirect('/suscriptions/'+req.params.idSuscription)
+                    })
                 } else {
                     db.Suscripcion.findByPk(req.params.idSuscription)
                     .then(function(resultado){
@@ -229,7 +214,7 @@ module.exports = {
                         precio: req.body.precio,
                     })
                     .then(function(resultado){
-                        res.redirect('/suscription/'+resultado.id)
+                        res.redirect('/suscriptions/'+resultado.id)
                     })
                     .catch(function(e){
                         res.render("404_notFound")
