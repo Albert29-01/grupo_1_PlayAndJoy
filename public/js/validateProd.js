@@ -1,16 +1,10 @@
-function validateForm() {
+function validateProd() {
     let nombreProducto = document.getElementById("nombreProducto").value;
-    let tipoSuscripcion = document.getElementById("tipoSuscripcion").value;
     let detalle = document.getElementById("detalle").value;
     let cantidad = document.getElementById("cantidad").value;
   
     
     if (nombreProducto=='' || nombreProducto.length < 5) {
-        document.getElementById("errorNombre").innerText = 'El nombre es obligatorio y debe tener al menos 5 caracteres'
-    } else {
-        document.getElementById("errorNombre").innerText = '' 
-    }
-    if (tipoSuscripcion=='' || tipoSuscripcion.length < 5) {
         document.getElementById("errorNombre").innerText = 'El nombre es obligatorio y debe tener al menos 5 caracteres'
     } else {
         document.getElementById("errorNombre").innerText = '' 

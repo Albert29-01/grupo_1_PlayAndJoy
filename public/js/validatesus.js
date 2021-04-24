@@ -1,4 +1,4 @@
-function validateForm() {
+function validateSus() {
     let tipoSuscripcion = document.getElementById("tipoSuscripcion").value;
     let detalle = document.getElementById("detalle").value;
    
